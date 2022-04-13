@@ -1,6 +1,5 @@
 import NavigationLink from './NavigationLink'
 import { useTranslation } from 'react-i18next'
-import { t } from 'i18next'
 
 export default function Navigation() {
   const { t, i18n } = useTranslation()
@@ -23,11 +22,7 @@ export default function Navigation() {
   return (
     <nav className="flex h-full justify-end">
       {routes.map((route) => (
-        <NavigationLink
-          to={route.to}
-          key={route.to}
-          label={route.label}
-        ></NavigationLink>
+        <NavigationLink to={route.to} key={route.to} label={route.label} />
       ))}
       <button
         onClick={changeLanguage}
