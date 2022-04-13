@@ -5,6 +5,9 @@ import { gitDescribeSync } from 'git-describe'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  test: {
+    globals: true,
+  },
   define: {
     GLOBAL: {
       APP_VERSION: gitDescribeSync().semverString,
