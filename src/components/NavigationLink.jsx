@@ -1,7 +1,7 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom'
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(' ')
 }
 
 export default function NavigationLink({ to, label }) {
@@ -9,13 +9,13 @@ export default function NavigationLink({ to, label }) {
     <NavLink
       className={({ isActive }) => {
         return classNames(
-          "inline-flex items-center pr-6 last:pr-0",
-          isActive ? "font-semibold text-orange-500" : ""
-        );
+          'inline-flex items-center pr-6 last:pr-0',
+          isActive ? 'font-semibold text-orange-500' : ''
+        )
       }}
       to={to}
     >
       {label}
     </NavLink>
-  );
+  )
 }

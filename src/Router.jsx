@@ -1,12 +1,12 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./index.css";
-import App from "./App";
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import './index.css'
+import App from './App'
 
 // Routes
-import First from "./pages/First";
-import Second from "./pages/Second";
-import NotFound from "./pages/NotFound";
+import First from './pages/First'
+import Second from './pages/Second'
+import NotFound from './pages/NotFound'
 
 export default function Router() {
   return (
@@ -19,5 +19,5 @@ export default function Router() {
         </Route>
       </Routes>
     </BrowserRouter>
-  );
+  )
 }

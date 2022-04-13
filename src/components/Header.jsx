@@ -1,4 +1,4 @@
-import Navigation from "@/components/Navigation";
+import Navigation from '@/components/Navigation'
 
 export default function Header() {
   return (
@@ -10,5 +10,5 @@ export default function Header() {
         <Navigation />
       </div>
     </header>
-  );
+  )
 }
