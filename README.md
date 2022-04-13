@@ -41,3 +41,15 @@ D-- No -->F[Proceed]
 ## Testing
 
 Tests are written in `src/test` using [Vitest](https://vitest.dev/).
+
+## Docker Environment
+
+The client can be run inside a [Docker](https://www.docker.com) container. This requires Docker to be installed on the host system. [Docker Compose](https://docs.docker.com/compose) is used to start and stop the container.
+
+```bash
+# build & serve on :8080 (detached mode)
+docker-compose up -d
+
+# stop serving
+docker-compose down
+```
