@@ -24,7 +24,7 @@ npm run test
 
 Tests are automatically run by a GitHub Action for every commit and pull request on the main branch. Merging is prevented if a test fails.
 
-:::mermaid
+```mermaid
 flowchart LR
 
 A[Commit to main] --> B[Run tests]
@@ -32,7 +32,7 @@ C[Pull request to main] --> B
 B --> D{is failing?}
 D-- Yes -->E[Stop]
 D-- No -->F[Proceed]
-:::
+```
 
 ### Formatting
 
