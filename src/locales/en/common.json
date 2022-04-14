@@ -1,4 +1,9 @@
 {
   "first": "First",
-  "second": "Second"
+  "second": "Second",
+  "appearance": {
+    "light": "Light",
+    "dark": "Dark",
+    "media": "System"
+  }
 }

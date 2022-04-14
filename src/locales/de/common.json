@@ -1,4 +1,9 @@
 {
   "first": "Eins",
-  "second": "Zwei"
+  "second": "Zwei",
+  "appearance": {
+    "light": "Hell",
+    "dark": "Dunkel",
+    "media": "System"
+  }
 }
