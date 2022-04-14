@@ -1,8 +1,10 @@
 import NavigationLink from './NavigationLink'
 import { useTranslation } from 'react-i18next'
+import { useLanguage } from '@/services/language'
 
 export default function Navigation() {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
+  const { language, setLanguage } = useLanguage()
 
   const routes = [
     {
@@ -17,27 +19,29 @@ export default function Navigation() {
 
   function changeLanguage(e) {
     e.preventDefault()
-    i18n.changeLanguage(e.target.dataset.lang)
+    setLanguage(e.target.dataset.lang)
   }
   return (
     <nav className="flex h-full justify-end">
       {routes.map((route) => (
         <NavigationLink to={route.to} key={route.to} label={route.label} />
       ))}
+      <div className="flex space-x-2">
       <button
         onClick={changeLanguage}
         data-lang="en"
-        className={i18n.language == 'en' ? 'pr-2 font-bold ' : 'pr-2'}
+          className={language == 'en' ? 'font-bold ' : ''}
       >
         EN
       </button>
       <button
         onClick={changeLanguage}
         data-lang="de"
-        className={i18n.language == 'de' ? 'font-bold' : ''}
+          className={language == 'de' ? 'font-bold' : ''}
       >
         DE
       </button>
+      </div>
     </nav>
   )
 }
