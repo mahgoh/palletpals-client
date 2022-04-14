@@ -1,25 +1,25 @@
-import { useContext, createContext } from 'react'
+import { useContext, useState, useEffect, createContext } from 'react'
 
 let AppearanceContext = createContext()
+const appearances = ['light', 'dark', 'media']
 
 export function useAppearance() {
   return useContext(AppearanceContext)
 }
 
 export function AppearanceProvider({ children }) {
-  let appearance =
+  let [appearance, setAppearance] = useState(
     'appearance' in localStorage ? localStorage.appearance : 'media'
+  )
 
-  let setAppearance = (appearance) => {
-    const variants = ['light', 'dark', 'media']
-
-    if (variants.includes(appearance)) {
+  let applyAppearance = () => {
+    if (appearances.includes(appearance)) {
       localStorage.appearance = appearance
-      window.location.reload()
+      applyClass()
     }
   }
 
-  let applyAppearance = () => {
+  let applyClass = () => {
     if (
       appearance === 'dark' ||
       (appearance === 'media' &&
@@ -31,9 +31,11 @@ export function AppearanceProvider({ children }) {
     }
   }
 
-  applyAppearance()
+  useEffect(() => {
+    applyAppearance()
+  }, [appearance])
 
-  let value = { appearance, setAppearance, applyAppearance }
+  let value = { appearance, appearances, setAppearance }
 
   return (
     <AppearanceContext.Provider value={value}>
