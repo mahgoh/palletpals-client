@@ -8,11 +8,9 @@ const container = document.getElementById('root')
 const root = createRoot(container)
 
 root.render(
-  <React.StrictMode>
-    <Suspense fallback="loading">
-      <Router />
-    </Suspense>
-  </React.StrictMode>
+  <Suspense fallback="loading">
+    <Router />
+  </Suspense>
 )
 
 // Print App version

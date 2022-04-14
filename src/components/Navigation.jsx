@@ -1,12 +1,11 @@
 import NavigationLink from './NavigationLink'
 import { useTranslation } from 'react-i18next'
 import { useAppearance } from '@/services/appearance'
-import { useLanguage } from '@/services/language'
+import LanguageSelect from '@/components/LanguageSelect'
 
 export default function Navigation() {
   const { t } = useTranslation()
   const { appearance, setAppearance } = useAppearance()
-  const { language, setLanguage } = useLanguage()
 
   const routes = [
     {
@@ -24,12 +23,8 @@ export default function Navigation() {
     setAppearance(e.target.dataset.appearance)
   }
 
-  function changeLanguage(e) {
-    e.preventDefault()
-    setLanguage(e.target.dataset.lang)
-  }
   return (
-    <nav className="flex h-full justify-end">
+    <nav className="flex h-full items-center justify-end">
       {routes.map((route) => (
         <NavigationLink to={route.to} key={route.to} label={route.label} />
       ))}
@@ -56,22 +51,7 @@ export default function Navigation() {
           {t('common.appearance.media')}
         </button>
       </div>
-      <div className="flex space-x-2">
-        <button
-          onClick={changeLanguage}
-          data-lang="en"
-          className={language == 'en' ? 'font-bold ' : ''}
-        >
-          EN
-        </button>
-        <button
-          onClick={changeLanguage}
-          data-lang="de"
-          className={language == 'de' ? 'font-bold' : ''}
-        >
-          DE
-        </button>
-      </div>
+      <LanguageSelect />
     </nav>
   )
 }
