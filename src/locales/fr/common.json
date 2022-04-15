@@ -1,0 +1,9 @@
+{
+  "first": "Premier",
+  "second": "Deuxième",
+  "appearance": {
+    "light": "Léger",
+    "dark": "Noir",
+    "media": "Système"
+  }
+}

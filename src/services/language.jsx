@@ -1,8 +1,8 @@
 import { useContext, useState, createContext, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { supportedLanguages } from '@/i18n'
 
 let LanguageContext = createContext()
-const languages = ['en', 'de']
 
 export function useLanguage() {
   return useContext(LanguageContext)
@@ -15,7 +15,7 @@ export function LanguageProvider({ children }) {
   )
 
   let applyLanguage = () => {
-    if (languages.includes(language)) {
+    if (supportedLanguages.includes(language)) {
       localStorage.lang = language
       i18n.changeLanguage(language)
     }
@@ -25,7 +25,7 @@ export function LanguageProvider({ children }) {
     applyLanguage()
   }, [language])
 
-  let value = { language, languages, setLanguage }
+  let value = { language, languages: supportedLanguages, setLanguage }
 
   return (
     <LanguageContext.Provider value={value}>

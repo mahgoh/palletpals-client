@@ -3,7 +3,9 @@ import { initReactI18next } from 'react-i18next'
 
 import common_en from '@/locales/en/common.json'
 import common_de from '@/locales/de/common.json'
+import common_fr from '@/locales/fr/common.json'
 
+const supportedLanguages = ['en', 'de', 'fr']
 const resources = {
   en: {
     translation: {
@@ -15,6 +17,11 @@ const resources = {
       common: common_de,
     },
   },
+  fr: {
+    translation: {
+      common: common_fr,
+    },
+  },
 }
 
 i18n
@@ -22,7 +29,7 @@ i18n
   .init({
     resources,
     debug: GLOBAL.DEBUG,
-    supportedLngs: ['en', 'de'],
+    supportedLngs: supportedLanguages,
     lng: 'en',
     fallbackLng: 'en',
     interpolation: {
@@ -31,3 +38,4 @@ i18n
   })
 
 export default i18n
+export { supportedLanguages }
