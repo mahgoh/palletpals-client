@@ -20,6 +20,18 @@ npm run test
 
 ## Workflow
 
+### Feature-Checklist
+
+The following checklist has to be fulfiled before a feature is completed.
+
+- [ ] Localization is complete?
+- [ ] Tests are written (at least 1 per feature)?
+- [ ] Tests are passing (100%)?
+- [ ] Implementation is congruent with specification ([UC, SD, CP](#terminology))?
+  - [ ] If not, is specification updated?
+- [ ] Works on mobile device?
+- [ ] No dead imports or similar?
+
 ### Automated Testing
 
 Tests are automatically run by a GitHub Action for every commit and pull request on the main branch. Merging is prevented if a test fails.
@@ -53,3 +65,11 @@ docker-compose up -d
 # stop serving
 docker-compose down
 ```
+
+## Terminology
+
+| Abbreviation | Term                    |
+| ------------ | ----------------------- |
+| CP           | Communications Protocol |
+| SD           | Sequence Diagram        |
+| UC           | Use Case                |
