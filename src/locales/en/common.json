@@ -1,6 +1,9 @@
 {
   "first": "First",
   "second": "Second",
+  "hero": {
+    "headline": "Bulky products?"
+  },
   "appearance": {
     "light": "Light",
     "dark": "Dark",

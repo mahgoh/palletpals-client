@@ -1,6 +1,9 @@
 {
   "first": "Premier",
   "second": "Deuxième",
+  "hero": {
+    "headline": "Produits volumineux ?"
+  },
   "appearance": {
     "light": "Léger",
     "dark": "Noir",

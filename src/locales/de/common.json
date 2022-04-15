@@ -1,6 +1,9 @@
 {
   "first": "Eins",
   "second": "Zwei",
+  "hero": {
+    "headline": "Sperrige Produkte?"
+  },
   "appearance": {
     "light": "Hell",
     "dark": "Dunkel",
