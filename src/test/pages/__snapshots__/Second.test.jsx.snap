@@ -6,7 +6,7 @@ exports[`Render page Second 1`] = `
 >
   <div>
     <h1
-      className="text-4xl font-extrabold"
+      className="text-4xl font-extrabold leading-10 tracking-tight sm:text-6xl sm:leading-none lg:text-5xl"
     >
       common.second
     </h1>
