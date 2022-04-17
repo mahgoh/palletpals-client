@@ -22,6 +22,6 @@ export default function NavigationLink({ to, label }) {
 }
 
 NavigationLink.propTypes = {
-  to: PropTypes.string,
-  label: PropTypes.string,
+  to: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
 }

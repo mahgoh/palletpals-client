@@ -4,7 +4,7 @@ import Pagetitle from '@/components/Pagetitle'
 export default function Login() {
   return (
     <Main>
-      <Pagetitle>Not Found</Pagetitle>
+      <Pagetitle title="Not Found" />
     </Main>
   )
 }
