@@ -18,7 +18,7 @@ export default function TextField({
 
   return (
     <div>
-      {label ? (
+      {label && (
         <label
           htmlFor={name}
           className={classNames(
@@ -28,7 +28,7 @@ export default function TextField({
         >
           {label}
         </label>
-      ) : null}
+      )}
       <div className="mt-1">
         <input
           id={name}
@@ -44,11 +44,11 @@ export default function TextField({
           {...props}
         />
       </div>
-      {error ? (
+      {error && (
         <p className="mt-2 text-sm text-red-500" id={`${name}-error`}>
           {error}
         </p>
-      ) : null}
+      )}
     </div>
   )
 }
