@@ -1,0 +1,48 @@
+// Vitest Snapshot v1
+
+exports[`product list > should render 1`] = `
+<div>
+  <div
+    class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"
+  >
+    <a
+      class="group "
+      href="/product/1"
+    >
+      <div
+        class="aspect-w-1 aspect-h-1 w-full overflow-hidden bg-gray-100 dark:bg-gray-800 xl:aspect-w-7 xl:aspect-h-8"
+      />
+      <h3
+        class="mt-4 text-sm text-gray-700 dark:text-gray-300"
+      >
+        DeWalt Saw Machine
+      </h3>
+      <p
+        class="mt-1 text-lg font-medium text-gray-900 dark:text-gray-100"
+      >
+        CHF 
+        249.00
+      </p>
+    </a>
+    <a
+      class="group "
+      href="/product/2"
+    >
+      <div
+        class="aspect-w-1 aspect-h-1 w-full overflow-hidden bg-gray-100 dark:bg-gray-800 xl:aspect-w-7 xl:aspect-h-8"
+      />
+      <h3
+        class="mt-4 text-sm text-gray-700 dark:text-gray-300"
+      >
+        Cover Suspension System
+      </h3>
+      <p
+        class="mt-1 text-lg font-medium text-gray-900 dark:text-gray-100"
+      >
+        CHF 
+        89.00
+      </p>
+    </a>
+  </div>
+</div>
+`;

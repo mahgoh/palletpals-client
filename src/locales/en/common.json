@@ -12,12 +12,9 @@
     "dark": "Dark",
     "media": "System"
   },
-  "copy": "Copy",
-  "first": "First",
   "hero": {
     "headline": "Bulky products?"
   },
-  "profile": {
-    "title": "Profile"
-  }
+  "products": "Products",
+  "profile": "Profile"
 }

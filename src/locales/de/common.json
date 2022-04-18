@@ -12,12 +12,9 @@
     "password": "Passwort",
     "email": "Email"
   },
-  "copy": "Kopieren",
-  "first": "Eins",
   "hero": {
     "headline": "Sperrige Produkte?"
   },
-  "profile": {
-    "title": "Profil"
-  }
+  "products": "Produkte",
+  "profile": "Profil"
 }

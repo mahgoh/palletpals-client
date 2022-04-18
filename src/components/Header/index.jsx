@@ -10,12 +10,12 @@ export default function Header() {
 
   const routes = [
     {
-      to: '/first',
-      label: t('common.first'),
+      to: '/products',
+      label: t('common.products'),
     },
     {
       to: '/profile',
-      label: t('common.profile.title'),
+      label: t('common.profile'),
     },
   ]
 

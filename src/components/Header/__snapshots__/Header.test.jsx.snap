@@ -25,9 +25,9 @@ exports[`header > should render 1`] = `
       >
         <a
           class="inline-flex items-center pr-6 last:pr-0"
-          href="/first"
+          href="/products"
         >
-          First
+          Products
         </a>
         <a
           class="inline-flex items-center pr-6 last:pr-0"

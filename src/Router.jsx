@@ -5,7 +5,7 @@ import { AuthProvider, RequireAuth } from '@/services/auth'
 
 // Routes
 import Home from '@/pages/Home'
-import First from '@/pages/First'
+import Products from '@/pages/Products'
 import Login from '@/pages/Login'
 import Profile from '@/pages/Profile'
 import NotFound from '@/pages/NotFound'
@@ -17,7 +17,7 @@ export default function Router() {
         <Routes>
           <Route path="/" element={<App />}>
             <Route path="" element={<Home />} />
-            <Route path="first" element={<First />} />
+            <Route path="products" element={<Products />} />
             <Route
               path="profile"
               element={

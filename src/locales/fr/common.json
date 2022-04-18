@@ -12,12 +12,9 @@
     "password": "Mot de passe",
     "email": "Email"
   },
-  "copy": "Copier",
-  "first": "Premier",
   "hero": {
     "headline": "Produits volumineux ?"
   },
-  "profile": {
-    "title": "Profil"
-  }
+  "products": "Produits",
+  "profile": "Profil"
 }

@@ -9,7 +9,7 @@ export default function Profile() {
   const auth = useAuth()
   return (
     <Main>
-      <Pagetitle title={t('common.profile.title')} />
+      <Pagetitle title={t('common.profile')} />
       <Debug data={auth} />
     </Main>
   )
