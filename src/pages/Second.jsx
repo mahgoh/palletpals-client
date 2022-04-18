@@ -6,7 +6,7 @@ export default function Second() {
   const { t } = useTranslation()
   return (
     <Main>
-      <Pagetitle>{t('common.second')}</Pagetitle>
+      <Pagetitle title={t('common.second')} />
     </Main>
   )
 }

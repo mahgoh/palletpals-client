@@ -7,6 +7,14 @@ import { gitDescribeSync } from 'git-describe'
 export default defineConfig({
   test: {
     globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/test/setup.js',
+    coverage: {
+      include: ['src/**/*.{js,jsx}'],
+      exclude: ['src/test/**/*.{js,jsx}', 'src/utils/test-utils.jsx'],
+      skipFull: true,
+      reporter: ['text'],
+    },
   },
   define: {
     GLOBAL: {

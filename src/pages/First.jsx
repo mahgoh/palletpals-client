@@ -6,7 +6,7 @@ export default function First() {
   const { t } = useTranslation()
   return (
     <Main>
-      <Pagetitle>{t('common.first')}</Pagetitle>
+      <Pagetitle title={t('common.first')} />
       <div className="mt-10 grid max-w-3xl space-y-6">
         <div>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est eos
