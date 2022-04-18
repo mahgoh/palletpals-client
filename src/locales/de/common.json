@@ -5,8 +5,8 @@
     "media": "System"
   },
   "auth": {
-    "login": "Login",
-    "logout": "Logout",
+    "login": "Anmelden",
+    "logout": "Abmelden",
     "register": "Registieren",
     "username": "Benutzername",
     "password": "Passwort",
