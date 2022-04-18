@@ -4,6 +4,7 @@ import { I18nextProvider } from 'react-i18next'
 import { render } from '@testing-library/react'
 import i18n from '../i18n'
 
+import { AuthProvider } from '@/services/auth'
 import { AppearanceProvider } from '@/services/appearance'
 import { LanguageProvider } from '@/services/language'
 
@@ -52,9 +53,11 @@ const renderWithRouterWithi18n = (component, options) => {
 const renderComplete = (component, options) => {
   return {
     ...renderWithRouterWithi18n(
-      <AppearanceProvider>
-        <LanguageProvider>{component}</LanguageProvider>
-      </AppearanceProvider>,
+      <AuthProvider>
+        <AppearanceProvider>
+          <LanguageProvider>{component}</LanguageProvider>
+        </AppearanceProvider>
+      </AuthProvider>,
       options
     ),
   }

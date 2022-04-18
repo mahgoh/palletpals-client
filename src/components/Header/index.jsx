@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import Navigation from '@/components/Navigation'
 import AppearanceSelect from './AppearanceSelect'
 import LanguageSelect from './LanguageSelect'
+import Logout from './Logout'
 
 export default function Header() {
   const { t } = useTranslation()
@@ -13,8 +14,8 @@ export default function Header() {
       label: t('common.first'),
     },
     {
-      to: '/second',
-      label: t('common.second'),
+      to: '/profile',
+      label: t('common.profile.title'),
     },
   ]
 
@@ -35,6 +36,7 @@ export default function Header() {
             <AppearanceSelect />
             <LanguageSelect />
           </div>
+          <Logout />
         </div>
       </div>
     </header>
