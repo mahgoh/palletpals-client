@@ -10,31 +10,31 @@ const products = [
     id: 1,
     name: 'DeWalt Saw Machine',
     price: 249,
-    image: '/dewalt.avif',
+    image: '/images/dewalt.jpg',
   },
   {
     id: 2,
     name: 'Cover Suspension System',
     price: 89,
-    image: '/suspension.avif',
+    image: '/images/suspension.jpg',
   },
   {
     id: 3,
     name: 'Focus Paper Refill',
     price: 56.9,
-    image: '/paper.avif',
+    image: '/images/paper.jpg',
   },
   {
     id: 4,
     name: 'Machined Mechanical Steel',
     price: 194,
-    image: '/steel.avif',
+    image: '/images/steel.jpg',
   },
   {
     id: 5,
     name: 'CNC Mill',
     price: 99,
-    image: '/cnc.avif',
+    image: '/images/cnc.jpg',
   },
 ]
 
