@@ -18,6 +18,15 @@ Object.defineProperty(window, 'matchMedia', {
   })),
 })
 
+/**
+ * Mock navigator.clipboard.writeText function
+ */
+Object.assign(window.navigator, {
+  clipboard: {
+    writeText: vi.fn().mockImplementation(() => Promise.resolve()),
+  },
+})
+
 // The purpose of the flag is to tell React that it’s running in a unit
 // test-like environment. React will log helpful warnings if you forget
 // to wrap an update with act. (since React 18)
