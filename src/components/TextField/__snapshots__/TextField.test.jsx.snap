@@ -1,0 +1,143 @@
+// Vitest Snapshot v1
+
+exports[`textfield > should render 1`] = `
+<input
+  class="block w-full border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm"
+  id="username"
+  name="username"
+  placeholder=""
+  type="text"
+  value=""
+/>
+`;
+
+exports[`textfield > should render with error 1`] = `
+<div>
+  <div>
+    <label
+      class="block text-sm font-medium text-gray-700"
+      for="username"
+    >
+      Username
+    </label>
+    <div
+      class="mt-1"
+    >
+      <input
+        class="block w-full border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm"
+        id="username"
+        name="username"
+        placeholder=""
+        type="text"
+        value=""
+      />
+    </div>
+    <p
+      class="mt-2 text-sm text-red-500"
+      id="username-error"
+    >
+      Required
+    </p>
+  </div>
+</div>
+`;
+
+exports[`textfield > should render with label 1`] = `
+<div>
+  <div>
+    <label
+      class="block text-sm font-medium text-gray-700"
+      for="username"
+    >
+      Username
+    </label>
+    <div
+      class="mt-1"
+    >
+      <input
+        class="block w-full border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm"
+        id="username"
+        name="username"
+        placeholder=""
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`textfield > should render with placeholder 1`] = `
+<div>
+  <div>
+    <label
+      class="block text-sm font-medium text-gray-700"
+      for="username"
+    >
+      Username
+    </label>
+    <div
+      class="mt-1"
+    >
+      <input
+        class="block w-full border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm"
+        id="username"
+        name="username"
+        placeholder="Username"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`textfield > should render with type 1`] = `
+<div>
+  <div>
+    <label
+      class="block text-sm font-medium text-gray-700"
+      for="password"
+    >
+      Password
+    </label>
+    <div
+      class="mt-1"
+    >
+      <input
+        class="block w-full border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm"
+        id="password"
+        name="password"
+        placeholder=""
+        type="password"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`textfield > should render with value 1`] = `
+<div>
+  <div>
+    <label
+      class="block text-sm font-medium text-gray-700"
+      for="username"
+    >
+      Username
+    </label>
+    <div
+      class="mt-1"
+    >
+      <input
+        class="block w-full border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm"
+        id="username"
+        name="username"
+        placeholder=""
+        type="text"
+        value="test"
+      />
+    </div>
+  </div>
+</div>
+`;

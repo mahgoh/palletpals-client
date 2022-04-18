@@ -1,12 +1,23 @@
 {
-  "first": "First",
-  "second": "Second",
-  "hero": {
-    "headline": "Bulky products?"
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register",
+    "username": "Username",
+    "password": "Password",
+    "email": "Email"
   },
   "appearance": {
     "light": "Light",
     "dark": "Dark",
     "media": "System"
+  },
+  "copy": "Copy",
+  "first": "First",
+  "hero": {
+    "headline": "Bulky products?"
+  },
+  "profile": {
+    "title": "Profile"
   }
 }

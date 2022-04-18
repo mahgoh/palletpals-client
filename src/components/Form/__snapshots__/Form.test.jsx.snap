@@ -1,0 +1,66 @@
+// Vitest Snapshot v1
+
+exports[`form > should render 1`] = `
+<div>
+  <form
+    class="w-full py-8"
+  >
+    <input
+      name="test"
+      type="text"
+    />
+  </form>
+</div>
+`;
+
+exports[`form > should render with width full 1`] = `
+<div>
+  <form
+    class="w-full py-8"
+  >
+    <input
+      name="test"
+      type="text"
+    />
+  </form>
+</div>
+`;
+
+exports[`form > should render with width half 1`] = `
+<div>
+  <form
+    class="w-full sm:w-1/2 py-8"
+  >
+    <input
+      name="test"
+      type="text"
+    />
+  </form>
+</div>
+`;
+
+exports[`form > should render with width sm 1`] = `
+<div>
+  <form
+    class="w-full sm:max-w-sm py-8"
+  >
+    <input
+      name="test"
+      type="text"
+    />
+  </form>
+</div>
+`;
+
+exports[`form > should render with width xs 1`] = `
+<div>
+  <form
+    class="w-full sm:max-w-xs py-8"
+  >
+    <input
+      name="test"
+      type="text"
+    />
+  </form>
+</div>
+`;
