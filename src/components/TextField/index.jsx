@@ -23,7 +23,7 @@ export default function TextField({
           htmlFor={name}
           className={classNames(
             className,
-            'block text-sm font-medium text-gray-700'
+            'block text-sm font-medium text-gray-700 dark:text-gray-100'
           )}
         >
           {label}
@@ -36,7 +36,7 @@ export default function TextField({
           type={type}
           className={classNames(
             className,
-            'block w-full border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm'
+            'block w-full border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-orange-500 sm:text-sm'
           )}
           placeholder={placeholder}
           onChange={onChange}
