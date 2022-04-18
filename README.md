@@ -52,7 +52,9 @@ D-- No -->F[Proceed]
 
 ## Testing
 
-Tests are written in `src/test` using [Vitest](https://vitest.dev/).
+### Unit Tests
+
+Unit tests are written using [Vitest](https://vitest.dev) and [Testing Library](https://testing-library.com). Tests for a component are written in a `ComponentName.test.jsx` file inside the components directory to keep the source code and tests close to each other.
 
 ## Docker Environment
 
