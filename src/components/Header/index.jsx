@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Navigation from '@/components/Navigation'
-import LanguageSelect from '@/components/LanguageSelect'
-import AppearanceSelect from '@/components/AppearanceSelect'
+import AppearanceSelect from './AppearanceSelect'
+import LanguageSelect from './LanguageSelect'
 
 export default function Header() {
   const { t } = useTranslation()
