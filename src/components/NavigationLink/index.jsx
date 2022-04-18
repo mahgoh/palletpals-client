@@ -1,9 +1,6 @@
 import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+import { classNames } from '@/utils/common'
 
 export default function NavigationLink({ to, label }) {
   return (

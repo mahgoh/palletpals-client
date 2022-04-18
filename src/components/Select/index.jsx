@@ -2,10 +2,7 @@ import PropTypes from 'prop-types'
 import { Fragment, useEffect, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { SelectorIcon } from '@heroicons/react/solid'
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+import { classNames } from '@/utils/common'
 
 export default function Select({
   options,
