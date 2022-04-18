@@ -1,12 +1,23 @@
 {
-  "first": "Eins",
-  "second": "Zwei",
-  "hero": {
-    "headline": "Sperrige Produkte?"
-  },
   "appearance": {
     "light": "Hell",
     "dark": "Dunkel",
     "media": "System"
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Registieren",
+    "username": "Benutzername",
+    "password": "Passwort",
+    "email": "Email"
+  },
+  "copy": "Kopieren",
+  "first": "Eins",
+  "hero": {
+    "headline": "Sperrige Produkte?"
+  },
+  "profile": {
+    "title": "Profil"
   }
 }

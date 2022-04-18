@@ -1,12 +1,23 @@
 {
-  "first": "Premier",
-  "second": "Deuxième",
-  "hero": {
-    "headline": "Produits volumineux ?"
-  },
   "appearance": {
     "light": "Léger",
     "dark": "Noir",
     "media": "Système"
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Enregistrer",
+    "username": "Nom d'utilisateur",
+    "password": "Mot de passe",
+    "email": "Email"
+  },
+  "copy": "Copier",
+  "first": "Premier",
+  "hero": {
+    "headline": "Produits volumineux ?"
+  },
+  "profile": {
+    "title": "Profil"
   }
 }
