@@ -48,20 +48,16 @@ export default function Login() {
       <Pagetitle title={t('common.auth.login')} />
       <Form onSubmit={formik.handleSubmit} width="xs">
         <TextField
-          name="username"
           label={t('common.auth.username')}
           error={
             formik.touched.username && formik.errors.username
               ? formik.errors.username
               : null
           }
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.username}
+          {...formik.getFieldProps('username')}
         />
         <Spacer />
         <TextField
-          name="password"
           type="password"
           label={t('common.auth.password')}
           error={
@@ -69,9 +65,7 @@ export default function Login() {
               ? formik.errors.password
               : null
           }
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.password}
+          {...formik.getFieldProps('password')}
         />
         <Spacer />
         <Button type="submit">{t('common.auth.login')}</Button>
