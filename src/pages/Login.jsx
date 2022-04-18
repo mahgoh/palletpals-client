@@ -50,8 +50,13 @@ export default function Login() {
         <TextField
           name="username"
           label={t('common.auth.username')}
-          error={formik.errors.username}
+          error={
+            formik.touched.username && formik.errors.username
+              ? formik.errors.username
+              : null
+          }
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           value={formik.values.username}
         />
         <Spacer />
@@ -59,8 +64,13 @@ export default function Login() {
           name="password"
           type="password"
           label={t('common.auth.password')}
-          error={formik.errors.password}
+          error={
+            formik.touched.password && formik.errors.password
+              ? formik.errors.password
+              : null
+          }
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           value={formik.values.password}
         />
         <Spacer />
