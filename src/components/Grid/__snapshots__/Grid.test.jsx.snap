@@ -1,0 +1,21 @@
+// Vitest Snapshot v1
+
+exports[`grid > should render 1`] = `
+<div>
+  <div
+    class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"
+  />
+</div>
+`;
+
+exports[`grid > should render with children 1`] = `
+<div>
+  <div
+    class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"
+  >
+    <div>
+      test
+    </div>
+  </div>
+</div>
+`;
