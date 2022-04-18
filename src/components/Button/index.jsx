@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { classNames } from '@/utils/common'
 
 export default function Button({
   children,
@@ -17,7 +18,11 @@ export default function Button({
 
   return (
     <button
-      className={`${className} ${colorClasses[color]} border border-transparent py-2 px-4 text-base font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2`}
+      className={classNames(
+        className,
+        colorClasses[color],
+        'border border-transparent py-2 px-4 text-base font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2'
+      )}
       onClick={onClick}
       {...props}
     >
