@@ -1,17 +1,6 @@
 import { createContext, useContext, useState } from 'react'
 import { useLocation, Navigate } from 'react-router-dom'
-
-const fakeAuthProvider = {
-  isAuthenticated: false,
-  signin(callback) {
-    fakeAuthProvider.isAuthenticated = true
-    setTimeout(callback, 100) // fake async
-  },
-  signout(callback) {
-    fakeAuthProvider.isAuthenticated = false
-    setTimeout(callback, 100)
-  },
-}
+import { User } from '@/services/api'
 
 let AuthContext = createContext()
 
@@ -20,23 +9,30 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }) {
-  let [user, setUser] = useState(null)
+  let [authenticated, setAuthenticated] = useState(false)
 
-  let signin = (newUser, callback) => {
-    return fakeAuthProvider.signin(() => {
-      setUser(newUser)
+  let login = (newUser, callback) => {
+    return User.login(newUser, (authenticated) => {
+      setAuthenticated(authenticated)
       callback()
     })
   }
 
-  let signout = (callback) => {
-    return fakeAuthProvider.signout(() => {
-      setUser(null)
+  let logout = (callback) => {
+    return User.logout(() => {
+      setAuthenticated(false)
       callback()
     })
   }
 
-  let value = { user, signin, signout }
+  let validate = (callback) => {
+    return User.validate((authenticated) => {
+      setAuthenticated(authenticated)
+      callback()
+    })
+  }
+
+  let value = { authenticated, login, logout, validate }
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 
@@ -44,13 +40,15 @@ export function RequireAuth({ children }) {
   let auth = useAuth()
   let location = useLocation()
 
-  if (!auth.user) {
-    // Redirect them to the /login page, but save the current location they were
-    // trying to go to when they were redirected. This allows us to send them
-    // along to that page after they login, which is a nicer user experience
-    // than dropping them off on the home page.
-    return <Navigate to="/login" state={{ from: location }} replace />
-  }
+  auth.validate(() => {
+    if (!auth.authenticated) {
+      // Redirect them to the /login page, but save the current location they were
+      // trying to go to when they were redirected. This allows us to send them
+      // along to that page after they login, which is a nicer user experience
+      // than dropping them off on the home page.
+      return <Navigate to="/login" state={{ from: location }} replace />
+    }
+  })
 
   return children
 }

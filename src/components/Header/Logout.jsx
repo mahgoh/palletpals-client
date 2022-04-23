@@ -1,4 +1,4 @@
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useAuth } from '@/services/auth'
 
@@ -8,10 +8,10 @@ export default function Logout() {
   const navigate = useNavigate()
 
   function logout() {
-    auth.signout(() => navigate('/'))
+    auth.logout(() => navigate('/'))
   }
 
-  if (auth.user) {
+  if (auth.authenticated) {
     return (
       <button className="ml-4" onClick={logout}>
         {t('common.auth.logout')}

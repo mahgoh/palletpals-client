@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { useAuth } from '@/services/auth'
+import { User } from '@/services/api'
 import Main from '@/components/Main'
 import Pagetitle from '@/components/Pagetitle'
 import Debug from '@/components/Debug'
@@ -7,10 +8,16 @@ import Debug from '@/components/Debug'
 export default function Profile() {
   const { t } = useTranslation()
   const auth = useAuth()
+
+  const { data, error, loading } = User.profile()
   return (
-    <Main>
-      <Pagetitle title={t('common.profile')} />
-      <Debug data={auth} />
-    </Main>
+    <>
+      {!loading && (
+        <Main>
+          <Pagetitle title={t('common.profile')} />
+          {!loading && <Debug data={{ auth, data, error }} />}
+        </Main>
+      )}
+    </>
   )
 }

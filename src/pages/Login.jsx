@@ -1,5 +1,5 @@
-import { useTranslation } from 'react-i18next'
 import { useNavigate, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { useAuth } from '@/services/auth'
 import { useFormik } from 'formik'
 import Button from '@/components/Button'
@@ -11,8 +11,8 @@ import TextField from '@/components/TextField'
 
 const validate = (values) => {
   const errors = {}
-  if (!values.username) {
-    errors.username = 'Required'
+  if (!values.email) {
+    errors.email = 'Required'
   }
 
   if (!values.password) {
@@ -32,12 +32,12 @@ export default function Login() {
 
   const formik = useFormik({
     initialValues: {
-      username: '',
+      email: '',
       password: '',
     },
     validate,
     onSubmit: (values) => {
-      auth.signin(values, () => {
+      auth.login(values, () => {
         navigate(from, { replace: true })
       })
     },
@@ -48,13 +48,13 @@ export default function Login() {
       <Pagetitle title={t('common.auth.login')} />
       <Form onSubmit={formik.handleSubmit} width="xs">
         <TextField
-          label={t('common.auth.username')}
+          label={t('common.auth.email')}
           error={
-            formik.touched.username && formik.errors.username
-              ? formik.errors.username
+            formik.touched.email && formik.errors.email
+              ? formik.errors.email
               : null
           }
-          {...formik.getFieldProps('username')}
+          {...formik.getFieldProps('email')}
         />
         <Spacer />
         <TextField
