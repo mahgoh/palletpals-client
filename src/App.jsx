@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
-import Header from '@/components/Header'
 import { AppearanceProvider } from '@/services/appearance'
 import { LanguageProvider } from '@/services/language'
+import Header from '@/components/Header'
 
 function App() {
   return (
