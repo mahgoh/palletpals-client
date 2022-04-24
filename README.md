@@ -18,6 +18,8 @@ npm run build
 npm run test
 ```
 
+Use the reverse proxy [**p3**](./p3) in development.
+
 ## Workflow
 
 ### Feature-Checklist

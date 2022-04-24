@@ -1,0 +1,4 @@
+{
+  "backend": "http://host.docker.internal:8080",
+  "frontend": "http://host.docker.internal:3000"
+}
