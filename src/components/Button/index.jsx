@@ -1,5 +1,25 @@
 import PropTypes from 'prop-types'
+import { useNavigate } from 'react-router-dom'
 import { classNames } from '@/utils/common'
+
+export function LinkButton({ to, ...props }) {
+  const navigate = useNavigate()
+
+  if (!to) {
+    return null
+  }
+
+  function onClick(e) {
+    e.preventDefault()
+    navigate(to)
+  }
+
+  return <Button onClick={onClick} {...props}></Button>
+}
+
+LinkButton.propTypes = {
+  to: PropTypes.string.isRequired,
+}
 
 export default function Button({
   children,

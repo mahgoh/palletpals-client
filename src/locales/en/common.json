@@ -1,16 +1,16 @@
 {
-  "auth": {
-    "login": "Login",
-    "logout": "Logout",
-    "register": "Register",
-    "username": "Username",
-    "password": "Password",
-    "email": "Email"
-  },
   "appearance": {
     "light": "Light",
     "dark": "Dark",
     "media": "System"
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register",
+    "userName": "Name",
+    "password": "Password",
+    "email": "Email"
   },
   "hero": {
     "headline": "Bulky products?"

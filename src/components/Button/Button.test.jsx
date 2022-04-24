@@ -1,7 +1,7 @@
 import React from 'react'
 import { vi } from 'vitest'
 import { render, screen } from '@/utils/test-utils'
-import Button from '.'
+import Button, { LinkButton } from '.'
 
 describe('button', () => {
   it('should render', () => {
@@ -39,5 +39,60 @@ describe('button', () => {
 
     screen.getByRole('button').click()
     expect(onClick).toHaveBeenCalled()
+  })
+})
+
+describe('link button', () => {
+  it('should render', () => {
+    render(<LinkButton to="/page">Click</LinkButton>, { renderer: 'router' })
+    expect(screen.getByRole('button')).toHaveTextContent('Click')
+  })
+
+  it('should not render', () => {
+    const { container } = render(<LinkButton>Click</LinkButton>, {
+      renderer: 'router',
+    })
+    expect(container).toBeEmptyDOMElement()
+  })
+
+  it('should render additional classNames', () => {
+    render(
+      <LinkButton to="/page" className="absolute">
+        Click
+      </LinkButton>,
+      { renderer: 'router' }
+    )
+    expect(screen.getByRole('button')).toHaveTextContent('Click')
+    expect(screen.getByRole('button')).toMatchSnapshot()
+  })
+
+  it('should render primary button', () => {
+    render(
+      <LinkButton to="/page" color="primary">
+        Click
+      </LinkButton>,
+      { renderer: 'router' }
+    )
+    expect(screen.getByRole('button')).toMatchSnapshot()
+  })
+
+  it('should render secondary button', () => {
+    render(
+      <LinkButton to="/page" color="secondary">
+        Click
+      </LinkButton>,
+      { renderer: 'router' }
+    )
+    expect(screen.getByRole('button')).toMatchSnapshot()
+  })
+
+  it('should render red button', () => {
+    render(
+      <LinkButton to="/page" color="red">
+        Click
+      </LinkButton>,
+      { renderer: 'router' }
+    )
+    expect(screen.getByRole('button')).toMatchSnapshot()
   })
 })

@@ -7,11 +7,6 @@ export function useFetch(path, options) {
   let [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    // in test env
-    if (GLOBAL.DEBUG) {
-      options = { ...options }
-    }
-
     setLoading(true)
 
     Fetch(path, options)
@@ -40,5 +35,12 @@ export function useFetch(path, options) {
 }
 
 export function Fetch(path, options) {
+  options = {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    ...options,
+  }
+
   return fetch(`${GLOBAL.API_URL}${path}`, options)
 }

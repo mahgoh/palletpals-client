@@ -19,12 +19,22 @@ export const User = {
       callback()
     })
   },
-  validate(callback) {
-    Fetch('/user/validate').then((res) => {
+  profile() {
+    return useFetch('/user/profile')
+  },
+  register(credentials, callback) {
+    Fetch('/user/register', {
+      method: 'POST',
+      body: JSON.stringify({
+        ...credentials,
+        role: 'USER',
+      }),
+    }).then((res) => {
       callback(res.status === 200)
     })
   },
-  profile() {
-    return useFetch('/user/profile')
+  async validate() {
+    const res = await Fetch('/user/validate')
+    return res.status === 200
   },
 }

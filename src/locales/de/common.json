@@ -8,7 +8,7 @@
     "login": "Anmelden",
     "logout": "Abmelden",
     "register": "Registieren",
-    "username": "Benutzername",
+    "userName": "Name",
     "password": "Passwort",
     "email": "Email"
   },

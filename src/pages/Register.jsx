@@ -1,6 +1,6 @@
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { useAuth } from '@/services/auth'
+import { User } from '@/services/api'
 import { useFormik } from 'formik'
 import Button, { LinkButton } from '@/components/Button'
 import Form from '@/components/Form'
@@ -11,8 +11,15 @@ import TextField from '@/components/TextField'
 
 const validate = (values) => {
   const errors = {}
+
+  if (!values.userName) {
+    errors.userName = 'Required'
+  }
+
   if (!values.email) {
     errors.email = 'Required'
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = 'Invalid email address'
   }
 
   if (!values.password) {
@@ -25,28 +32,36 @@ const validate = (values) => {
 export default function Login() {
   const { t } = useTranslation()
   let navigate = useNavigate()
-  let location = useLocation()
-  let auth = useAuth()
-
-  let from = location.state?.from?.pathname || '/'
 
   const formik = useFormik({
     initialValues: {
+      userName: '',
       email: '',
       password: '',
     },
     validate,
     onSubmit: (values) => {
-      auth.login(values, () => {
-        navigate(from, { replace: true })
+      User.register(values, () => {
+        navigate('/login')
+        // navigate(from, { replace: true })
       })
     },
   })
 
   return (
     <Main>
-      <Pagetitle title={t('common.auth.login')} />
+      <Pagetitle title={t('common.auth.register')} />
       <Form onSubmit={formik.handleSubmit} width="xs">
+        <TextField
+          label={t('common.auth.userName')}
+          error={
+            formik.touched.userName && formik.errors.userName
+              ? formik.errors.userName
+              : null
+          }
+          {...formik.getFieldProps('userName')}
+        />
+        <Spacer />
         <TextField
           label={t('common.auth.email')}
           error={
@@ -68,11 +83,12 @@ export default function Login() {
           {...formik.getFieldProps('password')}
         />
         <Spacer />
+
         <div className="flex space-x-2">
-          <LinkButton to="/register" color="secondary">
-            {t('common.auth.register')}
+          <LinkButton to="/login" color="secondary">
+            {t('common.auth.login')}
           </LinkButton>
-          <Button type="submit">{t('common.auth.login')}</Button>
+          <Button type="submit">{t('common.auth.register')}</Button>
         </div>
       </Form>
     </Main>
