@@ -8,7 +8,6 @@ describe('page: Products', () => {
     setTimeout(() => {
       products.forEach((product) => {
         expect(screen.getByText(product.name)).not.toBeFalsy()
-        expect(screen.getByText(product.description)).not.toBeFalsy()
         expect(screen.getByText(product.price)).not.toBeFalsy()
       })
     }, 200)
