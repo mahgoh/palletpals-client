@@ -1,6 +1,35 @@
 import { useEffect, useState } from 'react'
 import { useFetch, Fetch } from '@/services/fetch'
 
+export const Product = {
+  all() {
+    let [products, setProducts] = useState([])
+
+    let { data, error, loading } = useFetch('/products')
+
+    useEffect(() => {
+      if (data) {
+        setProducts(
+          data.map((product) => {
+            return {
+              id: product.id,
+              name: product.name,
+              price: product.price,
+              image: `/api/product-images/${product.productImages[0].id}`,
+            }
+          })
+        )
+      }
+    }, [data])
+
+    return {
+      products,
+      error,
+      loading,
+    }
+  },
+}
+
 export const User = {
   // TODO: Implement remember
   login(credentials, callback) {

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import fetch from 'cross-fetch'
 
 export function useFetch(path, options) {
   let [data, setData] = useState(null)

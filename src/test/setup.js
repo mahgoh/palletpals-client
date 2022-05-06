@@ -1,5 +1,13 @@
 import '@testing-library/jest-dom'
 import { vi } from 'vitest'
+import { server } from '../mocks/server'
+
+/**
+ * Start/stop mock server
+ */
+beforeAll(() => server.listen({ onUnhandledRequest: 'error' }))
+afterAll(() => server.close())
+afterEach(() => server.resetHandlers())
 
 /**
  * Mock window.matchMedia function
