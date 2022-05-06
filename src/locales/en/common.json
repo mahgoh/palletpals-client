@@ -15,6 +15,6 @@
   "hero": {
     "headline": "Bulky products?"
   },
-  "products": "Products",
+  "product": "{numProducts, plural, =0 {Products} =1 {Product} other {Products}}",
   "profile": "Profile"
 }

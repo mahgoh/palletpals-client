@@ -12,7 +12,7 @@ export default function Products() {
 
   return (
     <Main>
-      <Pagetitle title={t('common.products')} />
+      <Pagetitle title={t('common.product', { numProducts: 2 })} />
       <Debug data={{ products, error }} />
       <Spacer size="lg" />
       {loading && <div>Loading...</div>}

@@ -15,6 +15,6 @@
   "hero": {
     "headline": "Sperrige Produkte?"
   },
-  "products": "Produkte",
+  "product": "{numProducts, plural, =0 {Produkte} =1 {Produkt} other {Produkte}}",
   "profile": "Profil"
 }

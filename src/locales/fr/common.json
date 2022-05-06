@@ -15,6 +15,6 @@
   "hero": {
     "headline": "Produits volumineux ?"
   },
-  "products": "Produits",
+  "product": "{numProducts, plural, =0 {Produits} =1 {Produit} other {Produits}}",
   "profile": "Profil"
 }
