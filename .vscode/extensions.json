@@ -2,8 +2,6 @@
   "recommendations": [
     "esbenp.prettier-vscode",
     "bradlc.vscode-tailwindcss",
-    "bierner.markdown-mermaid",
-    "bierner.markdown-preview-github-styles",
-    "bierner.markdown-checkbox"
+    "bierner.github-markdown-preview"
   ]
 }
