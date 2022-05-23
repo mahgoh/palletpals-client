@@ -21,7 +21,7 @@ export default function Select({
       {({ open }) => (
         <>
           <div className={classNames('relative', ...classes)}>
-            <Listbox.Button className="relative w-full cursor-default border border-transparent bg-white py-2 pl-3 pr-10 text-left hover:border-gray-300 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 dark:bg-gray-900 dark:hover:border-gray-700 sm:text-sm">
+            <Listbox.Button className="relative w-full cursor-default rounded-md border border-transparent bg-white py-2 pl-3 pr-10 text-left hover:border-gray-300 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 dark:bg-gray-900 dark:hover:border-gray-700 dark:focus:border-orange-500 sm:text-sm">
               <span className="block truncate uppercase">
                 {selectedOption.label}
               </span>
@@ -44,14 +44,14 @@ export default function Select({
               enterFrom="opacity-0 -translate-y-4"
               enterTo="opacity-100 translate-y-0"
             >
-              <Listbox.Options className="absolute z-20 mt-1 max-h-60 w-full -translate-y-4 overflow-auto bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-900 dark:ring-gray-700 sm:text-sm">
+              <Listbox.Options className="absolute z-20 mt-1 max-h-60 w-full -translate-y-4 overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-900 dark:ring-gray-700 sm:text-sm">
                 {options.map((option) => (
                   <Listbox.Option
                     key={option.value}
                     className={({ active }) =>
                       classNames(
                         active
-                          ? 'bg-orange-600 text-white'
+                          ? 'bg-orange-100 dark:bg-orange-600 '
                           : 'text-gray-900 dark:text-gray-100',
                         'relative cursor-default select-none py-2 px-4'
                       )
@@ -62,10 +62,13 @@ export default function Select({
                       <>
                         <span
                           className={classNames(
-                            selected ? 'font-semibold' : 'font-normal',
+                            selected
+                              ? 'font-bold text-orange-500'
+                              : 'font-normal',
                             'block truncate uppercase'
                           )}
                         >
+                          {selected}
                           {option.label}
                         </span>
                       </>

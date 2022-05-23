@@ -2,7 +2,7 @@
 
 exports[`textfield > should render 1`] = `
 <input
-  class="block w-full border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-orange-500 sm:text-sm"
+  class="block w-full rounded-md border-gray-300 py-3 shadow-sm focus:border-orange-500 focus:ring-orange-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-orange-500"
   id="username"
   name="username"
   placeholder=""
@@ -13,131 +13,101 @@ exports[`textfield > should render 1`] = `
 
 exports[`textfield > should render with error 1`] = `
 <div>
-  <div>
-    <label
-      class="block text-sm font-medium text-gray-700 dark:text-gray-100"
-      for="username"
-    >
-      Username
-    </label>
-    <div
-      class="mt-1"
-    >
-      <input
-        class="block w-full border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-orange-500 sm:text-sm"
-        id="username"
-        name="username"
-        placeholder=""
-        type="text"
-        value=""
-      />
-    </div>
-    <p
-      class="mt-2 text-sm text-red-500"
-      id="username-error"
-    >
-      Required
-    </p>
-  </div>
+  <label
+    class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-100"
+    for="username"
+  >
+    Username
+  </label>
+  <input
+    class="border-red-500 block w-full rounded-md border-gray-300 py-3 shadow-sm focus:border-orange-500 focus:ring-orange-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-orange-500"
+    id="username"
+    name="username"
+    placeholder=""
+    type="text"
+    value=""
+  />
+  <p
+    class="mt-2 text-sm text-red-500"
+    id="username-error"
+  >
+    Required
+  </p>
 </div>
 `;
 
 exports[`textfield > should render with label 1`] = `
 <div>
-  <div>
-    <label
-      class="block text-sm font-medium text-gray-700 dark:text-gray-100"
-      for="username"
-    >
-      Username
-    </label>
-    <div
-      class="mt-1"
-    >
-      <input
-        class="block w-full border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-orange-500 sm:text-sm"
-        id="username"
-        name="username"
-        placeholder=""
-        type="text"
-        value=""
-      />
-    </div>
-  </div>
+  <label
+    class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-100"
+    for="username"
+  >
+    Username
+  </label>
+  <input
+    class="block w-full rounded-md border-gray-300 py-3 shadow-sm focus:border-orange-500 focus:ring-orange-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-orange-500"
+    id="username"
+    name="username"
+    placeholder=""
+    type="text"
+    value=""
+  />
 </div>
 `;
 
 exports[`textfield > should render with placeholder 1`] = `
 <div>
-  <div>
-    <label
-      class="block text-sm font-medium text-gray-700 dark:text-gray-100"
-      for="username"
-    >
-      Username
-    </label>
-    <div
-      class="mt-1"
-    >
-      <input
-        class="block w-full border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-orange-500 sm:text-sm"
-        id="username"
-        name="username"
-        placeholder="Username"
-        type="text"
-        value=""
-      />
-    </div>
-  </div>
+  <label
+    class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-100"
+    for="username"
+  >
+    Username
+  </label>
+  <input
+    class="block w-full rounded-md border-gray-300 py-3 shadow-sm focus:border-orange-500 focus:ring-orange-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-orange-500"
+    id="username"
+    name="username"
+    placeholder="Username"
+    type="text"
+    value=""
+  />
 </div>
 `;
 
 exports[`textfield > should render with type 1`] = `
 <div>
-  <div>
-    <label
-      class="block text-sm font-medium text-gray-700 dark:text-gray-100"
-      for="password"
-    >
-      Password
-    </label>
-    <div
-      class="mt-1"
-    >
-      <input
-        class="block w-full border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-orange-500 sm:text-sm"
-        id="password"
-        name="password"
-        placeholder=""
-        type="password"
-        value=""
-      />
-    </div>
-  </div>
+  <label
+    class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-100"
+    for="password"
+  >
+    Password
+  </label>
+  <input
+    class="block w-full rounded-md border-gray-300 py-3 shadow-sm focus:border-orange-500 focus:ring-orange-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-orange-500"
+    id="password"
+    name="password"
+    placeholder=""
+    type="password"
+    value=""
+  />
 </div>
 `;
 
 exports[`textfield > should render with value 1`] = `
 <div>
-  <div>
-    <label
-      class="block text-sm font-medium text-gray-700 dark:text-gray-100"
-      for="username"
-    >
-      Username
-    </label>
-    <div
-      class="mt-1"
-    >
-      <input
-        class="block w-full border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-orange-500 sm:text-sm"
-        id="username"
-        name="username"
-        placeholder=""
-        type="text"
-        value="test"
-      />
-    </div>
-  </div>
+  <label
+    class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-100"
+    for="username"
+  >
+    Username
+  </label>
+  <input
+    class="block w-full rounded-md border-gray-300 py-3 shadow-sm focus:border-orange-500 focus:ring-orange-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-orange-500"
+    id="username"
+    name="username"
+    placeholder=""
+    type="text"
+    value="test"
+  />
 </div>
 `;

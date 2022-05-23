@@ -1,0 +1,6 @@
+{
+  "required": "Required",
+  "invalid": {
+    "email": "Invalid email address"
+  }
+}

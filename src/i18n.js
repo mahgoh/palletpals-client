@@ -6,21 +6,28 @@ import common_en from '@/locales/en/common.json'
 import common_de from '@/locales/de/common.json'
 import common_fr from '@/locales/fr/common.json'
 
+import validation_en from '@/locales/en/validation.json'
+import validation_de from '@/locales/de/validation.json'
+import validation_fr from '@/locales/fr/validation.json'
+
 const supportedLanguages = ['en', 'de', 'fr']
 const resources = {
   en: {
     translation: {
       common: common_en,
+      validation: validation_en,
     },
   },
   de: {
     translation: {
       common: common_de,
+      validation: validation_de,
     },
   },
   fr: {
     translation: {
       common: common_fr,
+      validation: validation_fr,
     },
   },
 }

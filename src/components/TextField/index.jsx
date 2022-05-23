@@ -9,6 +9,7 @@ export default function TextField({
   onChange,
   placeholder,
   error,
+  showError,
   className,
   ...props
 }) {
@@ -17,50 +18,50 @@ export default function TextField({
   }
 
   return (
-    <div>
+    <>
       {label && (
         <label
           htmlFor={name}
           className={classNames(
             className,
-            'block text-sm font-medium text-gray-700 dark:text-gray-100'
+            'mb-1 block text-sm font-medium text-gray-700 dark:text-gray-100'
           )}
         >
           {label}
         </label>
       )}
-      <div className="mt-1">
-        <input
-          id={name}
-          name={name}
-          type={type}
-          className={classNames(
-            className,
-            'block w-full border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-orange-500 sm:text-sm'
-          )}
-          placeholder={placeholder}
-          onChange={onChange}
-          value={value}
-          {...props}
-        />
-      </div>
-      {error && (
+      <input
+        id={name}
+        name={name}
+        type={type}
+        className={classNames(
+          className,
+          error && 'border-red-500',
+          'block w-full rounded-md border-gray-300 py-3 shadow-sm focus:border-orange-500 focus:ring-orange-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-orange-500'
+        )}
+        placeholder={placeholder}
+        onChange={onChange}
+        value={value}
+        {...props}
+      />
+      {error && showError && (
         <p className="mt-2 text-sm text-red-500" id={`${name}-error`}>
           {error}
         </p>
       )}
-    </div>
+    </>
   )
 }
 
 TextField.propTypes = {
   name: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['text', 'email', 'password']),
+  type: PropTypes.oneOf(['text', 'email', 'password', 'number']),
   label: PropTypes.string,
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onChange: PropTypes.func,
   placeholder: PropTypes.string,
   error: PropTypes.string,
+  showError: PropTypes.bool,
   className: PropTypes.string,
 }
 
@@ -71,4 +72,5 @@ TextField.defaultProps = {
   onChange: () => {},
   placeholder: '',
   error: null,
+  showError: true,
 }
