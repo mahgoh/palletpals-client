@@ -35,15 +35,25 @@ export default function ProductDetail({ product }) {
   }
 
   const {
-    id,
     name,
     details,
     description,
     price,
+    productImages,
     maxProducts,
     minPalletSpace,
-    productImages,
   } = product
+
+  const detailRows = [
+    {
+      key: t('common.max-products'),
+      value: maxProducts,
+    },
+    {
+      key: t('common.min-pallet-space'),
+      value: minPalletSpace,
+    },
+  ]
 
   return (
     <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
@@ -174,18 +184,7 @@ export default function ProductDetail({ product }) {
                   >
                     <div>{details}</div>
                     <div className="mt-4 flex space-x-2">
-                      <Table
-                        rows={[
-                          { key: 'Max Products', value: maxProducts },
-                          { key: 'Min Pallet Space', value: minPalletSpace },
-                        ]}
-                      />
-                      {/* <div className="rounded-md border p-4">
-                        <strong>{maxProducts}</strong> products per pallet space
-                      </div>
-                      <div className="rounded-md border p-4">
-                        <strong>{minPalletSpace}</strong> pallet space minimum
-                      </div> */}
+                      <Table rows={detailRows} />
                     </div>
                   </Disclosure.Panel>
                 </>

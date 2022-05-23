@@ -20,5 +20,7 @@
   "add-to-cart": "In den Warenkorb",
   "description": "Beschreibung",
   "details": "Details",
+  "max-products": "Max. Produkte pro Palettenplatz",
+  "min-pallet-space": "Min. Palettenfläche",
   "profile": "Profil"
 }

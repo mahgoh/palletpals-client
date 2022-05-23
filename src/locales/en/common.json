@@ -20,5 +20,7 @@
   "add-to-cart": "Add to cart",
   "description": "Description",
   "details": "Details",
+  "max-products": "Max. products per pallet space",
+  "min-pallet-space": "Min. pallet space",
   "profile": "Profile"
 }
