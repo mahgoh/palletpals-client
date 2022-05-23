@@ -9,19 +9,6 @@ import Pagetitle from '@/components/Pagetitle'
 import Spacer from '@/components/Spacer'
 import TextField from '@/components/TextField'
 
-const validate = (values) => {
-  const errors = {}
-  if (!values.email) {
-    errors.email = 'Required'
-  }
-
-  if (!values.password) {
-    errors.password = 'Required'
-  }
-
-  return errors
-}
-
 export default function Login() {
   const { t } = useTranslation()
   let navigate = useNavigate()
@@ -29,6 +16,19 @@ export default function Login() {
   let auth = useAuth()
 
   let from = location.state?.from?.pathname || '/'
+
+  const validate = (values) => {
+    const errors = {}
+    if (!values.email) {
+      errors.email = t('validation.required')
+    }
+
+    if (!values.password) {
+      errors.password = t('validation.required')
+    }
+
+    return errors
+  }
 
   const formik = useFormik({
     initialValues: {
@@ -69,10 +69,12 @@ export default function Login() {
         />
         <Spacer />
         <div className="flex space-x-2">
-          <LinkButton to="/register" color="secondary">
+          <LinkButton to="/register" color="secondary" className="flex-1">
             {t('common.auth.register')}
           </LinkButton>
-          <Button type="submit">{t('common.auth.login')}</Button>
+          <Button type="submit" className="flex-1">
+            {t('common.auth.login')}
+          </Button>
         </div>
       </Form>
     </Main>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useFetch, Fetch } from '@/services/fetch'
+import { productImageURL } from '@/utils/common'
 
 export const Product = {
   all() {
@@ -15,7 +16,7 @@ export const Product = {
               id: product.id,
               name: product.name,
               price: product.price,
-              image: `/api/product-images/${product.productImages[0].id}`,
+              image: productImageURL(product.productImages[0].id),
             }
           })
         )
@@ -24,6 +25,31 @@ export const Product = {
 
     return {
       products,
+      error,
+      loading,
+    }
+  },
+  byId(id) {
+    let [product, setProduct] = useState({})
+
+    let { data, error, loading } = useFetch(`/products/${id}`)
+
+    useEffect(() => {
+      if (error === null && data) {
+        setProduct({
+          ...data,
+          productImages: data.productImages.map((image) => {
+            return {
+              src: productImageURL(image.id),
+              alt: `${data.name} ${image.id}`,
+            }
+          }),
+        })
+      }
+    }, [data])
+
+    return {
+      product,
       error,
       loading,
     }
@@ -66,4 +92,9 @@ export const User = {
     const res = await Fetch('/user/validate')
     return res.status === 200
   },
+}
+
+export default {
+  Product,
+  User,
 }

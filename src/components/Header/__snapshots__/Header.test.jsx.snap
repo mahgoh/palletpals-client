@@ -45,7 +45,7 @@ exports[`header > should render 1`] = `
           <button
             aria-expanded="false"
             aria-haspopup="true"
-            class="relative w-full cursor-default border border-transparent bg-white py-2 pl-3 pr-10 text-left hover:border-gray-300 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 dark:bg-gray-900 dark:hover:border-gray-700 sm:text-sm"
+            class="relative w-full cursor-default rounded-md border border-transparent bg-white py-2 pl-3 pr-10 text-left hover:border-gray-300 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 dark:bg-gray-900 dark:hover:border-gray-700 dark:focus:border-orange-500 sm:text-sm"
             id="headlessui-listbox-button-:r0:"
             type="button"
           >
@@ -79,7 +79,7 @@ exports[`header > should render 1`] = `
           <button
             aria-expanded="false"
             aria-haspopup="true"
-            class="relative w-full cursor-default border border-transparent bg-white py-2 pl-3 pr-10 text-left hover:border-gray-300 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 dark:bg-gray-900 dark:hover:border-gray-700 sm:text-sm"
+            class="relative w-full cursor-default rounded-md border border-transparent bg-white py-2 pl-3 pr-10 text-left hover:border-gray-300 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 dark:bg-gray-900 dark:hover:border-gray-700 dark:focus:border-orange-500 sm:text-sm"
             id="headlessui-listbox-button-:r1:"
             type="button"
           >

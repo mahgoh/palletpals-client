@@ -1,0 +1,6 @@
+{
+  "required": "Requis",
+  "invalid": {
+    "email": "Adresse e-mail non valide"
+  }
+}

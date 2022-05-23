@@ -9,29 +9,31 @@ import Pagetitle from '@/components/Pagetitle'
 import Spacer from '@/components/Spacer'
 import TextField from '@/components/TextField'
 
-const validate = (values) => {
-  const errors = {}
-
-  if (!values.userName) {
-    errors.userName = 'Required'
-  }
-
-  if (!values.email) {
-    errors.email = 'Required'
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = 'Invalid email address'
-  }
-
-  if (!values.password) {
-    errors.password = 'Required'
-  }
-
-  return errors
-}
-
 export default function Login() {
   const { t } = useTranslation()
   let navigate = useNavigate()
+
+  const validate = (values) => {
+    const errors = {}
+
+    if (!values.userName) {
+      errors.userName = t('validation.required')
+    }
+
+    if (!values.email) {
+      errors.email = t('validation.required')
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+    ) {
+      errors.email = t('validation.invalid.email')
+    }
+
+    if (!values.password) {
+      errors.password = t('validation.required')
+    }
+
+    return errors
+  }
 
   const formik = useFormik({
     initialValues: {

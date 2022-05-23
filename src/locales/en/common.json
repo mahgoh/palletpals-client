@@ -15,6 +15,12 @@
   "hero": {
     "headline": "Bulky products?"
   },
-  "products": "Products",
+  "product": "{numProducts, plural, =0 {Products} =1 {Product} other {Products}}",
+  "product-information": "Product information",
+  "add-to-cart": "Add to cart",
+  "description": "Description",
+  "details": "Details",
+  "max-products": "Max. products per pallet space",
+  "min-pallet-space": "Min. pallet space",
   "profile": "Profile"
 }

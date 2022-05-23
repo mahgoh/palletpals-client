@@ -15,6 +15,12 @@
   "hero": {
     "headline": "Sperrige Produkte?"
   },
-  "products": "Produkte",
+  "product": "{numProducts, plural, =0 {Produkte} =1 {Produkt} other {Produkte}}",
+  "product-information": "Produktinformationen",
+  "add-to-cart": "In den Warenkorb",
+  "description": "Beschreibung",
+  "details": "Details",
+  "max-products": "Max. Produkte pro Palettenplatz",
+  "min-pallet-space": "Min. Palettenfläche",
   "profile": "Profil"
 }
