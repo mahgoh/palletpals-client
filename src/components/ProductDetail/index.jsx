@@ -6,6 +6,7 @@ import { MinusSmIcon, PlusSmIcon } from '@heroicons/react/outline'
 import { classNames } from '@/utils/common'
 import Button from '@/components/Button'
 import TextField from '@/components/TextField'
+import Table from '@/components/Table'
 
 export default function ProductDetail({ product }) {
   const { t } = useTranslation()
@@ -28,6 +29,7 @@ export default function ProductDetail({ product }) {
       console.log(values)
     },
   })
+
   if (!product || Object.keys(product).length === 0) {
     return null
   }
@@ -92,7 +94,7 @@ export default function ProductDetail({ product }) {
       </Tab.Group>
 
       {/* Product info */}
-      <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
+      <div className="mt-10 sm:mt-16 lg:mt-0">
         <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
           {name}
         </h1>
@@ -111,7 +113,7 @@ export default function ProductDetail({ product }) {
         </div>
 
         <form className="mt-6">
-          <div className="mt-10 flex space-x-2">
+          <div className="mt-10 flex flex-col space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0">
             <TextField
               type="number"
               placeholder="Amount"
@@ -124,7 +126,7 @@ export default function ProductDetail({ product }) {
               }
               {...formik.getFieldProps('amount')}
             />
-            <Button type="submit" className="max-w-xs flex-grow">
+            <Button type="submit" className="flex-grow sm:max-w-xs">
               {t('common.add-to-cart')}
             </Button>
           </div>
@@ -172,12 +174,18 @@ export default function ProductDetail({ product }) {
                   >
                     <div>{details}</div>
                     <div className="mt-4 flex space-x-2">
-                      <div className="rounded-md border p-4">
+                      <Table
+                        rows={[
+                          { key: 'Max Products', value: maxProducts },
+                          { key: 'Min Pallet Space', value: minPalletSpace },
+                        ]}
+                      />
+                      {/* <div className="rounded-md border p-4">
                         <strong>{maxProducts}</strong> products per pallet space
                       </div>
                       <div className="rounded-md border p-4">
                         <strong>{minPalletSpace}</strong> pallet space minimum
-                      </div>
+                      </div> */}
                     </div>
                   </Disclosure.Panel>
                 </>
