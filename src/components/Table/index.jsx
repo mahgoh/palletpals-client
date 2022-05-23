@@ -36,7 +36,8 @@ Table.propTypes = {
   rows: PropTypes.arrayOf(
     PropTypes.exact({
       key: PropTypes.string.isRequired,
-      value: PropTypes.string.isRequired,
+      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+        .isRequired,
     })
   ).isRequired,
 }
