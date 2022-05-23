@@ -6,6 +6,7 @@ import App from '@/App'
 // Routes
 import Home from '@/pages/Home'
 import Products from '@/pages/Products'
+import Product from '@/pages/Product'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
 import Profile from '@/pages/Profile'
@@ -18,6 +19,7 @@ export default function Router() {
         <Route path="/" element={<App />}>
           <Route path="" element={<Home />} />
           <Route path="products" element={<Products />} />
+          <Route path="product/:productId" element={<Product />} />
           <Route
             path="profile"
             element={

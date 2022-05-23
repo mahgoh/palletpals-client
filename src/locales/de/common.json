@@ -16,5 +16,9 @@
     "headline": "Sperrige Produkte?"
   },
   "product": "{numProducts, plural, =0 {Produkte} =1 {Produkt} other {Produkte}}",
+  "product-information": "Produktinformationen",
+  "add-to-cart": "In den Warenkorb",
+  "description": "Beschreibung",
+  "details": "Details",
   "profile": "Profil"
 }

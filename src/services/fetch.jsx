@@ -11,7 +11,9 @@ export function useFetch(path, options) {
     setLoading(true)
 
     Fetch(path, options)
-      .then((res) => {
+      .then(async (res) => {
+        if (res.status >= 300) throw await res.json()
+
         setStatus(res.status)
         return res.json()
       })
