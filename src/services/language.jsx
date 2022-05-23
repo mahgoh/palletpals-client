@@ -1,6 +1,7 @@
 import { useContext, useState, createContext, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { supportedLanguages } from '@/i18n'
+import { User } from '@/services/api'
 
 let LanguageContext = createContext()
 
@@ -16,9 +17,18 @@ export function LanguageProvider({ children }) {
 
   let applyLanguage = () => {
     if (supportedLanguages.includes(language)) {
-      localStorage.lang = language
+      persistLanguage()
       i18n.changeLanguage(language)
     }
+  }
+
+  let persistLanguage = async () => {
+    localStorage.lang = language
+
+    // send request to server to persist appearance
+    await User.patch({
+      language,
+    })
   }
 
   useEffect(() => {

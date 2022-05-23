@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect, createContext } from 'react'
+import { User } from '@/services/api'
 
 let AppearanceContext = createContext()
 const appearances = ['light', 'dark', 'media']
@@ -14,9 +15,18 @@ export function AppearanceProvider({ children }) {
 
   let applyAppearance = () => {
     if (appearances.includes(appearance)) {
-      localStorage.appearance = appearance
+      persistAppearance()
       applyClass()
     }
+  }
+
+  let persistAppearance = async () => {
+    localStorage.appearance = appearance
+
+    // send request to server to persist appearance
+    await User.patch({
+      appearance: appearance.toUpperCase(),
+    })
   }
 
   let applyClass = () => {

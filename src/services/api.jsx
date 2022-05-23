@@ -74,6 +74,14 @@ export const User = {
       callback()
     })
   },
+  async settings() {
+    const data = await Fetch('/user/profile').then((res) => res.json())
+
+    return {
+      appearance: data.appearance,
+      language: data.language,
+    }
+  },
   profile() {
     return useFetch('/user/profile')
   },
@@ -86,6 +94,12 @@ export const User = {
       }),
     }).then((res) => {
       callback(res.status === 200)
+    })
+  },
+  patch(payload) {
+    return Fetch('/user/profile', {
+      method: 'PATCH',
+      body: JSON.stringify(payload),
     })
   },
   async validate() {

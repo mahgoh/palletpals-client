@@ -12,9 +12,20 @@ export function AuthProvider({ children }) {
   let [authenticated, setAuthenticated] = useState(false)
 
   let login = (newUser, callback) => {
-    return User.login(newUser, (authenticated) => {
+    return User.login(newUser, async (authenticated) => {
       setAuthenticated(authenticated)
-      callback()
+
+      // set/override appearance and language if authenticated
+      if (authenticated) {
+        const { appearance, language } = await User.settings()
+
+        callback(authenticated, {
+          appearance: appearance.toLowerCase(),
+          language,
+        })
+      } else {
+        callback(authenticated, null)
+      }
     })
   }
 

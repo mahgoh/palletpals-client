@@ -8,12 +8,16 @@ import Main from '@/components/Main'
 import Pagetitle from '@/components/Pagetitle'
 import Spacer from '@/components/Spacer'
 import TextField from '@/components/TextField'
+import { useAppearance } from '@/services/appearance'
+import { useLanguage } from '@/services/language'
 
 export default function Login() {
   const { t } = useTranslation()
   let navigate = useNavigate()
   let location = useLocation()
   let auth = useAuth()
+  let { setAppearance } = useAppearance()
+  let { setLanguage } = useLanguage()
 
   let from = location.state?.from?.pathname || '/'
 
@@ -37,8 +41,15 @@ export default function Login() {
     },
     validate,
     onSubmit: (values) => {
-      auth.login(values, () => {
-        navigate(from, { replace: true })
+      auth.login(values, async (authenticated, { appearance, language }) => {
+        if (authenticated) {
+          setAppearance(appearance)
+          setLanguage(language)
+
+          navigate(from, { replace: true })
+        } else {
+          // TODO: Display information to user that login failed
+        }
       })
     },
   })

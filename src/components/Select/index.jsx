@@ -16,6 +16,10 @@ export default function Select({
     set(selectedOption)
   }, [selectedOption])
 
+  useEffect(() => {
+    setSelectedOption(options[selectedIndex])
+  }, [selectedIndex])
+
   return (
     <Listbox value={selectedOption} onChange={setSelectedOption}>
       {({ open }) => (
@@ -51,27 +55,25 @@ export default function Select({
                     className={({ active }) =>
                       classNames(
                         active
-                          ? 'bg-orange-100 dark:bg-orange-600 '
+                          ? 'bg-orange-100 dark:bg-orange-800'
                           : 'text-gray-900 dark:text-gray-100',
-                        'relative cursor-default select-none py-2 px-4'
+                        'group relative cursor-default select-none py-2 px-4'
                       )
                     }
                     value={option}
                   >
                     {({ selected }) => (
-                      <>
-                        <span
-                          className={classNames(
-                            selected
-                              ? 'font-bold text-orange-500'
-                              : 'font-normal',
-                            'block truncate uppercase'
-                          )}
-                        >
-                          {selected}
-                          {option.label}
-                        </span>
-                      </>
+                      <span
+                        className={classNames(
+                          selected
+                            ? 'font-bold text-orange-500'
+                            : 'font-normal',
+                          'block truncate uppercase'
+                        )}
+                      >
+                        {selected}
+                        {option.label}
+                      </span>
                     )}
                   </Listbox.Option>
                 ))}
