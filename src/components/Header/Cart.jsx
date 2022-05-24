@@ -21,7 +21,7 @@ export default function Cart() {
           <h2 className="pb-10 pt-4 text-2xl font-extrabold leading-10 tracking-tight sm:text-3xl sm:leading-none">
             {t('common.cart')}
           </h2>
-          <div className="w-full grow justify-start divide-y divide-gray-200 overflow-y-auto">
+          <div className="w-full grow justify-start divide-y divide-gray-200 overflow-y-auto dark:divide-gray-700">
             {!loading &&
               !error &&
               cart &&
