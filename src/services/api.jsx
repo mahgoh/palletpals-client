@@ -56,6 +56,28 @@ export const Product = {
   },
 }
 
+export const Shopping = {
+  cart() {
+    let [cart, setCart] = useState({
+      shoppingCart: [],
+    })
+
+    let { data, error, loading } = useFetch('/shopping')
+
+    useEffect(() => {
+      if (data) {
+        setCart(data)
+      }
+    }, [data])
+
+    return {
+      cart,
+      error,
+      loading,
+    }
+  },
+}
+
 export const User = {
   // TODO: Implement remember
   login(credentials, callback) {
