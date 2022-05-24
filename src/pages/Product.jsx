@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import API from '@/services/api'
 import Debug from '@/components/Debug'
+import Loader from '@/components/Loader'
 import Main from '@/components/Main'
 import ProductDetail from '@/components/ProductDetail'
 
@@ -18,7 +19,7 @@ export default function Product() {
   return (
     <Main>
       <Debug data={{ product, error }} />
-      {loading && <div>Loading...</div>}
+      {loading && <Loader />}
       {!loading && product && <ProductDetail product={product} />}
     </Main>
   )
