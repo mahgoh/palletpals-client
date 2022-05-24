@@ -45,5 +45,7 @@ export function Fetch(path, options) {
     ...options,
   }
 
-  return fetch(`${GLOBAL.API_URL}${path}`, options)
+  const url = new URL(`${GLOBAL.API_URL}${path}`, 'http://localhost')
+
+  return fetch(url, options)
 }
