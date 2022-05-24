@@ -76,6 +76,26 @@ export const Shopping = {
       loading,
     }
   },
+  async add(productId, amount) {
+    return new Promise((resolve, reject) => {
+      Fetch('/shopping', {
+        method: 'POST',
+        body: JSON.stringify({
+          quantity: amount,
+          product: {
+            id: productId,
+          },
+        }),
+      })
+        .then((res) => {
+          if (res.status === 201) resolve()
+          reject()
+        })
+        .catch(() => {
+          reject()
+        })
+    })
+  },
 }
 
 export const User = {
@@ -132,5 +152,6 @@ export const User = {
 
 export default {
   Product,
+  Shopping,
   User,
 }

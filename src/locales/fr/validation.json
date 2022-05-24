@@ -2,5 +2,6 @@
   "required": "Requis",
   "invalid": {
     "email": "Adresse e-mail non valide"
-  }
+  },
+  "min": "Minimum de {min}"
 }
