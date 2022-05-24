@@ -45,7 +45,10 @@ export function Fetch(path, options) {
     ...options,
   }
 
-  const url = new URL(`${GLOBAL.API_URL}${path}`, 'http://localhost')
+  const base = 'http://localhost'
+  const prefix = GLOBAL.API_URL || '/api'
+
+  const url = new URL(`${prefix}${path}`, base)
 
   return fetch(url, options)
 }
