@@ -5,7 +5,7 @@ import { server } from '../mocks/server'
 /**
  * Start/stop mock server
  */
-beforeAll(() => server.listen({ onUnhandledRequest: 'error' }))
+beforeAll(() => server.listen({ onUnhandledRequest: 'warn' }))
 afterAll(() => server.close())
 afterEach(() => server.resetHandlers())
 
