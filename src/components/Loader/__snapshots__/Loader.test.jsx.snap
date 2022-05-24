@@ -1,0 +1,14 @@
+// Vitest Snapshot v1
+
+exports[`loader > should render 1`] = `
+<div>
+  <div
+    class="flex grow items-center justify-center py-4"
+  >
+    <img
+      class="h-10 w-10"
+      src="/loader.svg"
+    />
+  </div>
+</div>
+`;
