@@ -1,0 +1,9 @@
+// Vitest Snapshot v1
+
+exports[`subheading > should not render children 1`] = `
+<h2
+  class="text-2xl font-bold leading-10 tracking-tight sm:text-4xl sm:leading-none lg:text-3xl"
+>
+  Hello
+</h2>
+`;

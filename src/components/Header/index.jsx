@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import Navigation from '@/components/Navigation'
 import AppearanceSelect from './AppearanceSelect'
 import LanguageSelect from './LanguageSelect'
+import Cart from './Cart'
 import Logout from './Logout'
 
 export default function Header() {
@@ -36,6 +37,7 @@ export default function Header() {
             <AppearanceSelect />
             <LanguageSelect />
           </div>
+          <Cart />
           <Logout />
         </div>
       </div>

@@ -30,6 +30,11 @@ describe('button', () => {
     expect(screen.getByRole('button')).toMatchSnapshot()
   })
 
+  it('should render red outline button', () => {
+    render(<Button color="redOutline">Click</Button>)
+    expect(screen.getByRole('button')).toMatchSnapshot()
+  })
+
   it('should handle onClick', () => {
     const onClick = vi.fn()
     render(<Button onClick={onClick}>Click</Button>)

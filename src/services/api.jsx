@@ -56,6 +56,47 @@ export const Product = {
   },
 }
 
+export const Cart = {
+  async get() {
+    try {
+      const data = await Fetch('/shopping').then((res) => res.json())
+      return data
+    } catch (error) {
+      throw error
+    }
+  },
+  async add(productId, amount) {
+    await Fetch('/shopping', {
+      method: 'POST',
+      body: JSON.stringify({
+        quantity: amount,
+        product: {
+          id: productId,
+        },
+      }),
+    }).then((res) => {
+      if (res.status !== 201) throw new Error('Could not add to cart')
+    })
+  },
+  async update(productId, amount) {
+    await Fetch(`/shopping/${productId}`, {
+      method: 'PATCH',
+      body: JSON.stringify({
+        quantity: amount,
+      }),
+    }).then((res) => {
+      if (res.status !== 202) throw new Error('Could not update cart item')
+    })
+  },
+  async remove(productId) {
+    await Fetch(`/shopping/${productId}`, {
+      method: 'DELETE',
+    }).then((res) => {
+      if (res.status !== 202) throw new Error('Could not delete cart item')
+    })
+  },
+}
+
 export const User = {
   // TODO: Implement remember
   login(credentials, callback) {
@@ -109,6 +150,7 @@ export const User = {
 }
 
 export default {
+  Cart,
   Product,
   User,
 }

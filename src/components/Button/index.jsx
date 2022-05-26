@@ -34,6 +34,8 @@ export default function Button({
     secondary:
       'bg-orange-100 focus:bg-orange-200 hover:bg-orange-200 focus:ring-orange-500 text-orange-500',
     red: 'bg-rose-500 focus:bg-rose-700 hover:bg-rose-700 focus:ring-rose-500 text-white',
+    redOutline:
+      'bg-rose-500/20 focus:bg-rose-500 hover:bg-rose-500 focus:ring-rose-500 text-rose-500 hover:text-white focus:text-white',
   }
 
   return (
@@ -54,5 +56,5 @@ export default function Button({
 Button.propTypes = {
   onClick: PropTypes.func,
   className: PropTypes.string,
-  color: PropTypes.oneOf(['primary', 'secondary', 'red']),
+  color: PropTypes.oneOf(['primary', 'secondary', 'red', 'redOutline']),
 }

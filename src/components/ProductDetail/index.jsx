@@ -1,20 +1,30 @@
 import { useTranslation } from 'react-i18next'
 import PropTypes from 'prop-types'
 import { useFormik } from 'formik'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { Disclosure, Tab } from '@headlessui/react'
 import { MinusSmIcon, PlusSmIcon } from '@heroicons/react/outline'
 import { classNames } from '@/utils/common'
+import { useAuth } from '@/services/auth'
+import { useCart } from '@/services/cart'
+import API from '@/services/api'
 import Button from '@/components/Button'
 import TextField from '@/components/TextField'
 import Table from '@/components/Table'
 
 export default function ProductDetail({ product }) {
   const { t } = useTranslation()
+  const auth = useAuth()
+  const { refreshCart } = useCart()
+  const location = useLocation()
+  const navigate = useNavigate()
 
   const validate = (values) => {
     const errors = {}
     if (!values.amount) {
       errors.amount = t('validation.required')
+    } else if (values.amount < 1) {
+      errors.amount = t('validation.min', { min: 1 })
     }
 
     return errors
@@ -25,8 +35,18 @@ export default function ProductDetail({ product }) {
       amount: 1,
     },
     validate,
-    onSubmit: (values) => {
-      console.log(values)
+    onSubmit: async (values) => {
+      if (!auth.authenticated) {
+        navigate('/login', { state: { from: location } })
+      } else {
+        try {
+          await API.Cart.add(product.id, values.amount)
+          await refreshCart()
+          // TODO: Display success message
+        } catch (e) {
+          console.error(e)
+        }
+      }
     },
   })
 
@@ -122,13 +142,14 @@ export default function ProductDetail({ product }) {
           </div>
         </div>
 
-        <form className="mt-6">
+        <form className="mt-6" onSubmit={formik.handleSubmit}>
           <div className="mt-10 flex flex-col space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0">
             <TextField
               type="number"
-              placeholder="Amount"
+              placeholder={t('common.amount')}
               className="w-auto text-center"
               showError={false}
+              min={1}
               error={
                 formik.touched.amount && formik.errors.amount
                   ? formik.errors.amount

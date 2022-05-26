@@ -7,6 +7,7 @@ import App from '@/App'
 import Home from '@/pages/Home'
 import Products from '@/pages/Products'
 import Product from '@/pages/Product'
+import Cart from '@/pages/Cart'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
 import Profile from '@/pages/Profile'
@@ -20,6 +21,14 @@ export default function Router() {
           <Route path="" element={<Home />} />
           <Route path="products" element={<Products />} />
           <Route path="product/:productId" element={<Product />} />
+          <Route
+            path="cart"
+            element={
+              <RequireAuth>
+                <Cart />
+              </RequireAuth>
+            }
+          />
           <Route
             path="profile"
             element={

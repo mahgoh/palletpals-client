@@ -26,7 +26,7 @@ export default function Debug({ data }) {
               Close
             </Button>
           </div>
-          <pre className="text-sm leading-tight">
+          <pre className="max-h-56 overflow-y-scroll text-sm leading-tight">
             {JSON.stringify(data, null, 2)}
           </pre>
         </div>
