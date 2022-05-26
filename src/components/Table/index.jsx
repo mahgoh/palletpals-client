@@ -1,4 +1,36 @@
 import PropTypes from 'prop-types'
+import { classNames } from '@/utils/common'
+
+export function FinancialTable({ rows }) {
+  return (
+    <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+      <tbody>
+        {rows.map((row, i) => (
+          <tr
+            key={i}
+            className="border-b border-gray-200 last:border-b-0 dark:border-gray-700"
+          >
+            <td className="py-4 pl-4 pr-3 text-sm sm:pl-6 md:pl-0">
+              <div className="font-medium text-gray-900 dark:text-gray-100">
+                {row.key}
+              </div>
+            </td>
+            <td
+              className={classNames(
+                'py-4 pl-3 pr-4 text-right text-sm sm:pr-6 md:pr-0',
+                row.bold
+                  ? 'font-semibold text-gray-900 dark:text-gray-100'
+                  : 'text-gray-500 dark:text-gray-300'
+              )}
+            >
+              CHF {row.value.toFixed(2)}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  )
+}
 
 export default function Table({ rows }) {
   if (!rows || rows.length === 0) {
