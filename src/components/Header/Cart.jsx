@@ -1,14 +1,12 @@
 import { useTranslation } from 'react-i18next'
 import { ShoppingCartIcon } from '@heroicons/react/outline'
-import API from '@/services/api'
+import { useCart } from '@/services/cart'
 import { LinkButton } from '@/components/Button'
-import Loader from '@/components/Loader'
 import CartItem from './CartItem'
 
 export default function Cart() {
   const { t } = useTranslation()
-
-  const { cart, error, loading } = API.Shopping.cart()
+  const { cart } = useCart()
 
   return (
     <div className="group ml-4 flex items-center">
@@ -22,13 +20,10 @@ export default function Cart() {
             {t('common.cart')}
           </h2>
           <div className="w-full grow justify-start divide-y divide-gray-200 overflow-y-auto dark:divide-gray-700">
-            {!loading &&
-              !error &&
-              cart &&
+            {cart &&
               cart.shoppingCart.map((cartItem, i) => (
                 <CartItem key={i} cartItem={cartItem} />
               ))}
-            {loading && <Loader />}
           </div>
           <LinkButton to="/cart" className="mt-4 w-full">
             {t('common.go-to-cart')}

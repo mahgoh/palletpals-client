@@ -6,6 +6,7 @@ import { Disclosure, Tab } from '@headlessui/react'
 import { MinusSmIcon, PlusSmIcon } from '@heroicons/react/outline'
 import { classNames } from '@/utils/common'
 import { useAuth } from '@/services/auth'
+import { useCart } from '@/services/cart'
 import API from '@/services/api'
 import Button from '@/components/Button'
 import TextField from '@/components/TextField'
@@ -14,6 +15,7 @@ import Table from '@/components/Table'
 export default function ProductDetail({ product }) {
   const { t } = useTranslation()
   const auth = useAuth()
+  const { refreshCart } = useCart()
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -37,8 +39,13 @@ export default function ProductDetail({ product }) {
       if (!auth.authenticated) {
         navigate('/login', { state: { from: location } })
       } else {
-        await API.Shopping.add(product.id, values.amount)
-        // TODO: show success message
+        try {
+          await API.Cart.add(product.id, values.amount)
+          await refreshCart()
+          // TODO: Display success message
+        } catch (e) {
+          console.error(e)
+        }
       }
     },
   })
