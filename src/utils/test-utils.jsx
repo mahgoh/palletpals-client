@@ -7,6 +7,7 @@ import i18n from '../i18n'
 import { AuthProvider } from '@/services/auth'
 import { AppearanceProvider } from '@/services/appearance'
 import { LanguageProvider } from '@/services/language'
+import { CartProvider } from '@/services/cart'
 
 // TODO: add logic to support fake authentication
 // return {
@@ -55,7 +56,9 @@ const renderComplete = (component, options) => {
     ...renderWithRouterWithi18n(
       <AuthProvider>
         <AppearanceProvider>
-          <LanguageProvider>{component}</LanguageProvider>
+          <LanguageProvider>
+            <CartProvider>{component}</CartProvider>
+          </LanguageProvider>
         </AppearanceProvider>
       </AuthProvider>,
       options

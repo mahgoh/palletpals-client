@@ -56,44 +56,43 @@ export const Product = {
   },
 }
 
-export const Shopping = {
-  cart() {
-    let [cart, setCart] = useState({
-      shoppingCart: [],
-    })
-
-    let { data, error, loading } = useFetch('/shopping')
-
-    useEffect(() => {
-      if (data) {
-        setCart(data)
-      }
-    }, [data])
-
-    return {
-      cart,
-      error,
-      loading,
+export const Cart = {
+  async get() {
+    try {
+      const data = await Fetch('/shopping').then((res) => res.json())
+      return data
+    } catch (error) {
+      throw error
     }
   },
   async add(productId, amount) {
-    return new Promise((resolve, reject) => {
-      Fetch('/shopping', {
-        method: 'POST',
-        body: JSON.stringify({
-          quantity: amount,
-          product: {
-            id: productId,
-          },
-        }),
-      })
-        .then((res) => {
-          if (res.status === 201) resolve()
-          reject()
-        })
-        .catch(() => {
-          reject()
-        })
+    await Fetch('/shopping', {
+      method: 'POST',
+      body: JSON.stringify({
+        quantity: amount,
+        product: {
+          id: productId,
+        },
+      }),
+    }).then((res) => {
+      if (res.status !== 201) throw new Error('Could not add to cart')
+    })
+  },
+  async update(productId, amount) {
+    await Fetch(`/shopping/${productId}`, {
+      method: 'PATCH',
+      body: JSON.stringify({
+        quantity: amount,
+      }),
+    }).then((res) => {
+      if (res.status !== 202) throw new Error('Could not update cart item')
+    })
+  },
+  async remove(productId) {
+    await Fetch(`/shopping/${productId}`, {
+      method: 'DELETE',
+    }).then((res) => {
+      if (res.status !== 202) throw new Error('Could not delete cart item')
     })
   },
 }
@@ -151,7 +150,7 @@ export const User = {
 }
 
 export default {
+  Cart,
   Product,
-  Shopping,
   User,
 }
