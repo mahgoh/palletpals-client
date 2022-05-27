@@ -12,13 +12,11 @@ export default function CartItem({ cartItem }) {
       <div className="mr-4 h-12 w-12 overflow-hidden bg-gray-100 dark:bg-gray-800">
         {product.productImages.length > 0 && (
           <NavLink to={`/product/${product.id}`}>
-            (
             <img
               className="h-12 w-12 object-cover"
               src={productImageURL(product.productImages[0].id)}
               alt={product.name}
             />
-            )
           </NavLink>
         )}
       </div>
