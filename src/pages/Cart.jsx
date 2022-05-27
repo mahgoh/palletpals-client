@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import API from '@/services/api'
 import { useCart } from '@/services/cart'
 import Button from '@/components/Button'
 import CartItem from '@/components/CartItem'
@@ -9,7 +10,6 @@ import Pagetitle from '@/components/Pagetitle'
 import Spacer from '@/components/Spacer'
 import Subheading from '@/components/Subheading'
 import { FinancialTable } from '@/components/Table'
-import Button from '../components/Button'
 
 export default function Cart() {
   const { t } = useTranslation()
@@ -18,6 +18,17 @@ export default function Cart() {
   useEffect(() => {
     refreshCart()
   }, [])
+
+  async function placeOrder() {
+    try {
+      await API.Cart.order()
+      await refreshCart()
+      // TODO: Show success message/page
+    } catch (e) {
+      console.error(e)
+      // TODO: Disply error message
+    }
+  }
 
   function renderTotal() {
     if (cart.shoppingCart.length === 0) return null
@@ -49,7 +60,7 @@ export default function Cart() {
         <Spacer size="md" />
         <div className="flex justify-end">
           {/* TODO: Submit order */}
-          <Button onClick={placeOrder}>{t('common.order-cart')}</Button>
+          <Button onClick={placeOrder}>{t('common.cart.order')}</Button>
         </div>
         <Spacer size="lg" />
       </>

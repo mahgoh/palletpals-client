@@ -98,6 +98,13 @@ export const Cart = {
       if (res.status !== 202) throw new Error('Could not delete cart item')
     })
   },
+  async order() {
+    await Fetch('/orders', {
+      method: 'POST',
+    }).then((res) => {
+      if (res.status !== 201) throw new Error('Could not create order')
+    })
+  },
 }
 
 export const User = {
