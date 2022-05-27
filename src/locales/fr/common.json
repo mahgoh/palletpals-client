@@ -12,27 +12,30 @@
     "password": "Mot de passe",
     "email": "Email"
   },
+  "cart": {
+    "title": "Panier",
+    "add": "Ajouter au panier",
+    "go": "Mon panier",
+    "empty": "Ton panier est vide.",
+    "shipping": "Expédition",
+    "total": "Total",
+    "subtotal": "Sous-total",
+    "order": "Commander",
+    "not-authenticated": "Connectes-toi pour acheter des produits."
+  },
   "hero": {
     "headline": "Produits volumineux ?"
   },
   "product": "{numProducts, plural, =0 {Produits} =1 {Produit} other {Produits}}",
   "product-information": "Informations sur le produit",
-  "cart": "Panier",
   "amount": "Quantité",
   "update": "Actualiser",
   "remove": "Supprimer",
   "price": "Prix",
   "price-per-unit": "Prix par unité",
-  "add-to-cart": "Ajouter au panier",
-  "go-to-cart": "Mon panier",
   "description": "Description",
   "details": "Détails",
   "max-products": "Produits max. par espace de palette",
   "min-pallet-space": "Espace min. des palettes",
-  "shipping": "Expédition",
-  "total": "Total",
-  "subtotal": "Sous-total",
-  "order-cart": "Commander",
-  "login-to-shop": "Connectes-toi pour acheter des produits.",
   "profile": "Profil"
 }

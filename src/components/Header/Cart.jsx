@@ -24,7 +24,7 @@ export default function Cart() {
     if (!auth.authenticated) {
       return (
         <>
-          <div>{t('common.login-to-shop')}</div>
+          <div>{t('common.cart.not-authenticated')}</div>
           <LinkButton to="/login" className="mt-4 w-full">
             {t('common.auth.login')}
           </LinkButton>
@@ -38,7 +38,7 @@ export default function Cart() {
           {renderCartItems()}
         </div>
         <LinkButton to="/cart" className="mt-4 w-full">
-          {t('common.go-to-cart')}
+          {t('common.cart.go')}
         </LinkButton>
       </>
     )
@@ -53,7 +53,7 @@ export default function Cart() {
       <div className="absolute top-0 right-0 z-20 hidden h-screen w-screen transition-all group-hover:block md:w-1/3">
         <div className="flex h-full w-full flex-col border-l border-gray-200 bg-white p-8 text-left dark:border-gray-700 dark:bg-gray-900">
           <h2 className="pb-10 pt-4 text-2xl font-extrabold leading-10 tracking-tight sm:text-3xl sm:leading-none">
-            {t('common.cart')}
+            {t('common.cart.title')}
           </h2>
           {renderCart()}
         </div>

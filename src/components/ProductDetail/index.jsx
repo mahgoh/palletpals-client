@@ -158,7 +158,7 @@ export default function ProductDetail({ product }) {
               {...formik.getFieldProps('amount')}
             />
             <Button type="submit" className="w-full grow sm:max-w-xs">
-              {t('common.add-to-cart')}
+              {t('common.cart.add')}
             </Button>
           </div>
         </form>

@@ -12,27 +12,30 @@
     "password": "Passwort",
     "email": "Email"
   },
+  "cart": {
+    "title": "Warenkorb",
+    "add": "In den Warenkorb",
+    "go": "Zum Warenkorb",
+    "empty": "Dein Warenkorb ist leer.",
+    "shipping": "Versand",
+    "total": "Total",
+    "subtotal": "Zwischensumme",
+    "order": "Bestellen",
+    "not-authenticated": "Melde dich an, um einzukaufen."
+  },
   "hero": {
     "headline": "Sperrige Produkte?"
   },
   "product": "{numProducts, plural, =0 {Produkte} =1 {Produkt} other {Produkte}}",
   "product-information": "Produktinformationen",
-  "cart": "Warenkorb",
   "amount": "Anzahl",
   "update": "Aktualisieren",
   "remove": "Entfernen",
   "price": "Preis",
   "price-per-unit": "Preis pro Stück",
-  "add-to-cart": "In den Warenkorb",
-  "go-to-cart": "Zum Warenkorb",
   "description": "Beschreibung",
   "details": "Details",
   "max-products": "Max. Produkte pro Palettenplatz",
   "min-pallet-space": "Min. Palettenfläche",
-  "shipping": "Versand",
-  "total": "Total",
-  "subtotal": "Zwischensumme",
-  "order-cart": "Bestellen",
-  "login-to-shop": "Melde dich an, um einzukaufen.",
   "profile": "Profil"
 }

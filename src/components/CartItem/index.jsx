@@ -82,7 +82,7 @@ export default function CartItem({ item }) {
             {t('common.amount')}: {quantity}
           </div>
           <div className="sm:mt-2">
-            {t('common.total')}:{' '}
+            {t('common.cart.total')}:{' '}
             <strong>CHF {(pricePerUnit * quantity).toFixed(2)}</strong>
           </div>
         </div>
