@@ -58,13 +58,17 @@ export default function CartItem({ item }) {
   return (
     <div className="mb-4 flex flex-col last:mb-0 sm:flex-row">
       <div className="flex grow">
-        <NavLink to={`/product/${product.id}`}>
-          <img
-            className="h-32 w-32 object-cover"
-            src={productImageURL(product.productImages[0].id)}
-            alt={product.name}
-          />
-        </NavLink>
+        <div className="h-32 w-32 overflow-hidden bg-gray-100 dark:bg-gray-800">
+          {product.productImages.length > 0 && (
+            <NavLink to={`/product/${product.id}`}>
+              <img
+                className="h-32 w-32 object-cover"
+                src={productImageURL(product.productImages[0].id)}
+                alt={product.name}
+              />
+            </NavLink>
+          )}
+        </div>
         <div className="flex flex-col py-2 px-6">
           <NavLink to={`/product/${product.id}`}>
             <h3 className="mb-2 text-lg font-bold hover:underline focus:underline">

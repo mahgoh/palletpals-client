@@ -110,7 +110,7 @@ export default function ProductDetail({ product }) {
           </Tab.List>
         </div>
 
-        <Tab.Panels className="aspect-w-1 aspect-h-1 w-full">
+        <Tab.Panels className="aspect-w-1 aspect-h-1 w-full overflow-hidden bg-gray-100 dark:bg-gray-800">
           {productImages.map((image, i) => (
             <Tab.Panel key={i}>
               <img
@@ -169,7 +169,7 @@ export default function ProductDetail({ product }) {
           </h2>
 
           <div className="divide-y divide-gray-200 border-t border-gray-200 dark:divide-gray-700 dark:border-gray-700">
-            <Disclosure as="div">
+            <Disclosure as="div" defaultOpen="true">
               {({ open }) => (
                 <>
                   <h3>
