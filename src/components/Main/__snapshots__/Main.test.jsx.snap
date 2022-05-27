@@ -1,5 +1,13 @@
 // Vitest Snapshot v1
 
+exports[`main > should render with center true > Hello 1`] = `
+<main
+  class="mx-auto py-12 px-4 lg:max-w-6xl lg:px-10 flex flex-col items-center"
+>
+  Hello
+</main>
+`;
+
 exports[`main > should render with html content 1`] = `
 <main
   class="mx-auto py-12 px-4 lg:max-w-6xl lg:px-10"

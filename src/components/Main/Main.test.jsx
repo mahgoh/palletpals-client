@@ -17,4 +17,10 @@ describe('main', () => {
     expect(screen.getByRole('main')).toContainHTML('<div>Inside a div</div>')
     expect(screen.getByRole('main')).toMatchSnapshot()
   })
+
+  it('should render with center true', () => {
+    render(<Main center>Hello</Main>)
+    expect(screen.getByRole('main')).toHaveClass('flex flex-col items-center')
+    expect(screen.getByRole('main')).toMatchSnapshot('Hello')
+  })
 })
