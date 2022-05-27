@@ -107,6 +107,12 @@ export const Cart = {
   },
 }
 
+export const Order = {
+  async all() {
+    return useFetch('/orders')
+  },
+}
+
 export const User = {
   // TODO: Implement remember
   login(credentials, callback) {
@@ -161,6 +167,7 @@ export const User = {
 
 export default {
   Cart,
+  Order,
   Product,
   User,
 }

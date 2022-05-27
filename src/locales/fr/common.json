@@ -26,6 +26,11 @@
   "hero": {
     "headline": "Produits volumineux ?"
   },
+  "profile": {
+    "title": "Profil",
+    "address": "Adresse",
+    "edit": "Modifier le profil"
+  },
   "product": "{numProducts, plural, =0 {Produits} =1 {Produit} other {Produits}}",
   "product-information": "Informations sur le produit",
   "amount": "Quantité",
@@ -36,6 +41,5 @@
   "description": "Description",
   "details": "Détails",
   "max-products": "Produits max. par espace de palette",
-  "min-pallet-space": "Espace min. des palettes",
-  "profile": "Profil"
+  "min-pallet-space": "Espace min. des palettes"
 }

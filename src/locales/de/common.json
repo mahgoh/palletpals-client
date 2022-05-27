@@ -26,6 +26,11 @@
   "hero": {
     "headline": "Sperrige Produkte?"
   },
+  "profile": {
+    "title": "Profil",
+    "address": "Adresse",
+    "edit": "Profil bearbeiten"
+  },
   "product": "{numProducts, plural, =0 {Produkte} =1 {Produkt} other {Produkte}}",
   "product-information": "Produktinformationen",
   "amount": "Anzahl",
@@ -36,6 +41,5 @@
   "description": "Beschreibung",
   "details": "Details",
   "max-products": "Max. Produkte pro Palettenplatz",
-  "min-pallet-space": "Min. Palettenfläche",
-  "profile": "Profil"
+  "min-pallet-space": "Min. Palettenfläche"
 }

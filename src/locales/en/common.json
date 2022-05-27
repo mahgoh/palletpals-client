@@ -26,6 +26,11 @@
   "hero": {
     "headline": "Bulky products?"
   },
+  "profile": {
+    "title": "Profile",
+    "address": "Address",
+    "edit": "Edit profile"
+  },
   "product": "{numProducts, plural, =0 {Products} =1 {Product} other {Products}}",
   "product-information": "Product information",
   "amount": "Amount",
@@ -36,6 +41,5 @@
   "description": "Description",
   "details": "Details",
   "max-products": "Max. products per pallet space",
-  "min-pallet-space": "Min. pallet space",
-  "profile": "Profile"
+  "min-pallet-space": "Min. pallet space"
 }

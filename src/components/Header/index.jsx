@@ -16,7 +16,7 @@ export default function Header() {
     },
     {
       to: '/profile',
-      label: t('common.profile'),
+      label: t('common.profile.title'),
     },
   ]
 
