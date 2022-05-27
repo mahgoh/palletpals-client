@@ -55,7 +55,7 @@ export default function Login() {
   })
 
   return (
-    <Main>
+    <Main center>
       <Pagetitle title={t('common.auth.login')} />
       <Form onSubmit={formik.handleSubmit} width="xs">
         <TextField
