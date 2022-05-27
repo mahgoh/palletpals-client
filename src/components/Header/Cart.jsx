@@ -32,6 +32,14 @@ export default function Cart() {
       )
     }
 
+    if (cart.shoppingCart.length === 0) {
+      return (
+        <div className="inline-flex grow items-center justify-center">
+          {t('common.cart.empty')}
+        </div>
+      )
+    }
+
     return (
       <>
         <div className="w-full grow justify-start divide-y divide-gray-200 overflow-y-auto dark:divide-gray-700">

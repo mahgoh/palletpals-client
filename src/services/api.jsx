@@ -16,7 +16,10 @@ export const Product = {
               id: product.id,
               name: product.name,
               price: product.price,
-              image: productImageURL(product.productImages[0].id),
+              image:
+                product.productImages.length > 0
+                  ? productImageURL(product.productImages[0].id)
+                  : null,
             }
           })
         )
