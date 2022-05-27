@@ -1,12 +1,48 @@
 import { useTranslation } from 'react-i18next'
 import { ShoppingCartIcon } from '@heroicons/react/outline'
+import { useAuth } from '@/services/auth'
 import { useCart } from '@/services/cart'
 import { LinkButton } from '@/components/Button'
 import CartItem from './CartItem'
 
 export default function Cart() {
   const { t } = useTranslation()
+  const auth = useAuth()
   const { cart } = useCart()
+
+  function renderCartItems() {
+    if (!cart || cart.length === 0) {
+      return null
+    }
+
+    return cart.shoppingCart.map((cartItem, i) => (
+      <CartItem key={i} cartItem={cartItem} />
+    ))
+  }
+
+  function renderCart() {
+    if (!auth.authenticated) {
+      return (
+        <>
+          <div>{t('common.login-to-shop')}</div>
+          <LinkButton to="/login" className="mt-4 w-full">
+            {t('common.auth.login')}
+          </LinkButton>
+        </>
+      )
+    }
+
+    return (
+      <>
+        <div className="w-full grow justify-start divide-y divide-gray-200 overflow-y-auto dark:divide-gray-700">
+          {renderCartItems()}
+        </div>
+        <LinkButton to="/cart" className="mt-4 w-full">
+          {t('common.go-to-cart')}
+        </LinkButton>
+      </>
+    )
+  }
 
   return (
     <div className="group ml-4 flex items-center">
@@ -19,15 +55,7 @@ export default function Cart() {
           <h2 className="pb-10 pt-4 text-2xl font-extrabold leading-10 tracking-tight sm:text-3xl sm:leading-none">
             {t('common.cart')}
           </h2>
-          <div className="w-full grow justify-start divide-y divide-gray-200 overflow-y-auto dark:divide-gray-700">
-            {cart &&
-              cart.shoppingCart.map((cartItem, i) => (
-                <CartItem key={i} cartItem={cartItem} />
-              ))}
-          </div>
-          <LinkButton to="/cart" className="mt-4 w-full">
-            {t('common.go-to-cart')}
-          </LinkButton>
+          {renderCart()}
         </div>
       </div>
     </div>
