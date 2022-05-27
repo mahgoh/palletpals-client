@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
+    "staging": "set DEBUG=false&& vite",
     "build": "vite build",
     "preview": "vite preview",
     "coverage": "vitest run --coverage",

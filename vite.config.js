@@ -20,7 +20,9 @@ export default defineConfig({
     GLOBAL: {
       APP_VERSION: gitDescribeSync().semverString,
       API_URL: process.env.API_URL,
-      DEBUG: process.env.NODE_ENV !== 'production',
+      DEBUG: process.env.hasOwnProperty('DEBUG')
+        ? process.env.DEBUG === 'true'
+        : process.env.NODE_ENV !== 'production',
     },
   },
   plugins: [react()],
