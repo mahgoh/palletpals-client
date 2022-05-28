@@ -1,9 +1,18 @@
 // Vitest Snapshot v1
 
-exports[`pagetitle > should not render children 1`] = `
-<h1
-  class="text-4xl font-extrabold leading-10 tracking-tight sm:text-6xl sm:leading-none lg:text-5xl"
->
-  Hello
-</h1>
+exports[`pagetitle > should render children 1`] = `
+<div>
+  <div
+    class="flex items-center justify-between"
+  >
+    <h1
+      class="text-4xl font-extrabold leading-10 tracking-tight sm:text-6xl sm:leading-none lg:text-5xl"
+    >
+      Hello
+    </h1>
+    <div>
+      should be rendered
+    </div>
+  </div>
+</div>
 `;
