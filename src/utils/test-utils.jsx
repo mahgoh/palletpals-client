@@ -9,12 +9,6 @@ import { AppearanceProvider } from '@/services/appearance'
 import { LanguageProvider } from '@/services/language'
 import { CartProvider } from '@/services/cart'
 
-// TODO: add logic to support fake authentication
-// return {
-//   user: fakeUser,
-//   ...render(component, {wrapper: MemoryRouter}),
-// }
-
 /**
  * Render component with router wrapper and option for specifying the current route.
  *

@@ -1,0 +1,12 @@
+{
+  "added-to-cart": "Produit ajouté au panier",
+  "not-added-to-cart": "Impossible d'ajouter le produit au panier",
+  "profile-updated": "Profil mis à jour avec succès",
+  "profile-not-updated": "Impossible de mettre à jour le profil",
+  "order-placed": "Commande passée avec succès",
+  "order-not-placed": "Impossible de passer la commande",
+  "cart-item-removed": "Produit supprimé du panier",
+  "cart-item-not-removed": "Impossible de supprimer le produit du panier",
+  "cart-item-updated": "Produit mis à jour dans le panier",
+  "cart-item-not-updated": "Impossible de mettre à jour le produit dans le panier"
+}

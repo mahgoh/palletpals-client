@@ -2,7 +2,7 @@
 
 exports[`header > should render 1`] = `
 <header
-  class="sticky top-0 z-10 h-20 border-b border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900"
+  class="sticky top-0 z-20 h-20 border-b border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900"
 >
   <div
     class="mx-auto grid h-full grid-cols-2 px-4 lg:max-w-6xl lg:px-10"

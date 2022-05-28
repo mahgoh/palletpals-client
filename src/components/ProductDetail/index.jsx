@@ -7,6 +7,7 @@ import { MinusSmIcon, PlusSmIcon } from '@heroicons/react/outline'
 import { classNames, formatPrice } from '@/utils/common'
 import { useAuth } from '@/services/auth'
 import { useCart } from '@/services/cart'
+import { useNotification } from '@/services/notification'
 import API from '@/services/api'
 import Button from '@/components/Button'
 import Table from '@/components/Table'
@@ -18,6 +19,7 @@ export default function ProductDetail({ product }) {
   const { refreshCart } = useCart()
   const location = useLocation()
   const navigate = useNavigate()
+  const { showNotification } = useNotification()
 
   const validate = (values) => {
     const errors = {}
@@ -42,8 +44,9 @@ export default function ProductDetail({ product }) {
         try {
           await API.Cart.add(product.id, values.amount)
           await refreshCart()
-          // TODO: Display success message
+          showNotification(t('message.added-to-cart'))
         } catch (e) {
+          showNotification(t('message.not-added-to-cart'))
           console.error(e)
         }
       }

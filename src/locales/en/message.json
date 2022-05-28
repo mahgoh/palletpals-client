@@ -1,0 +1,12 @@
+{
+  "added-to-cart": "Product added to cart",
+  "not-added-to-cart": "Could not add Product to cart",
+  "profile-updated": "Profile updated successfully",
+  "profile-not-updated": "Could not update profile",
+  "order-placed": "Order placed successfully",
+  "order-not-placed": "Could not place order",
+  "cart-item-removed": "Cart item removed successfully",
+  "cart-item-not-removed": "Could not remove cart item",
+  "cart-item-updated": "Cart item updated successfully",
+  "cart-item-not-updated": "Could not update cart item"
+}

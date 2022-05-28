@@ -1,7 +1,9 @@
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import API from '@/services/api'
 import { useCart } from '@/services/cart'
+import { useNotification } from '@/services/notification'
 import Button from '@/components/Button'
 import CartItem from '@/components/CartItem'
 import Debug from '@/components/Debug'
@@ -14,6 +16,8 @@ import { FinancialTable } from '@/components/Table'
 export default function Cart() {
   const { t } = useTranslation()
   const { cart, refreshCart } = useCart()
+  const { showNotification } = useNotification()
+  const navigate = useNavigate()
 
   useEffect(() => {
     refreshCart()
@@ -21,12 +25,13 @@ export default function Cart() {
 
   async function placeOrder() {
     try {
-      await API.Cart.order()
+      const { id } = await API.Cart.order()
       await refreshCart()
-      // TODO: Show success message/page
+      showNotification(t('message.order-placed'))
+      navigate(`/order/${id}`)
     } catch (e) {
+      showNotification(t('message.order-not-placed'))
       console.error(e)
-      // TODO: Disply error message
     }
   }
 
@@ -59,7 +64,6 @@ export default function Cart() {
         />
         <Spacer size="md" />
         <div className="flex justify-end">
-          {/* TODO: Submit order */}
           <Button onClick={placeOrder}>{t('common.cart.order')}</Button>
         </div>
         <Spacer size="lg" />

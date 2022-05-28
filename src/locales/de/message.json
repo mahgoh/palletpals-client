@@ -1,0 +1,12 @@
+{
+  "added-to-cart": "Produkt zum Warenkorb hinzugefügt",
+  "not-added-to-cart": "Produkt konnte nicht zum Warenkorb hinzugefügt werden.",
+  "profile-updated": "Profil erfolgreich aktualisiert",
+  "profile-not-updated": "Profil konnte nicht aktualisiert werden",
+  "order-placed": "Bestellung erfolgreich abgeschlossen",
+  "order-not-placed": "Bestellung konnte nicht abgeschlossen werden",
+  "cart-item-removed": "Produkt aus dem Warenkorb entfernt",
+  "cart-item-not-removed": "Produkt konnte nicht aus dem Warenkorb entfernt werden",
+  "cart-item-updated": "Produkt im Warenkorb aktualisiert",
+  "cart-item-not-updated": "Produkt im Warenkorb konnte nicht aktualisiert werden"
+}

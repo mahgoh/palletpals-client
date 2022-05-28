@@ -99,10 +99,11 @@ export const Cart = {
     })
   },
   async order() {
-    await Fetch('/orders', {
+    return await Fetch('/orders', {
       method: 'POST',
     }).then((res) => {
       if (res.status !== 201) throw new Error('Could not create order')
+      return res.json()
     })
   },
 }

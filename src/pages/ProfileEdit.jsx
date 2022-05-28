@@ -1,6 +1,8 @@
+import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useFormik } from 'formik'
 import API from '@/services/api'
+import { useNotification } from '@/services/notification'
 import Button from '@/components/Button'
 import Form from '@/components/Form'
 import Main from '@/components/Main'
@@ -9,6 +11,8 @@ import TextField from '@/components/TextField'
 
 export default function ProfileEdit() {
   const { t } = useTranslation()
+  const navigate = useNavigate()
+  const { showNotification } = useNotification()
 
   const { loading, error, data = {} } = API.User.profile()
 
@@ -74,9 +78,10 @@ export default function ProfileEdit() {
           },
           email: values.email,
         })
-        // TODO: Display success message
+        showNotification(t('message.profile-updated'))
+        navigate('/profile')
       } catch (e) {
-        // TODO: Display error message
+        showNotification(t('message.profile-not-updated'))
         console.error(e)
       }
     },

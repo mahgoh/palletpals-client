@@ -4,6 +4,7 @@ import { TrashIcon } from '@heroicons/react/outline'
 import { useFormik } from 'formik'
 import API from '@/services/api'
 import { useCart } from '@/services/cart'
+import { useNotification } from '@/services/notification'
 import { productImageURL, formatPrice } from '@/utils/common'
 import Button from '@/components/Button'
 import TextField from '@/components/TextField'
@@ -11,6 +12,7 @@ import TextField from '@/components/TextField'
 export default function CartItem({ item }) {
   const { t } = useTranslation()
   const { refreshCart } = useCart()
+  const { showNotification } = useNotification()
 
   if (!item) {
     return null
@@ -38,8 +40,9 @@ export default function CartItem({ item }) {
       try {
         await API.Cart.update(id, values.amount)
         await refreshCart()
-        // TODO: Display success message
+        showNotification(t('message.cart-item-updated'))
       } catch (e) {
+        showNotification(t('message.cart-item-not-updated'))
         console.error(e)
       }
     },
@@ -49,8 +52,9 @@ export default function CartItem({ item }) {
     try {
       await API.Cart.remove(id)
       await refreshCart()
-      // TODO: Display success message
+      showNotification(t('message.cart-item-removed'))
     } catch (e) {
+      showNotification(t('message.cart-item-not-removed'))
       console.error(e)
     }
   }

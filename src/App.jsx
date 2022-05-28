@@ -1,7 +1,8 @@
 import { Outlet } from 'react-router-dom'
 import { AppearanceProvider } from '@/services/appearance'
-import { LanguageProvider } from '@/services/language'
 import { CartProvider } from '@/services/cart'
+import { LanguageProvider } from '@/services/language'
+import { NotificationProvider } from '@/services/notification'
 import Header from '@/components/Header'
 
 function App() {
@@ -11,7 +12,9 @@ function App() {
         <CartProvider>
           <div className="min-h-screen dark:bg-gray-900 dark:text-gray-100">
             <Header />
-            <Outlet />
+            <NotificationProvider>
+              <Outlet />
+            </NotificationProvider>
           </div>
         </CartProvider>
       </LanguageProvider>
