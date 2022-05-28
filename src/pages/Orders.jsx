@@ -16,13 +16,9 @@ export default function Orders() {
     if (!data) return null
 
     return (
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+      <div>
         {data.map((order) => (
-          <OrderItem
-            key={order.id}
-            order={order}
-            className="mb-6 pt-6 first:pt-0 last:mb-0"
-          />
+          <OrderItem key={order.id} order={order} />
         ))}
       </div>
     )

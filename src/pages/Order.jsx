@@ -32,7 +32,7 @@ export default function Order() {
           )}`}
         />
         <Spacer size="lg" />
-        <div className="grid grid-cols-1 gap-y-4 gap-x-6 rounded-md bg-gray-100 p-6 dark:bg-gray-800 sm:grid-cols-4 ">
+        <div className="grid grid-cols-1 gap-y-4 gap-x-6 rounded-md bg-gray-100 p-6 dark:bg-gray-800 sm:grid-cols-4">
           <div>
             <div className="font-semibold">{t('common.order.id')}</div>
             <div className="text-gray-500 dark:text-gray-400">
