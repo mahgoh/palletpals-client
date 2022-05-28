@@ -31,7 +31,8 @@
     "all": "All orders",
     "ordered": "Ordered",
     "delivered": "Delivered",
-    "pending": "Pending"
+    "pending": "Pending",
+    "none": "No orders yet."
   },
   "profile": {
     "title": "Profile",

@@ -31,7 +31,8 @@
     "all": "Alle Bestellungen",
     "ordered": "Bestellt",
     "delivered": "Lieferung",
-    "pending": "Ausstehend"
+    "pending": "Ausstehend",
+    "none": "Keine Bestellungen vorhanden."
   },
   "profile": {
     "title": "Profil",

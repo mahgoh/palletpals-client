@@ -63,7 +63,17 @@ export default function Profile() {
   }
 
   function renderOrders() {
-    if (!orders.data || orders.data?.length === 0) return null
+    if (!orders.data) return null
+
+    if (orders.data.length === 0) {
+      return (
+        <>
+          <Subheading title={t('common.order.title', { numOrders: 2 })} />
+          <Spacer size="md" />
+          <div>{t('common.order.none')}</div>
+        </>
+      )
+    }
 
     const latestOrders = orders.data[0]
 

@@ -27,11 +27,12 @@
     "headline": "Produits volumineux ?"
   },
   "order": {
-    "title": "{numOrders, plural, =0 {Ordres} =1 {Ordre} other {Ordres}}",
-    "all": "Tous les ordres",
+    "title": "{numOrders, plural, =0 {Commandes} =1 {Commande} other {Commandes}}",
+    "all": "Tous les commandes",
     "ordered": "Commandé",
     "delivered": "Livraison",
-    "pending": "En attente"
+    "pending": "En attente",
+    "none": "Aucune commande disponible."
   },
   "profile": {
     "title": "Profil",
