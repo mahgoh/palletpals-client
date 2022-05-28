@@ -10,6 +10,7 @@ import Product from '@/pages/Product'
 import Cart from '@/pages/Cart'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
+import Orders from '@/pages/Orders'
 import Profile from '@/pages/Profile'
 import ProfileEdit from '@/pages/ProfileEdit'
 import NotFound from '@/pages/NotFound'
@@ -27,6 +28,14 @@ export default function Router() {
             element={
               <RequireAuth>
                 <Cart />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="orders"
+            element={
+              <RequireAuth>
+                <Orders />
               </RequireAuth>
             }
           />
