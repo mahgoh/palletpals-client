@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { useTranslation } from 'react-i18next'
 import { NavLink } from 'react-router-dom'
-import { parseDateTime, formatPrice } from '@/utils/common'
+import { parseDateTime, formatPrice, formatOrderId } from '@/utils/common'
 
 export default function OrderItem({ order, className }) {
   const { t, i18n } = useTranslation()
@@ -16,7 +16,7 @@ export default function OrderItem({ order, className }) {
     <div className={className}>
       <NavLink to={`/order/${id}`}>
         <h3 className="mb-2 text-xl font-medium hover:underline focus:underline">
-          {t('common.order.title', { numOrders: 1 })} #{id}
+          {t('common.order.title', { numOrders: 1 })} #{formatOrderId(id)}
         </h3>
       </NavLink>
       <div className="flex justify-between">

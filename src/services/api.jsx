@@ -111,6 +111,9 @@ export const Order = {
   all() {
     return useFetch('/orders')
   },
+  byId(id) {
+    return useFetch(`/orders/${id}`)
+  },
 }
 
 export const User = {

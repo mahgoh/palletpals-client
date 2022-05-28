@@ -22,3 +22,7 @@ export function parseDateTime(dateTimeString, locale = 'en') {
 export function formatPrice(price) {
   return `CHF ${price.toFixed(2)}`
 }
+
+export function formatOrderId(id) {
+  return id.toString().padStart(6, '0')
+}

@@ -28,6 +28,7 @@
   },
   "order": {
     "title": "{numOrders, plural, =0 {Orders} =1 {Order} other {Orders}}",
+    "id": "Order ID",
     "all": "All orders",
     "ordered": "Ordered",
     "delivered": "Delivered",
@@ -58,5 +59,6 @@
   "details": "Details",
   "max-products": "Max. products per pallet space",
   "min-pallet-space": "Min. pallet space",
+  "pallet-space": "Pallet space",
   "save": "Save"
 }

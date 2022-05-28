@@ -28,6 +28,7 @@
   },
   "order": {
     "title": "{numOrders, plural, =0 {Bestellungen} =1 {Bestellung} other {Bestellungen}}",
+    "id": "Bestellnummer",
     "all": "Alle Bestellungen",
     "ordered": "Bestellt",
     "delivered": "Lieferung",
@@ -58,5 +59,6 @@
   "details": "Details",
   "max-products": "Max. Produkte pro Palettenplatz",
   "min-pallet-space": "Min. Palettenfläche",
+  "pallet-space": "Palettenfläche",
   "save": "Speichern"
 }

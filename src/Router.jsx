@@ -11,6 +11,7 @@ import Cart from '@/pages/Cart'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
 import Orders from '@/pages/Orders'
+import Order from '@/pages/Order'
 import Profile from '@/pages/Profile'
 import ProfileEdit from '@/pages/ProfileEdit'
 import NotFound from '@/pages/NotFound'
@@ -36,6 +37,14 @@ export default function Router() {
             element={
               <RequireAuth>
                 <Orders />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="order/:orderId"
+            element={
+              <RequireAuth>
+                <Order />
               </RequireAuth>
             }
           />
