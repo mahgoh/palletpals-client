@@ -80,8 +80,8 @@ export default function Cart() {
       <Spacer size="md" />
       {cart.shoppingCart.length > 0 && (
         <div>
-          {cart.shoppingCart.map((item, i) => (
-            <CartItem key={i} item={item} />
+          {cart.shoppingCart.map((item) => (
+            <CartItem key={item.id} item={item} />
           ))}
         </div>
       )}
