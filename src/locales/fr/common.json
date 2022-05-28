@@ -36,6 +36,14 @@
   "profile": {
     "title": "Profil",
     "address": "Adresse",
+    "firstName": "Prénom",
+    "lastName": "Nom de famille",
+    "organisationName": "Organisation",
+    "street": "Rue",
+    "premise": "Prémisse",
+    "city": "Ville",
+    "postalCode": "Code postal",
+    "country": "Pays",
     "edit": "Modifier le profil"
   },
   "product": "{numProducts, plural, =0 {Produits} =1 {Produit} other {Produits}}",
@@ -48,5 +56,6 @@
   "description": "Description",
   "details": "Détails",
   "max-products": "Produits max. par espace de palette",
-  "min-pallet-space": "Espace min. des palettes"
+  "min-pallet-space": "Espace min. des palettes",
+  "save": "Sauver"
 }

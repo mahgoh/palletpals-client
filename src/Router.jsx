@@ -11,6 +11,7 @@ import Cart from '@/pages/Cart'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
 import Profile from '@/pages/Profile'
+import ProfileEdit from '@/pages/ProfileEdit'
 import NotFound from '@/pages/NotFound'
 
 export default function Router() {
@@ -34,6 +35,14 @@ export default function Router() {
             element={
               <RequireAuth>
                 <Profile />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="profile/edit"
+            element={
+              <RequireAuth>
+                <ProfileEdit />
               </RequireAuth>
             }
           />

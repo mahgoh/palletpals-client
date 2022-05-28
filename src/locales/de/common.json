@@ -36,6 +36,14 @@
   "profile": {
     "title": "Profil",
     "address": "Adresse",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "organisationName": "Organisation",
+    "street": "Strasse",
+    "premise": "Postfach",
+    "city": "Ort",
+    "postalCode": "PLZ",
+    "country": "Land",
     "edit": "Profil bearbeiten"
   },
   "product": "{numProducts, plural, =0 {Produkte} =1 {Produkt} other {Produkte}}",
@@ -48,5 +56,6 @@
   "description": "Beschreibung",
   "details": "Details",
   "max-products": "Max. Produkte pro Palettenplatz",
-  "min-pallet-space": "Min. Palettenfläche"
+  "min-pallet-space": "Min. Palettenfläche",
+  "save": "Speichern"
 }
