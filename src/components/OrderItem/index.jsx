@@ -48,7 +48,7 @@ export default function OrderItem({ order }) {
             </div>
           </div>
           <div>
-            <div className="text-right text-xl font-bold">
+            <div className="text-xl font-bold sm:text-right">
               {formatPrice(totalCost)}
             </div>
           </div>
