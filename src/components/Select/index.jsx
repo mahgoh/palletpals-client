@@ -18,7 +18,7 @@ export default function Select({
 
   useEffect(() => {
     setSelectedOption(options[selectedIndex])
-  }, [selectedIndex])
+  }, [selectedIndex, options])
 
   return (
     <Listbox value={selectedOption} onChange={setSelectedOption}>
