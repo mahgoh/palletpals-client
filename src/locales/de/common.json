@@ -26,6 +26,13 @@
   "hero": {
     "headline": "Sperrige Produkte?"
   },
+  "order": {
+    "title": "{numOrders, plural, =0 {Bestellungen} =1 {Bestellung} other {Bestellungen}}",
+    "all": "Alle Bestellungen",
+    "ordered": "Bestellt",
+    "delivered": "Lieferung",
+    "pending": "Ausstehend"
+  },
   "profile": {
     "title": "Profil",
     "address": "Adresse",

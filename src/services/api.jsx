@@ -108,7 +108,7 @@ export const Cart = {
 }
 
 export const Order = {
-  async all() {
+  all() {
     return useFetch('/orders')
   },
 }

@@ -26,6 +26,13 @@
   "hero": {
     "headline": "Produits volumineux ?"
   },
+  "order": {
+    "title": "{numOrders, plural, =0 {Ordres} =1 {Ordre} other {Ordres}}",
+    "all": "Tous les ordres",
+    "ordered": "Commandé",
+    "delivered": "Livraison",
+    "pending": "En attente"
+  },
   "profile": {
     "title": "Profil",
     "address": "Adresse",

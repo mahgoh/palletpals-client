@@ -1,7 +1,9 @@
+import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useAuth } from '@/services/auth'
 import API from '@/services/api'
-import Button from '@/components/Button'
+import { parseDateTime, formatPrice } from '@/utils/common'
+import Button, { LinkButton } from '@/components/Button'
 import Debug from '@/components/Debug'
 import Subheading from '@/components/Subheading'
 import Loader from '@/components/Loader'
@@ -10,7 +12,7 @@ import Pagetitle from '@/components/Pagetitle'
 import Spacer from '@/components/Spacer'
 
 export default function Profile() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const auth = useAuth()
 
   const profile = API.User.profile()
@@ -59,23 +61,84 @@ export default function Profile() {
       </div>
     )
   }
+
+  function renderOrders() {
+    if (!orders.data || orders.data?.length === 0) return null
+
+    const latestOrders = orders.data[0]
+
+    const { id, totalCost, dateOrdered, dateDelivered, productItems } =
+      latestOrders
+
+    const numProducts = productItems.length
+
+    return (
+      <>
+        <Subheading title={t('common.order.title', { numOrders: 2 })}>
+          <LinkButton to="/orders">{t('common.order.all')}</LinkButton>
+        </Subheading>
+        <Spacer size="md" />
+        <div>
+          <NavLink to={`/order/${id}`}>
+            <h3 className="mb-2 text-xl font-medium hover:underline focus:underline">
+              {t('common.order.title', { numOrders: 1 })} #{id}
+            </h3>
+          </NavLink>
+          <div className="flex justify-between">
+            <div>
+              <div>
+                {t('common.order.ordered')}:{' '}
+                {parseDateTime(dateOrdered, i18n.language)}
+              </div>
+              {dateDelivered !== null && (
+                <div>
+                  {t('common.order.delivered')}:{' '}
+                  {parseDateTime(dateDelivered, i18n.language)}
+                </div>
+              )}
+              {dateDelivered === null && (
+                <div>
+                  {t('common.order.delivered')}:{' '}
+                  <strong>{t('common.order.pending')}</strong>
+                </div>
+              )}
+              <div>
+                {numProducts} {t('common.product', { numProducts })}
+              </div>
+            </div>
+            <div>
+              <div className="mb-4 text-right text-xl font-bold">
+                {formatPrice(totalCost)}
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    )
+  }
+
   return (
     <>
-      {profile.loading && <Loader />}
-      {!profile.loading && (
-        <Main>
-          <Pagetitle title={t('common.profile.title')} />
-          <Spacer size="lg" />
+      {!profile.loading && !orders.loading && (
+        <Debug data={{ auth, profile, orders }} />
+      )}
+      <Main>
+        <Pagetitle title={t('common.profile.title')}>
+          <LinkButton to="/profile/edit">{t('common.profile.edit')}</LinkButton>
+        </Pagetitle>
+        <Spacer size="lg" />
+        {profile.loading && <Loader />}
+        {!profile.loading && (
           <div className="grid grid-cols-3">
             {renderAddress()}
             {renderEmail()}
           </div>
-          <Spacer size="sm" />
-          {/* TODO: Add edit functionality */}
-          <Button>{t('common.profile.edit')}</Button>
-          <Debug data={{ auth, profile, orders }} />
-        </Main>
-      )}
+        )}
+        <Spacer size="lg" />
+        {orders.loading && <Loader />}
+        {!orders.loading && renderOrders()}
+        <Spacer size="lg" />
+      </Main>
     </>
   )
 }
