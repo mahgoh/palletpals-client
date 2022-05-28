@@ -29,6 +29,7 @@
   "order": {
     "title": "{numOrders, plural, =0 {Orders} =1 {Order} other {Orders}}",
     "id": "Order ID",
+    "last": "Last order",
     "all": "All orders",
     "ordered": "Ordered",
     "delivered": "Delivered",

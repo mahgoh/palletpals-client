@@ -78,7 +78,7 @@ export default function Profile() {
 
     return (
       <>
-        <Subheading title={t('common.order.title', { numOrders: 2 })}>
+        <Subheading title={t('common.order.last')}>
           <LinkButton to="/orders">{t('common.order.all')}</LinkButton>
         </Subheading>
         <Spacer size="md" />
