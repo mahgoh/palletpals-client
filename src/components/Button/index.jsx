@@ -43,7 +43,7 @@ export default function Button({
       className={classNames(
         className,
         colorClasses[color],
-        'rounded-md border border-transparent px-6 py-2 text-base font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 sm:py-3 sm:px-8'
+        'rounded-md border border-transparent px-6 py-2 text-base font-medium ring-offset-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 sm:py-3 sm:px-8'
       )}
       onClick={onClick}
       {...props}
