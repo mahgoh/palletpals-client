@@ -10,14 +10,14 @@ export function FinancialTable({ rows }) {
             key={i}
             className="border-b border-gray-200 last:border-b-0 dark:border-gray-700"
           >
-            <td className="py-4 pl-4 pr-3 sm:pl-6 md:pl-0">
+            <td className="py-4">
               <div className="font-medium text-gray-900 dark:text-gray-100">
                 {row.key}
               </div>
             </td>
             <td
               className={classNames(
-                'py-4 pl-3 pr-4 text-right sm:pr-6 md:pr-0',
+                'py-4 text-right',
                 row.bold
                   ? 'font-semibold text-gray-900 dark:text-gray-100'
                   : 'text-gray-500 dark:text-gray-300'
