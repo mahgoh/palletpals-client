@@ -4,13 +4,13 @@ import { useFormik } from 'formik'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Disclosure, Tab } from '@headlessui/react'
 import { MinusSmIcon, PlusSmIcon } from '@heroicons/react/outline'
-import { classNames } from '@/utils/common'
+import { classNames, formatPrice } from '@/utils/common'
 import { useAuth } from '@/services/auth'
 import { useCart } from '@/services/cart'
 import API from '@/services/api'
 import Button from '@/components/Button'
-import TextField from '@/components/TextField'
 import Table from '@/components/Table'
+import TextField from '@/components/TextField'
 
 export default function ProductDetail({ product }) {
   const { t } = useTranslation()
@@ -131,7 +131,7 @@ export default function ProductDetail({ product }) {
 
         <div className="mt-3">
           <h2 className="sr-only">{t('common.product-information')}</h2>
-          <p className="text-3xl">CHF {price.toFixed(2)}</p>
+          <p className="text-3xl">{formatPrice(price)}</p>
         </div>
 
         <div className="mt-6">

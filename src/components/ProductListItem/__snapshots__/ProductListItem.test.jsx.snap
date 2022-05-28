@@ -16,8 +16,7 @@ exports[`product list item > should render 1`] = `
   <p
     class="mt-1 text-lg font-medium text-gray-900 dark:text-gray-100"
   >
-    CHF 
-    249.00
+    CHF 249.00
   </p>
 </a>
 `;

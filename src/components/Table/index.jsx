@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { classNames } from '@/utils/common'
+import { classNames, formatPrice } from '@/utils/common'
 
 export function FinancialTable({ rows }) {
   return (
@@ -23,7 +23,7 @@ export function FinancialTable({ rows }) {
                   : 'text-gray-500 dark:text-gray-300'
               )}
             >
-              CHF {row.value.toFixed(2)}
+              {formatPrice(row.value)}
             </td>
           </tr>
         ))}

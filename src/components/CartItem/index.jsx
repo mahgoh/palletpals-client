@@ -4,7 +4,7 @@ import { TrashIcon } from '@heroicons/react/outline'
 import { useFormik } from 'formik'
 import API from '@/services/api'
 import { useCart } from '@/services/cart'
-import { productImageURL } from '@/utils/common'
+import { productImageURL, formatPrice } from '@/utils/common'
 import Button from '@/components/Button'
 import TextField from '@/components/TextField'
 
@@ -76,14 +76,14 @@ export default function CartItem({ item }) {
             </h3>
           </NavLink>
           <div>
-            {t('common.price-per-unit')}: CHF {pricePerUnit.toFixed(2)}
+            {t('common.price-per-unit')}: {formatPrice(pricePerUnit)}
           </div>
           <div>
             {t('common.amount')}: {quantity}
           </div>
           <div className="sm:mt-2">
             {t('common.cart.total')}:{' '}
-            <strong>CHF {(pricePerUnit * quantity).toFixed(2)}</strong>
+            <strong>{formatPrice(pricePerUnit * quantity)}</strong>
           </div>
         </div>
       </div>

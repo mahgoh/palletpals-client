@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { productImageURL } from '@/utils/common'
+import { productImageURL, formatPrice } from '@/utils/common'
 
 export default function CartItem({ cartItem }) {
   const { t } = useTranslation()
@@ -31,7 +31,7 @@ export default function CartItem({ cartItem }) {
         </div>
       </div>
       <div className="text-right text-lg font-medium">
-        CHF {(pricePerUnit * quantity).toFixed(2)}
+        {formatPrice(pricePerUnit * quantity)}
       </div>
     </div>
   )

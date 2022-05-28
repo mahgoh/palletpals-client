@@ -18,3 +18,7 @@ export function parseDateTime(dateTimeString, locale = 'en') {
 
   return datetime.toLocaleString(locale, options)
 }
+
+export function formatPrice(price) {
+  return `CHF ${price.toFixed(2)}`
+}

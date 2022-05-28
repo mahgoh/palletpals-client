@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
+import { formatPrice } from '@/utils/common'
 
 export default function ProductListItem({ product }) {
   if (!product) {
@@ -21,7 +22,7 @@ export default function ProductListItem({ product }) {
         {product.name}
       </h3>
       <p className="mt-1 text-lg font-medium text-gray-900 dark:text-gray-100">
-        CHF {product.price.toFixed(2)}
+        {formatPrice(product.price)}
       </p>
     </Link>
   )
