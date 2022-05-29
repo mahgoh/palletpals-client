@@ -41,7 +41,7 @@ export default function OrderItem({ order }) {
           </div>
           <div>
             <div className="font-semibold">
-              {t('common.product', { numProducts: 2 })}
+              {t('common.product.title', { numProducts: 2 })}
             </div>
             <div className="text-gray-500 dark:text-gray-400">
               {numProducts}

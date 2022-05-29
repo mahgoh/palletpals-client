@@ -15,7 +15,7 @@ export default function Products() {
     <>
       <Debug data={{ products, error }} />
       <Main>
-        <Pagetitle title={t('common.product', { numProducts: 2 })} />
+        <Pagetitle title={t('common.product.title', { numProducts: 2 })} />
         <Spacer size="lg" />
         {loading && <Loader />}
         {!loading && <ProductList products={products} />}

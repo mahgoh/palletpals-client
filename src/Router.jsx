@@ -1,26 +1,50 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { RequireAuth } from '@/services/auth'
+import { RequireAuth, RequireAdmin } from '@/services/auth'
 import App from '@/App'
 
 // Routes
+// Public routes
 import Home from '@/pages/Home'
 import Products from '@/pages/Products'
 import Product from '@/pages/Product'
-import Cart from '@/pages/Cart'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
+import NotFound from '@/pages/NotFound'
+
+// Private routes
+import Cart from '@/pages/Cart'
 import Orders from '@/pages/Orders'
 import Order from '@/pages/Order'
 import Profile from '@/pages/Profile'
 import ProfileEdit from '@/pages/ProfileEdit'
-import NotFound from '@/pages/NotFound'
+
+// Admin routes
+import Admin from '@/pages/Admin'
+import AdminProducts from '@/pages/AdminProducts'
+import AdminServiceProviders from '@/pages/AdminServiceProviders'
+import AdminWarehouses from '@/pages/AdminWarehouses'
 
 export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
+          <Route
+            path="admin/"
+            element={
+              <RequireAdmin>
+                <Admin />
+              </RequireAdmin>
+            }
+          >
+            <Route path="products" element={<AdminProducts />} />
+            <Route
+              path="service-providers"
+              element={<AdminServiceProviders />}
+            />
+            <Route path="warehouses" element={<AdminWarehouses />} />
+          </Route>
           <Route path="" element={<Home />} />
           <Route path="products" element={<Products />} />
           <Route path="product/:productId" element={<Product />} />

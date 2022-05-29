@@ -55,7 +55,7 @@ export default function Order() {
           </div>
           <div>
             <div className="font-semibold">
-              {t('common.product', { numProducts: 2 })}
+              {t('common.product.title', { numProducts: 2 })}
             </div>
             <div className="text-gray-500 dark:text-gray-400">
               {numProducts}
@@ -74,10 +74,10 @@ export default function Order() {
     return (
       <>
         <Spacer size="lg" />
-        <Subheading title={t('common.product', { numProducts: 2 })} />
+        <Subheading title={t('common.product.title', { numProducts: 2 })} />
         <Spacer size="md" />
         <div className="mb-6 grid grid-cols-3 border-b border-gray-200 pb-3 text-gray-500 dark:border-gray-700 dark:text-gray-400 sm:grid-cols-5">
-          <div>{t('common.product', { numProducts: 1 })}</div>
+          <div>{t('common.product.title', { numProducts: 1 })}</div>
           <div className="text-right sm:hidden">
             {t('common.price-per-unit')}
           </div>

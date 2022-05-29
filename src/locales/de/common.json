@@ -37,6 +37,9 @@
     "pending": "Ausstehend",
     "none": "Keine Bestellungen vorhanden."
   },
+  "product": {
+    "title": "{numProducts, plural, =0 {Produkte} =1 {Produkt} other {Produkte}}"
+  },
   "profile": {
     "title": "Profil",
     "address": "Adresse",
@@ -50,7 +53,13 @@
     "country": "Land",
     "edit": "Profil bearbeiten"
   },
-  "product": "{numProducts, plural, =0 {Produkte} =1 {Produkt} other {Produkte}}",
+  "service-provider": {
+    "title": "{numServiceProviders, plural, =0 {Dienstleister} =1 {Dienstleister} other {Dienstleister}}"
+  },
+  "warehouse": {
+    "title": "{numWarehouses, plural, =0 {Lagerhäuser} =1 {Lagerhaus} other {Lagerhäuser  }}"
+  },
+  "create": "Erstellen",
   "product-information": "Produktinformationen",
   "amount": "Anzahl",
   "update": "Aktualisieren",

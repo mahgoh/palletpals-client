@@ -76,7 +76,7 @@ export default function Cart() {
       <Pagetitle title={t('common.cart.title')} />
       <Debug data={{ cart }} />
       <Spacer size="lg" />
-      <Subheading title={t('common.product', { numProducts: 2 })} />
+      <Subheading title={t('common.product.title', { numProducts: 2 })} />
       <Spacer size="md" />
       {cart.shoppingCart.length > 0 && (
         <div>
