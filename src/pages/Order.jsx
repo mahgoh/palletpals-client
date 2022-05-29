@@ -9,7 +9,13 @@ import Pagetitle from '@/components/Pagetitle'
 import ProductItem from '@/components/ProductItem'
 import Subheading from '@/components/Subheading'
 import Spacer from '@/components/Spacer'
-import { FinancialTable } from '@/components/Table'
+import {
+  FinancialTable,
+  TableHead,
+  TableBody,
+  TableHeadRow,
+  TableCell,
+} from '@/components/Table'
 
 export default function Order() {
   const { t, i18n } = useTranslation()
@@ -76,19 +82,32 @@ export default function Order() {
         <Spacer size="lg" />
         <Subheading title={t('common.product.title', { numProducts: 2 })} />
         <Spacer size="md" />
-        <div className="mb-6 grid grid-cols-3 border-b border-gray-200 pb-3 text-gray-500 dark:border-gray-700 dark:text-gray-400 sm:grid-cols-5">
-          <div>{t('common.product.title', { numProducts: 1 })}</div>
-          <div className="text-right sm:hidden">
-            {t('common.price-per-unit')}
-          </div>
-          <div className="hidden sm:block">{t('common.pallet-space')}</div>
-          <div className="hidden sm:block">{t('common.amount')}</div>
-          <div className="hidden sm:block">{t('common.price-per-unit')}</div>
-          <div className="text-right">{t('common.price')}</div>
-        </div>
-        {productItems.map((product) => (
-          <ProductItem key={product.id} product={product} />
-        ))}
+        <TableHead>
+          <TableHeadRow className="grid-cols-3 sm:grid-cols-5">
+            <TableCell>
+              {t('common.product.title', { numProducts: 1 })}
+            </TableCell>
+            <TableCell className="text-right sm:hidden">
+              {t('common.price-per-unit')}
+            </TableCell>
+            <TableCell className="hidden sm:block">
+              {t('common.pallet-space')}
+            </TableCell>
+            <TableCell className="hidden sm:block">
+              {t('common.amount')}
+            </TableCell>
+            <TableCell className="hidden sm:block">
+              {t('common.price-per-unit')}
+            </TableCell>
+            <TableCell className="text-right">{t('common.price')}</TableCell>
+          </TableHeadRow>
+        </TableHead>
+
+        <TableBody>
+          {productItems.map((product) => (
+            <ProductItem key={product.id} product={product} />
+          ))}
+        </TableBody>
       </>
     )
   }

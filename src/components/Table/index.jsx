@@ -32,6 +32,64 @@ export function FinancialTable({ rows }) {
   )
 }
 
+export function TableHead({ children, className, ...props }) {
+  return (
+    <div className={className} {...props}>
+      {children}
+    </div>
+  )
+}
+
+export function TableBody({ children, className, ...props }) {
+  return (
+    <div className={className} {...props}>
+      {children}
+    </div>
+  )
+}
+
+export function TableHeadRow({ children, className, ...props }) {
+  return (
+    <div
+      className={classNames(
+        'mb-5 grid border-b border-gray-200 pb-3 text-gray-500 dark:border-gray-700 dark:text-gray-400',
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </div>
+  )
+}
+
+export function TableRow({ children, className, ...props }) {
+  return (
+    <div
+      className={classNames(
+        'mb-5 grid border-b border-gray-200 pb-5 last:mb-0 last:border-0 dark:border-gray-700',
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </div>
+  )
+}
+
+export function TableCell({ children, className, ...props }) {
+  return (
+    <div
+      className={classNames(
+        'inline-flex items-center last:justify-end',
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </div>
+  )
+}
+
 export default function Table({ rows }) {
   if (!rows || rows.length === 0) {
     return null
