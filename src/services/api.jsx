@@ -171,19 +171,19 @@ export const User = {
 
 export const ServiceProvider = {
   all() {
-    return useFetch('/serviceprovider/all')
+    return useFetch('/serviceproviders')
   },
   byId(id) {
-    return useFetch(`/serviceprovider/${id}`)
+    return useFetch(`/serviceproviders/${id}`)
   },
 }
 
 export const Warehouse = {
   all() {
-    return useFetch('/warehouse/all')
+    return useFetch('/warehouses')
   },
   byId(id) {
-    return useFetch(`/warehouse/${id}`)
+    return useFetch(`/warehouses/${id}`)
   },
 }
 
