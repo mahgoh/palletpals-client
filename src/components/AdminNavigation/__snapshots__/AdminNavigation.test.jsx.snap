@@ -1,0 +1,63 @@
+// Vitest Snapshot v1
+
+exports[`admin navigation > should not render with children 1`] = `
+<div>
+  <div
+    class="border-b border-gray-200 p-4 dark:border-gray-700"
+  >
+    <div
+      class="mx-auto flex flex-col items-center px-4 sm:flex-row lg:max-w-6xl lg:px-10"
+    >
+      <a
+        class="mb-2 w-full -translate-x-3 rounded-md py-1 px-3 transition-colors last:mb-0 hover:bg-orange-500/10  hover:text-orange-600 focus:text-orange-600 sm:mr-2 sm:mb-0 sm:w-auto sm:last:mr-0"
+        href="/admin/products"
+      >
+        Products
+      </a>
+      <a
+        class="mb-2 w-full -translate-x-3 rounded-md py-1 px-3 transition-colors last:mb-0 hover:bg-orange-500/10  hover:text-orange-600 focus:text-orange-600 sm:mr-2 sm:mb-0 sm:w-auto sm:last:mr-0"
+        href="/admin/service-providers"
+      >
+        Service Providers
+      </a>
+      <a
+        class="mb-2 w-full -translate-x-3 rounded-md py-1 px-3 transition-colors last:mb-0 hover:bg-orange-500/10  hover:text-orange-600 focus:text-orange-600 sm:mr-2 sm:mb-0 sm:w-auto sm:last:mr-0"
+        href="/admin/warehouses"
+      >
+        Warehouses
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`admin navigation > should render with text content 1`] = `
+<div>
+  <div
+    class="border-b border-gray-200 p-4 dark:border-gray-700"
+  >
+    <div
+      class="mx-auto flex flex-col items-center px-4 sm:flex-row lg:max-w-6xl lg:px-10"
+    >
+      <a
+        class="mb-2 w-full -translate-x-3 rounded-md py-1 px-3 transition-colors last:mb-0 hover:bg-orange-500/10  hover:text-orange-600 focus:text-orange-600 sm:mr-2 sm:mb-0 sm:w-auto sm:last:mr-0"
+        href="/admin/products"
+      >
+        Products
+      </a>
+      <a
+        class="mb-2 w-full -translate-x-3 rounded-md py-1 px-3 transition-colors last:mb-0 hover:bg-orange-500/10  hover:text-orange-600 focus:text-orange-600 sm:mr-2 sm:mb-0 sm:w-auto sm:last:mr-0"
+        href="/admin/service-providers"
+      >
+        Service Providers
+      </a>
+      <a
+        class="mb-2 w-full -translate-x-3 rounded-md py-1 px-3 transition-colors last:mb-0 hover:bg-orange-500/10  hover:text-orange-600 focus:text-orange-600 sm:mr-2 sm:mb-0 sm:w-auto sm:last:mr-0"
+        href="/admin/warehouses"
+      >
+        Warehouses
+      </a>
+    </div>
+  </div>
+</div>
+`;
