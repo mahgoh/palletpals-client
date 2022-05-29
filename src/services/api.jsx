@@ -169,9 +169,29 @@ export const User = {
   },
 }
 
+export const ServiceProvider = {
+  all() {
+    return useFetch('/serviceprovider/all')
+  },
+  byId(id) {
+    return useFetch(`/serviceprovider/${id}`)
+  },
+}
+
+export const Warehouse = {
+  all() {
+    return useFetch('/warehouse/all')
+  },
+  byId(id) {
+    return useFetch(`/warehouse/${id}`)
+  },
+}
+
 export default {
   Cart,
   Order,
   Product,
   User,
+  ServiceProvider,
+  Warehouse,
 }

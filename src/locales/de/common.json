@@ -60,6 +60,8 @@
     "title": "{numWarehouses, plural, =0 {Lagerhäuser} =1 {Lagerhaus} other {Lagerhäuser  }}"
   },
   "create": "Erstellen",
+  "edit": "Bearbeiten",
+  "actions": "Aktionen",
   "product-information": "Produktinformationen",
   "amount": "Anzahl",
   "update": "Aktualisieren",

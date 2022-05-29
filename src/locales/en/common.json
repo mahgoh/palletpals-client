@@ -60,6 +60,8 @@
     "title": "{numWarehouses, plural, =0 {Warehouses} =1 {Warehouse} other {Warehouses}}"
   },
   "create": "Create",
+  "edit": "Edit",
+  "actions": "Actions",
   "product-information": "Product information",
   "amount": "Amount",
   "update": "Update",
