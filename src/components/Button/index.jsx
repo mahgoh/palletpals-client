@@ -26,6 +26,7 @@ export default function Button({
   onClick,
   className,
   color = 'primary',
+  size = 'md',
   ...props
 }) {
   const colorClasses = {
@@ -38,12 +39,18 @@ export default function Button({
       'bg-rose-500/20 focus:bg-rose-500 hover:bg-rose-500 focus:ring-rose-500 text-rose-500 hover:text-white focus:text-white',
   }
 
+  const sizeClasses = {
+    sm: 'px-4 py-2 sm:px-6 text-sm',
+    md: 'px-6 py-2 sm:py-3 sm:px-8',
+  }
+
   return (
     <button
       className={classNames(
         className,
         colorClasses[color],
-        'rounded-md border border-transparent px-6 py-2 text-base font-medium ring-offset-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 sm:py-3 sm:px-8'
+        sizeClasses[size],
+        'rounded-md border border-transparent  text-base font-medium ring-offset-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 '
       )}
       onClick={onClick}
       {...props}
@@ -57,4 +64,5 @@ Button.propTypes = {
   onClick: PropTypes.func,
   className: PropTypes.string,
   color: PropTypes.oneOf(['primary', 'secondary', 'red', 'redOutline']),
+  size: PropTypes.oneOf(['md', 'sm']),
 }
