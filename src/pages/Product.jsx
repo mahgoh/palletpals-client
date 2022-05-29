@@ -17,10 +17,12 @@ export default function Product() {
   }
 
   return (
-    <Main>
+    <>
       <Debug data={{ product, error }} />
-      {loading && <Loader />}
-      {!loading && product && <ProductDetail product={product} />}
-    </Main>
+      <Main>
+        {loading && <Loader />}
+        {!loading && product && <ProductDetail product={product} />}
+      </Main>
+    </>
   )
 }

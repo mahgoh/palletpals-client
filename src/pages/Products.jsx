@@ -12,12 +12,14 @@ export default function Products() {
   const { products, error, loading } = Product.all()
 
   return (
-    <Main>
-      <Pagetitle title={t('common.product', { numProducts: 2 })} />
+    <>
       <Debug data={{ products, error }} />
-      <Spacer size="lg" />
-      {loading && <Loader />}
-      {!loading && <ProductList products={products} />}
-    </Main>
+      <Main>
+        <Pagetitle title={t('common.product', { numProducts: 2 })} />
+        <Spacer size="lg" />
+        {loading && <Loader />}
+        {!loading && <ProductList products={products} />}
+      </Main>
+    </>
   )
 }
