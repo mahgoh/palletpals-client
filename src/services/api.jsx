@@ -118,7 +118,6 @@ export const Order = {
 }
 
 export const User = {
-  // TODO: Implement remember
   login(credentials, callback) {
     Fetch('/user/login', {
       method: 'POST',
