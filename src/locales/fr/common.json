@@ -10,7 +10,8 @@
     "register": "Enregistrer",
     "userName": "Nom",
     "password": "Mot de passe",
-    "email": "Email"
+    "email": "Email",
+    "remember": "Rappelle-toi de moi"
   },
   "cart": {
     "title": "Panier",

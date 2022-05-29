@@ -8,5 +8,6 @@
   "cart-item-removed": "Produit supprimé du panier",
   "cart-item-not-removed": "Impossible de supprimer le produit du panier",
   "cart-item-updated": "Produit mis à jour dans le panier",
-  "cart-item-not-updated": "Impossible de mettre à jour le produit dans le panier"
+  "cart-item-not-updated": "Impossible de mettre à jour le produit dans le panier",
+  "login-failed": "Identifiant et/ou mot de passe incorrect"
 }

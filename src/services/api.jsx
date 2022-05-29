@@ -122,13 +122,14 @@ export const User = {
   login(credentials, callback) {
     Fetch('/user/login', {
       method: 'POST',
-      body: JSON.stringify({
-        ...credentials,
-        remember: false,
-      }),
-    }).then((res) => {
-      callback(res.status === 200)
+      body: JSON.stringify(credentials),
     })
+      .then((res) => {
+        callback(res.status === 200)
+      })
+      .catch(() => {
+        callback(false)
+      })
   },
   logout(callback) {
     Fetch('/user/logout').then(() => {

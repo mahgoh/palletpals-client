@@ -8,5 +8,6 @@
   "cart-item-removed": "Produkt aus dem Warenkorb entfernt",
   "cart-item-not-removed": "Produkt konnte nicht aus dem Warenkorb entfernt werden",
   "cart-item-updated": "Produkt im Warenkorb aktualisiert",
-  "cart-item-not-updated": "Produkt im Warenkorb konnte nicht aktualisiert werden"
+  "cart-item-not-updated": "Produkt im Warenkorb konnte nicht aktualisiert werden",
+  "login-failed": "Email und/oder Passwort nicht korrekt"
 }

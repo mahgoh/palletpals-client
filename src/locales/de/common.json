@@ -10,7 +10,8 @@
     "register": "Registieren",
     "userName": "Name",
     "password": "Passwort",
-    "email": "Email"
+    "email": "Email",
+    "remember": "Angemeldet bleiben"
   },
   "cart": {
     "title": "Warenkorb",
