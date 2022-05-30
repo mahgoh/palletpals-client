@@ -14,7 +14,7 @@ import Table from '@/components/Table'
 import TextField from '@/components/TextField'
 
 export default function ProductDetail({ product }) {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const auth = useAuth()
   const { refreshCart } = useCart()
   const location = useLocation()
@@ -77,6 +77,23 @@ export default function ProductDetail({ product }) {
       value: minPalletSpace,
     },
   ]
+
+  const i18nDescription = () => {
+    if (
+      i18n.language !== 'en' &&
+      product['description_' + i18n.language] !== null
+    )
+      return product['description_' + i18n.language]
+
+    return description
+  }
+
+  const i18nDetails = () => {
+    if (i18n.language !== 'en' && product['details_' + i18n.language] !== null)
+      return product['details_' + i18n.language]
+
+    return details
+  }
 
   return (
     <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
@@ -141,7 +158,7 @@ export default function ProductDetail({ product }) {
           <h3 className="sr-only">{t('common.description')}</h3>
 
           <div className="space-y-6 text-base text-gray-700 dark:text-gray-300">
-            {description}
+            {i18nDescription()}
           </div>
         </div>
 
@@ -206,7 +223,7 @@ export default function ProductDetail({ product }) {
                     as="div"
                     className="pb-6 text-gray-700 dark:text-gray-200"
                   >
-                    <div>{details}</div>
+                    <div>{i18nDetails()}</div>
                     <div className="mt-4 flex space-x-2">
                       <Table rows={detailRows} />
                     </div>
