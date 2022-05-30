@@ -58,6 +58,7 @@
     "title": "{numServiceProviders, plural, =0 {Fournisseurs de services} =1 {Fournisseur de services} other {Fournisseurs de services}}",
     "create": "Créer fournisseur de services",
     "price-plan": "Plan tarifaire",
+    "price-plan-valid": "Plan tarifaire traité et valide.",
     "upload-file": "Choisissez un fichier",
     "or-drag-and-drop": "ou glisser-déposer"
   },

@@ -58,6 +58,7 @@
     "title": "{numServiceProviders, plural, =0 {Dienstleister} =1 {Dienstleister} other {Dienstleister}}",
     "create": "Dienstleister erstellen",
     "price-plan": "Preisplan",
+    "price-plan-valid": "Preisplan verarbeitet und gültig",
     "upload-file": "Datei auswählen",
     "or-drag-and-drop": "oder hierhin ziehen"
   },

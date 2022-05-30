@@ -58,6 +58,7 @@
     "title": "{numServiceProviders, plural, =0 {Service Providers} =1 {Service Provider} other {Service Providers}}",
     "create": "Create service provider",
     "price-plan": "Price plan",
+    "price-plan-valid": "Price plan processed and valid.",
     "upload-file": "Choose a file",
     "or-drag-and-drop": "or drag and drop"
   },

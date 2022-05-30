@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { FormikProvider, useFormik } from 'formik'
+import { useFormik } from 'formik'
 import { DocumentTextIcon, TrashIcon } from '@heroicons/react/outline'
 import API from '@/services/api'
 import { useNotification } from '@/services/notification'
@@ -143,7 +143,10 @@ export default function AdminServiceProviderCreate() {
 
     return (
       <div className="flex space-x-2">
-        <AlertGreen className="grow" message="Price plan is valid" />
+        <AlertGreen
+          className="grow"
+          message={t('common.service-provider.price-plan-valid')}
+        />
         <Button
           color="redOutline"
           className="inline-flex justify-center"
