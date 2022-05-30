@@ -3,7 +3,7 @@
 exports[`admin navigation > should not render with children 1`] = `
 <div>
   <div
-    class="border-b border-gray-200 p-4 dark:border-gray-700"
+    class="border-b border-gray-200 py-4 dark:border-gray-700"
   >
     <div
       class="mx-auto flex flex-col items-center px-4 sm:flex-row lg:max-w-6xl lg:px-10"
@@ -34,7 +34,7 @@ exports[`admin navigation > should not render with children 1`] = `
 exports[`admin navigation > should render with text content 1`] = `
 <div>
   <div
-    class="border-b border-gray-200 p-4 dark:border-gray-700"
+    class="border-b border-gray-200 py-4 dark:border-gray-700"
   >
     <div
       class="mx-auto flex flex-col items-center px-4 sm:flex-row lg:max-w-6xl lg:px-10"
