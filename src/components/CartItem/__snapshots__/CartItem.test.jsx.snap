@@ -72,7 +72,7 @@ exports[`cart item > should render 1`] = `
         />
       </div>
       <button
-        class="bg-orange-500 focus:bg-orange-700 hover:bg-orange-700 focus:ring-orange-500 text-white px-6 py-2 sm:py-3 sm:px-8 rounded-md border border-transparent  text-base font-medium ring-offset-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 "
+        class="bg-orange-500 focus:bg-orange-700 hover:bg-orange-700 focus:ring-orange-500 text-white px-6 py-2 sm:py-3 sm:px-8 items-center rounded-md border border-transparent text-base font-medium ring-offset-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 "
         type="submit"
       >
         Update
@@ -82,7 +82,7 @@ exports[`cart item > should render 1`] = `
       class="flex flex-col justify-end pt-2 sm:pt-0 sm:pl-4"
     >
       <button
-        class="inline-flex justify-center bg-rose-500/20 focus:bg-rose-500 hover:bg-rose-500 focus:ring-rose-500 text-rose-500 hover:text-white focus:text-white px-6 py-2 sm:py-3 sm:px-8 rounded-md border border-transparent  text-base font-medium ring-offset-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 "
+        class="inline-flex justify-center bg-rose-500/20 focus:bg-rose-500 hover:bg-rose-500 focus:ring-rose-500 text-rose-500 hover:text-white focus:text-white px-6 py-2 sm:py-3 sm:px-8 items-center rounded-md border border-transparent text-base font-medium ring-offset-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 "
         title="Remove"
       >
         <svg

@@ -50,7 +50,7 @@ export default function Button({
         className,
         colorClasses[color],
         sizeClasses[size],
-        'rounded-md border border-transparent  text-base font-medium ring-offset-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 '
+        'items-center rounded-md border border-transparent text-base font-medium ring-offset-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 '
       )}
       onClick={onClick}
       {...props}
