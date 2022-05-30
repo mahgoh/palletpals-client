@@ -184,7 +184,7 @@ export default function AdminServiceProviderCreate() {
         </div>
         <Button
           type="submit"
-          disabled={!formik.isValid || !formik.isDirty || !fileIsValid}
+          disabled={!formik.isValid || formik.isDirty || !fileIsValid}
         >
           {t('common.create')}
         </Button>
