@@ -185,6 +185,15 @@ export const ServiceProvider = {
   all() {
     return useFetch('/serviceproviders')
   },
+  async create(payload) {
+    await Fetch('/serviceproviders', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    }).then((res) => {
+      if (res.status !== 201)
+        throw new Error('Could not create service provider')
+    })
+  },
   byId(id) {
     return useFetch(`/serviceproviders/${id}`)
   },

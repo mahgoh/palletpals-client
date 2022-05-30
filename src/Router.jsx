@@ -23,6 +23,7 @@ import ProfileEdit from '@/pages/ProfileEdit'
 import Admin from '@/pages/Admin'
 import AdminProducts from '@/pages/AdminProducts'
 import AdminServiceProviders from '@/pages/AdminServiceProviders'
+import AdminServiceProviderCreate from '@/pages/AdminServiceProviderCreate'
 import AdminWarehouses from '@/pages/AdminWarehouses'
 import AdminWarehouseCreate from '@/pages/AdminWarehouseCreate'
 
@@ -47,6 +48,10 @@ export default function Router() {
             <Route
               path="service-providers"
               element={<AdminServiceProviders />}
+            />
+            <Route
+              path="service-providers/create"
+              element={<AdminServiceProviderCreate />}
             />
             <Route path="warehouses" element={<AdminWarehouses />} />
             <Route

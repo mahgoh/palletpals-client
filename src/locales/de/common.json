@@ -55,7 +55,11 @@
     "edit": "Profil bearbeiten"
   },
   "service-provider": {
-    "title": "{numServiceProviders, plural, =0 {Dienstleister} =1 {Dienstleister} other {Dienstleister}}"
+    "title": "{numServiceProviders, plural, =0 {Dienstleister} =1 {Dienstleister} other {Dienstleister}}",
+    "create": "Dienstleister erstellen",
+    "price-plan": "Preisplan",
+    "upload-file": "Datei auswählen",
+    "or-drag-and-drop": "oder hierhin ziehen"
   },
   "warehouse": {
     "title": "{numWarehouses, plural, =0 {Lagerhäuser} =1 {Lagerhaus} other {Lagerhäuser  }}",

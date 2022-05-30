@@ -55,11 +55,15 @@
     "edit": "Modifier le profil"
   },
   "service-provider": {
-    "title": "{numServiceProviders, plural, =0 {Fournisseurs de services} =1 {Fournisseur de services} other {Fournisseurs de services}}"
+    "title": "{numServiceProviders, plural, =0 {Fournisseurs de services} =1 {Fournisseur de services} other {Fournisseurs de services}}",
+    "create": "Créer fournisseur de services",
+    "price-plan": "Plan tarifaire",
+    "upload-file": "Choisissez un fichier",
+    "or-drag-and-drop": "ou glisser-déposer"
   },
   "warehouse": {
     "title": "{numWarehouses, plural, =0 {Entrepôts} =1 {Entrepôt} other {Entrepôts}}",
-    "create": "Créer"
+    "create": "Créer entrepôt"
   },
   "admin": "Admin",
   "name": "Nom",
