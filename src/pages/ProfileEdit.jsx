@@ -44,6 +44,14 @@ export default function ProfileEdit() {
 
     if (!values.email) {
       errors.email = t('validation.required')
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+    ) {
+      errors.email = t('validation.invalid.email')
+    }
+
+    if (!values.password) {
+      errors.password = t('validation.required')
     }
 
     return errors
@@ -60,6 +68,7 @@ export default function ProfileEdit() {
       postalCode: data?.address?.postalCode,
       country: data?.address?.country,
       email: data?.email,
+      password: '',
     },
     enableReinitialize: true,
     validate,
@@ -77,6 +86,8 @@ export default function ProfileEdit() {
             country: values.country,
           },
           email: values.email,
+          ...(values.password &&
+            values.password !== '' && { password: values.password }),
         })
         showNotification(t('message.profile-updated'))
         navigate('/profile')
@@ -175,7 +186,16 @@ export default function ProfileEdit() {
           }
           {...formik.getFieldProps('email')}
         />
-        <div></div>
+        <TextField
+          type="password"
+          label={t('common.auth.password')}
+          error={
+            formik.touched.password && formik.errors.password
+              ? formik.errors.password
+              : null
+          }
+          {...formik.getFieldProps('password')}
+        />
         <Button type="submit">{t('common.save')}</Button>
       </Form>
     )
