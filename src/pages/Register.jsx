@@ -7,6 +7,7 @@ import Form from '@/components/Form'
 import Main from '@/components/Main'
 import Pagetitle from '@/components/Pagetitle'
 import Spacer from '@/components/Spacer'
+import Subheading from '@/components/Subheading'
 import TextField from '@/components/TextField'
 
 export default function Login() {
@@ -59,7 +60,6 @@ export default function Login() {
     initialValues: {
       firstName: '',
       lastName: '',
-      organisationName: '',
       street: '',
       premise: '',
       city: '',
@@ -76,7 +76,6 @@ export default function Login() {
         address: {
           firstName: values.firstName,
           lastName: values.lastName,
-          organisationName: values.organisationName,
           street: values.street,
           premise: values.premise,
           city: values.city,
@@ -95,7 +94,7 @@ export default function Login() {
   })
 
   return (
-    <Main center>
+    <Main>
       <Pagetitle title={t('common.auth.register')} />
       <Form onSubmit={formik.handleSubmit} width="two-thirds" twoColumns>
         <TextField
@@ -117,15 +116,28 @@ export default function Login() {
           {...formik.getFieldProps('lastName')}
         />
         <TextField
-          label={t('common.profile.organisationName')}
+          label={t('common.auth.email')}
           error={
-            formik.touched.organisationName && formik.errors.organisationName
-              ? formik.errors.organisationName
+            formik.touched.email && formik.errors.email
+              ? formik.errors.email
               : null
           }
-          {...formik.getFieldProps('organisationName')}
+          {...formik.getFieldProps('email')}
         />
-        <div></div>
+        <TextField
+          type="password"
+          label={t('common.auth.password')}
+          error={
+            formik.touched.password && formik.errors.password
+              ? formik.errors.password
+              : null
+          }
+          {...formik.getFieldProps('password')}
+        />
+        <div className="sm:col-span-2">
+          <Spacer size="sm" />
+          <Subheading title={t('common.profile.address')} />
+        </div>
         <TextField
           label={t('common.profile.street')}
           error={
@@ -172,25 +184,9 @@ export default function Login() {
           {...formik.getFieldProps('country')}
         />
         <div></div>
-        <TextField
-          label={t('common.auth.email')}
-          error={
-            formik.touched.email && formik.errors.email
-              ? formik.errors.email
-              : null
-          }
-          {...formik.getFieldProps('email')}
-        />
-        <TextField
-          type="password"
-          label={t('common.auth.password')}
-          error={
-            formik.touched.password && formik.errors.password
-              ? formik.errors.password
-              : null
-          }
-          {...formik.getFieldProps('password')}
-        />
+        <div className="sm:col-span-2">
+          <Spacer size="sm" />
+        </div>
         <TextField
           label={t('common.auth.accessCode')}
           error={
