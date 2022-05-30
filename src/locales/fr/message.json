@@ -3,6 +3,8 @@
   "not-added-to-cart": "Impossible d'ajouter le produit au panier",
   "profile-updated": "Profil mis à jour avec succès",
   "profile-not-updated": "Impossible de mettre à jour le profil",
+  "registered": "Vous êtes inscrit avec succès",
+  "not-registered": "Impossible d'inscrire",
   "order-placed": "Commande passée avec succès",
   "order-not-placed": "Impossible de passer la commande",
   "cart-item-removed": "Produit supprimé du panier",

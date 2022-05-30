@@ -3,6 +3,8 @@
   "not-added-to-cart": "Produkt konnte nicht zum Warenkorb hinzugefügt werden.",
   "profile-updated": "Profil erfolgreich aktualisiert",
   "profile-not-updated": "Profil konnte nicht aktualisiert werden",
+  "registerd": "Registrierung erfolgreich",
+  "not-registerd": "Registrierung fehlgeschlagen",
   "order-placed": "Bestellung erfolgreich abgeschlossen",
   "order-not-placed": "Bestellung konnte nicht abgeschlossen werden",
   "cart-item-removed": "Produkt aus dem Warenkorb entfernt",

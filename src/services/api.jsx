@@ -161,9 +161,13 @@ export const User = {
         ...credentials,
         role: 'USER',
       }),
-    }).then((res) => {
-      callback(res.status === 200)
     })
+      .then((res) => {
+        callback(res.status === 200)
+      })
+      .catch(() => {
+        callback(false)
+      })
   },
   patch(payload) {
     return Fetch('/user/profile', {

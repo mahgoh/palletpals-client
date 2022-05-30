@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { User } from '@/services/api'
 import { useFormik } from 'formik'
+import { User } from '@/services/api'
+import { useNotification } from '@/services/notification'
 import Button, { LinkButton } from '@/components/Button'
 import Form from '@/components/Form'
 import Main from '@/components/Main'
@@ -12,7 +13,8 @@ import TextField from '@/components/TextField'
 
 export default function Login() {
   const { t } = useTranslation()
-  let navigate = useNavigate()
+  const navigate = useNavigate()
+  const { showNotification } = useNotification()
 
   const validate = (values) => {
     const errors = {}
@@ -87,8 +89,13 @@ export default function Login() {
         accessCode: values.accessCode,
       }
 
-      User.register(payload, () => {
-        navigate('/login')
+      User.register(payload, (success) => {
+        if (success) {
+          showNotification(t('message.registered'))
+          navigate('/login')
+        } else {
+          showNotification(t('message.not-registered'))
+        }
       })
     },
   })
