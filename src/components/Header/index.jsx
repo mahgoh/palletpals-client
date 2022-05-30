@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { useAuth } from '@/services/auth'
 import Navigation from '@/components/Navigation'
 import AppearanceSelect from './AppearanceSelect'
 import LanguageSelect from './LanguageSelect'
@@ -8,8 +9,9 @@ import Logout from './Logout'
 
 export default function Header() {
   const { t } = useTranslation()
+  const { authenticated, isAdmin } = useAuth()
 
-  const routes = [
+  let routes = [
     {
       to: '/products',
       label: t('common.product.title', { numProducts: 2 }),
@@ -19,6 +21,13 @@ export default function Header() {
       label: t('common.profile.title'),
     },
   ]
+
+  if (authenticated && isAdmin) {
+    routes.unshift({
+      to: '/admin',
+      label: t('common.admin'),
+    })
+  }
 
   return (
     <header className="sticky top-0 z-20 h-20 border-b border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900">

@@ -15,34 +15,17 @@ export function AuthProvider({ children }) {
   let login = (newUser, callback) => {
     return User.login(newUser, async (_authenticated) => {
       if (_authenticated) {
-        // try until JWT is valid
-        const MAX_ROUNDS = 10
-        let round = 0
-        let success = false
+        try {
+          setAuthenticated(_authenticated)
 
-        while (!success && round < MAX_ROUNDS) {
-          await new Promise((resolve) =>
-            setTimeout(async () => {
-              try {
-                // set/override appearance and language if authenticated
-                const { appearance, language } = await User.settings()
+          const userSettings = await User.settings()
+          const isAdmin = await User.validateAdmin()
+          setIsAdmin(isAdmin)
 
-                setAuthenticated(_authenticated)
-
-                // TODO: replace this with actual admin validation
-                setIsAdmin(true)
-
-                callback(_authenticated, {
-                  appearance: appearance.toLowerCase(),
-                  language,
-                })
-                success = true
-              } catch (e) {
-                round++
-              }
-              resolve()
-            }, 500)
-          )
+          callback(_authenticated, userSettings)
+        } catch (e) {
+          // Should never occur
+          console.error(e)
         }
       } else {
         callback(_authenticated, null)
@@ -53,6 +36,7 @@ export function AuthProvider({ children }) {
   let logout = (callback) => {
     return User.logout(() => {
       setAuthenticated(false)
+      setIsAdmin(false)
       callback()
     })
   }
@@ -64,7 +48,14 @@ export function AuthProvider({ children }) {
     if (cb) cb(authenticated)
   }
 
-  let value = { authenticated, login, logout, validate }
+  let validateAdmin = async (cb) => {
+    const isAdmin = await User.validateAdmin()
+    setIsAdmin(isAdmin)
+
+    if (cb) cb(isAdmin)
+  }
+
+  let value = { authenticated, isAdmin, login, logout, validate, validateAdmin }
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 
@@ -77,10 +68,6 @@ export function RequireAuth({ children }) {
     async function validate() {
       auth.validate((authenticated) => {
         if (!authenticated) {
-          // Redirect them to the /login page, but save the current location they were
-          // trying to go to when they were redirected. This allows us to send them
-          // along to that page after they login, which is a nicer user experience
-          // than dropping them off on the home page.
           navigate('/login', { replace: true, state: { from: location } })
         }
       })
@@ -98,14 +85,9 @@ export function RequireAdmin({ children }) {
 
   useEffect(() => {
     async function validate() {
-      // TODO: Implement actual admin validation
-      auth.validate((authenticated) => {
-        if (!authenticated) {
-          // Redirect them to the /login page, but save the current location they were
-          // trying to go to when they were redirected. This allows us to send them
-          // along to that page after they login, which is a nicer user experience
-          // than dropping them off on the home page.
-          navigate('/login', { replace: true, state: { from: location } })
+      auth.validateAdmin((isAdmin) => {
+        if (!isAdmin) {
+          navigate('/', { replace: true, state: { from: location } })
         }
       })
     }

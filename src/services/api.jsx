@@ -167,6 +167,10 @@ export const User = {
     const res = await Fetch('/user/validate')
     return res.status === 200
   },
+  async validateAdmin() {
+    const res = await Fetch('/user/validateAdmin')
+    return res.status === 200
+  },
 }
 
 export const ServiceProvider = {

@@ -47,17 +47,26 @@ export default function Login() {
     },
     validate,
     onSubmit: (values) => {
+      // Enable loader
       setValidating(true)
-      auth.login(values, async (authenticated, userSettings) => {
-        if (authenticated) {
-          const { appearance, language } = userSettings
-          setValidating(false)
-          setAppearance(appearance)
-          setLanguage(language)
 
+      auth.login(values, async (authenticated, userPreferences) => {
+        if (authenticated) {
+          // Set user preferences
+          const { appearance, language } = userPreferences
+          if (appearance !== null) setAppearance(appearance.toLowerCase())
+          if (language !== null) setLanguage(language)
+
+          // Disable loader
+          setValidating(false)
+
+          // Redirect to previous page
           navigate(from, { replace: true })
         } else {
+          // Disable loader
           setValidating(false)
+
+          // Display error message
           showNotification(t('message.login-failed'))
         }
       })

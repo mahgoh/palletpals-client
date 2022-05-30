@@ -59,6 +59,7 @@
   "warehouse": {
     "title": "{numWarehouses, plural, =0 {Lagerhäuser} =1 {Lagerhaus} other {Lagerhäuser  }}"
   },
+  "admin": "Admin",
   "create": "Erstellen",
   "edit": "Bearbeiten",
   "actions": "Aktionen",
