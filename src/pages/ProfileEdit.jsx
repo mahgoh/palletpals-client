@@ -73,6 +73,7 @@ export default function ProfileEdit() {
     onSubmit: async (values) => {
       try {
         let payload = {
+          userName: values.firstName + ' ' + values.lastName,
           address: {
             firstName: values.firstName,
             lastName: values.lastName,
