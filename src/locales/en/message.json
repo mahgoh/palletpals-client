@@ -12,5 +12,21 @@
   "login-failed": "Email and/or password is incorrect",
   "login-with-new-email": "Please login with your new email",
   "warehouse-created": "Warehouse created successfully",
-  "warehouse-not-created": "Could not create warehouse"
+  "warehouse-not-created": "Could not create warehouse",
+  "warehouse-updated": "Warehouse updated successfully",
+  "warehouse-not-updated": "Could not update warehouse",
+  "warehouse-removed": "Warehouse removed successfully",
+  "warehouse-not-removed": "Could not remove warehouse",
+  "service-provider-created": "Service provider created successfully",
+  "service-provider-not-created": "Could not create service provider",
+  "service-provider-updated": "Service provider updated successfully",
+  "service-provider-not-updated": "Could not update service provider",
+  "service-provider-removed": "Service provider removed successfully",
+  "service-provider-not-removed": "Could not remove service provider",
+  "product-created": "Product created successfully",
+  "product-not-created": "Could not create product",
+  "product-updated": "Product updated successfully",
+  "product-not-updated": "Could not update product",
+  "product-removed": "Product removed successfully",
+  "product-not-removed": "Could not remove product"
 }

@@ -197,6 +197,13 @@ export const Warehouse = {
   byId(id) {
     return useFetch(`/warehouses/${id}`)
   },
+  async remove(warehouseId) {
+    await Fetch(`/warehouses/${warehouseId}`, {
+      method: 'DELETE',
+    }).then((res) => {
+      if (res.status !== 202) throw new Error('Could not delete warehouse')
+    })
+  },
 }
 
 export default {

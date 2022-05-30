@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import API from '@/services/api'
+import { useNotification } from '@/services/notification'
 import { PencilIcon, TrashIcon } from '@heroicons/react/outline'
 import Button, { LinkButton } from '@/components/Button'
 import Debug from '@/components/Debug'
@@ -18,8 +19,29 @@ import {
 
 export default function AdminWarehouses() {
   const { t } = useTranslation()
+  const { showNotification } = useNotification()
 
-  const { data, loading, error } = API.Warehouse.all()
+  let { data, loading, error, load } = API.Warehouse.all()
+
+  async function removeWarehouse(e) {
+    e.preventDefault()
+
+    // currentTarget inseat of target to get button and not svg
+    const id = e.currentTarget.dataset.id
+
+    try {
+      // Remove warehouse
+      await API.Warehouse.remove(id)
+
+      // Show notification
+      showNotification(t('message.warehouse-removed'))
+    } catch (e) {
+      showNotification(t('message.warehouse-not-removed'))
+    }
+
+    // Reload warehouses
+    load()
+  }
 
   function renderWarehouses() {
     if (!data) return null
@@ -59,6 +81,8 @@ export default function AdminWarehouses() {
               color="redOutline"
               className="inline-flex justify-center"
               title={t('common.remove')}
+              data-id={id}
+              onClick={removeWarehouse}
             >
               <TrashIcon className="h-4 w-4 sm:h-5 sm:w-5" />
             </Button>

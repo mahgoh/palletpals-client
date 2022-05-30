@@ -12,5 +12,21 @@
   "login-failed": "Email und/oder Passwort nicht korrekt",
   "login-with-new-email": "Bitte melden Sie sich mit Ihrer neuen Email-Adresse an",
   "warehouse-created": "Lagerhaus erfolgreich erstellt",
-  "warehouse-not-created": "Lagerhaus konnte nicht erstellt werden"
+  "warehouse-not-created": "Lagerhaus konnte nicht erstellt werden",
+  "warehouse-updated": "Lagerhaus erfolgreich aktualisiert",
+  "warehouse-not-updated": "Lagerhaus konnte nicht aktualisiert werden",
+  "warehouse-removed": "Lagerhaus erfolgreich entfernt",
+  "warehouse-not-removed": "Lagerhaus konnte nicht entfernt werden",
+  "service-provider-created": "Dienstleister erfolgreich erstellt",
+  "service-provider-not-created": "Dienstleister konnte nicht erstellt werden",
+  "service-provider-updated": "Dienstleister erfolgreich aktualisiert",
+  "service-provider-not-updated": "Dienstleister konnte nicht aktualisiert werden",
+  "service-provider-removed": "Dienstleister erfolgreich entfernt",
+  "service-provider-not-removed": "Dienstleister konnte nicht entfernt werden",
+  "product-created": "Produkt erfolgreich erstellt",
+  "product-not-created": "Produkt konnte nicht erstellt werden",
+  "product-updated": "Produkt erfolgreich aktualisiert",
+  "product-not-updated": "Produkt konnte nicht aktualisiert werden",
+  "product-removed": "Produkt erfolgreich entfernt",
+  "product-not-removed": "Produkt konnte nicht entfernt werden"
 }

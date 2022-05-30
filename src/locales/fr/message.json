@@ -12,5 +12,21 @@
   "login-failed": "Identifiant et/ou mot de passe incorrect",
   "login-with-new-email": "Veuillez vous connecter avec votre nouvelle adresse email.",
   "warehouse-created": "Entrepôt créé avec succès",
-  "warehouse-not-created": "Impossible de créer l'entrepôt"
+  "warehouse-not-created": "Impossible de créer l'entrepôt",
+  "warehouse-updated": "Entrepôt mis à jour avec succès",
+  "warehouse-not-updated": "Impossible de mettre à jour l'entrepôt",
+  "warehouse-removed": "Entrepôt supprimé avec succès",
+  "warehouse-not-removed": "Impossible de supprimer l'entrepôt",
+  "service-provider-created": "Fournisseur de service créé avec succès",
+  "service-provider-not-created": "Impossible de créer le fournisseur de service",
+  "service-provider-updated": "Fournisseur de service mis à jour avec succès",
+  "service-provider-not-updated": "Impossible de mettre à jour le fournisseur de service",
+  "service-provider-removed": "Fournisseur de service supprimé avec succès",
+  "service-provider-not-removed": "Impossible de supprimer le fournisseur de service",
+  "product-created": "Produit créé avec succès",
+  "product-not-created": "Impossible de créer le produit",
+  "product-updated": "Produit mis à jour avec succès",
+  "product-not-updated": "Impossible de mettre à jour le produit",
+  "product-removed": "Produit supprimé avec succès",
+  "product-not-removed": "Impossible de supprimer le produit"
 }
