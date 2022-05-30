@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import API from '@/services/api'
+import { useNotification } from '@/services/notification'
 import { PencilIcon, TrashIcon } from '@heroicons/react/outline'
 import Button, { LinkButton } from '@/components/Button'
 import Debug from '@/components/Debug'
@@ -18,8 +19,29 @@ import {
 
 export default function AdminProducts() {
   const { t } = useTranslation()
+  const { showNotification } = useNotification()
 
-  const { products, loading, error } = API.Product.all()
+  const { products, loading, error, load } = API.Product.all()
+
+  async function removeProduct(e) {
+    e.preventDefault()
+
+    // currentTarget inseat of target to get button and not svg
+    const id = e.currentTarget.dataset.id
+
+    try {
+      // Remove product
+      await API.Product.remove(id)
+
+      // Show notification
+      showNotification(t('message.product-removed'))
+    } catch (e) {
+      showNotification(t('message.product-not-removed'))
+    }
+
+    // Reload products
+    load()
+  }
 
   function renderProducts() {
     if (!products) return null
@@ -57,6 +79,8 @@ export default function AdminProducts() {
               color="redOutline"
               className="inline-flex justify-center"
               title={t('common.remove')}
+              data-id={id}
+              onClick={removeProduct}
             >
               <TrashIcon className="h-4 w-4 sm:h-5 sm:w-5" />
             </Button>

@@ -6,7 +6,7 @@ export const Product = {
   all() {
     let [products, setProducts] = useState([])
 
-    let { data, error, loading } = useFetch('/products')
+    let { data, error, loading, load } = useFetch('/products')
 
     useEffect(() => {
       if (data) {
@@ -30,6 +30,7 @@ export const Product = {
       products,
       error,
       loading,
+      load,
     }
   },
   byId(id) {
@@ -56,6 +57,13 @@ export const Product = {
       error,
       loading,
     }
+  },
+  async remove(productId) {
+    await Fetch(`/products/${productId}`, {
+      method: 'DELETE',
+    }).then((res) => {
+      if (res.status !== 202) throw new Error('Could not delete product')
+    })
   },
 }
 
