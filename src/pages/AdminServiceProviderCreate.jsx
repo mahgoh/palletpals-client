@@ -128,7 +128,7 @@ export default function AdminServiceProviderCreate() {
                 }}
               />
             </label>
-            <p className="pl-1">
+            <p className="hidden pl-1 sm:block">
               {t('common.service-provider.or-drag-and-drop')}
             </p>
           </div>
