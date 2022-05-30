@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom'
 import { RequireAuth, RequireAdmin } from '@/services/auth'
 import App from '@/App'
 
@@ -38,6 +38,10 @@ export default function Router() {
               </RequireAdmin>
             }
           >
+            <Route
+              path=""
+              element={<Navigate to="products" replace={true} />}
+            />
             <Route path="products" element={<AdminProducts />} />
             <Route
               path="service-providers"
