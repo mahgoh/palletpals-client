@@ -164,15 +164,6 @@ export default function Login() {
           {...formik.getFieldProps('premise')}
         />
         <TextField
-          label={t('common.profile.city')}
-          error={
-            formik.touched.city && formik.errors.city
-              ? formik.errors.city
-              : null
-          }
-          {...formik.getFieldProps('city')}
-        />
-        <TextField
           label={t('common.profile.postalCode')}
           error={
             formik.touched.postalCode && formik.errors.postalCode
@@ -180,6 +171,15 @@ export default function Login() {
               : null
           }
           {...formik.getFieldProps('postalCode')}
+        />
+        <TextField
+          label={t('common.profile.city')}
+          error={
+            formik.touched.city && formik.errors.city
+              ? formik.errors.city
+              : null
+          }
+          {...formik.getFieldProps('city')}
         />
         <TextField
           label={t('common.profile.country')}

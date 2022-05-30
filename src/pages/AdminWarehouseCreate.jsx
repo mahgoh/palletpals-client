@@ -118,15 +118,6 @@ export default function AdminWarehouseCreate() {
           />
         </div>
         <TextField
-          label={t('common.profile.city')}
-          error={
-            formik.touched.city && formik.errors.city
-              ? formik.errors.city
-              : null
-          }
-          {...formik.getFieldProps('city')}
-        />
-        <TextField
           label={t('common.profile.postalCode')}
           error={
             formik.touched.postalCode && formik.errors.postalCode
@@ -134,6 +125,15 @@ export default function AdminWarehouseCreate() {
               : null
           }
           {...formik.getFieldProps('postalCode')}
+        />
+        <TextField
+          label={t('common.profile.city')}
+          error={
+            formik.touched.city && formik.errors.city
+              ? formik.errors.city
+              : null
+          }
+          {...formik.getFieldProps('city')}
         />
         <div className="sm:col-span-2">
           <TextField
