@@ -109,12 +109,12 @@ export default function Login() {
         </div>
         <Spacer />
         <div className="flex space-x-2">
-          <LinkButton to="/register" color="secondary" className="flex-1">
-            {t('common.auth.register')}
-          </LinkButton>
           <Button type="submit" className="flex-1">
             {t('common.auth.login')}
           </Button>
+          <LinkButton to="/register" color="secondary" className="flex-1">
+            {t('common.auth.register')}
+          </LinkButton>
         </div>
       </Form>
     </Main>

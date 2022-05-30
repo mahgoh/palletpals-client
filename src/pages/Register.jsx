@@ -87,10 +87,10 @@ export default function Login() {
         <Spacer />
 
         <div className="flex space-x-2">
+          <Button type="submit">{t('common.auth.register')}</Button>
           <LinkButton to="/login" color="secondary">
             {t('common.auth.login')}
           </LinkButton>
-          <Button type="submit">{t('common.auth.register')}</Button>
         </div>
       </Form>
     </Main>
