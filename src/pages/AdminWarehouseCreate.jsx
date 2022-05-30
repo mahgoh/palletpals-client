@@ -146,7 +146,9 @@ export default function AdminWarehouseCreate() {
             {...formik.getFieldProps('country')}
           />
         </div>
-        <Button type="submit">{t('common.create')}</Button>
+        <Button type="submit" disabled={!formik.isValid || !formik.isDirty}>
+          {t('common.create')}
+        </Button>
       </Form>
     )
   }

@@ -198,7 +198,9 @@ export default function Login() {
         />
         <div></div>
         <div className="flex space-x-2">
-          <Button type="submit">{t('common.auth.register')}</Button>
+          <Button type="submit" disabled={!formik.isValid || !formik.isDirty}>
+            {t('common.auth.register')}
+          </Button>
           <LinkButton to="/login" color="secondary">
             {t('common.auth.login')}
           </LinkButton>

@@ -200,7 +200,9 @@ export default function ProfileEdit() {
         />
         <div></div>
 
-        <Button type="submit">{t('common.save')}</Button>
+        <Button type="submit" disabled={!formik.isValid}>
+          {t('common.save')}
+        </Button>
       </Form>
     )
   }
