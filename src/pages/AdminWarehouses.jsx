@@ -70,7 +70,7 @@ export default function AdminWarehouses() {
           <TableCell className="space-x-2">
             <LinkButton
               size="sm"
-              to={`/admin/warehouses/${id}/edit`}
+              to={`/admin/warehouses/edit/${id}`}
               className="inline-flex justify-center"
               title={t('common.edit')}
             >

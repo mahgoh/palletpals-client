@@ -70,7 +70,7 @@ export default function AdminServiceProviders() {
           <TableCell className="space-x-2">
             <LinkButton
               size="sm"
-              to={`/admin/service-providers/${id}/edit`}
+              to={`/admin/service-providers/edit/${id}`}
               className="inline-flex justify-center"
               title={t('common.edit')}
             >

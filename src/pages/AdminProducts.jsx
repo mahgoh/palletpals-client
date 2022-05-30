@@ -68,7 +68,7 @@ export default function AdminProducts() {
           <TableCell className="space-x-2">
             <LinkButton
               size="sm"
-              to={`/admin/products/${id}/edit`}
+              to={`/admin/products/edit/${id}`}
               className="inline-flex justify-center"
               title={t('common.edit')}
             >
