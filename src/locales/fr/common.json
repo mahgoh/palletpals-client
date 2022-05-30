@@ -11,7 +11,8 @@
     "userName": "Nom",
     "password": "Mot de passe",
     "email": "Email",
-    "remember": "Rappelle-toi de moi"
+    "remember": "Rappelle-toi de moi",
+    "accessCode": "Code d'accès"
   },
   "cart": {
     "title": "Panier",

@@ -11,7 +11,8 @@
     "userName": "Name",
     "password": "Password",
     "email": "Email",
-    "remember": "Remember me"
+    "remember": "Remember me",
+    "accessCode": "Access Code"
   },
   "cart": {
     "title": "Cart",

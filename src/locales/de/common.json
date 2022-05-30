@@ -11,7 +11,8 @@
     "userName": "Name",
     "password": "Passwort",
     "email": "Email",
-    "remember": "Angemeldet bleiben"
+    "remember": "Angemeldet bleiben",
+    "accessCode": "Zugangscode"
   },
   "cart": {
     "title": "Warenkorb",

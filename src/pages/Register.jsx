@@ -16,8 +16,28 @@ export default function Login() {
   const validate = (values) => {
     const errors = {}
 
-    if (!values.userName) {
-      errors.userName = t('validation.required')
+    if (!values.firstName) {
+      errors.firstName = t('validation.required')
+    }
+
+    if (!values.lastName) {
+      errors.lastName = t('validation.required')
+    }
+
+    if (!values.street) {
+      errors.street = t('validation.required')
+    }
+
+    if (!values.city) {
+      errors.city = t('validation.required')
+    }
+
+    if (!values.postalCode) {
+      errors.postalCode = t('validation.required')
+    }
+
+    if (!values.country) {
+      errors.country = t('validation.required')
     }
 
     if (!values.email) {
@@ -37,15 +57,39 @@ export default function Login() {
 
   const formik = useFormik({
     initialValues: {
-      userName: '',
+      firstName: '',
+      lastName: '',
+      organisationName: '',
+      street: '',
+      premise: '',
+      city: '',
+      postalCode: '',
+      country: '',
       email: '',
       password: '',
+      accessCode: '',
     },
     validate,
     onSubmit: (values) => {
-      User.register(values, () => {
+      const payload = {
+        userName: values.firstName + ' ' + values.lastName,
+        address: {
+          firstName: values.firstName,
+          lastName: values.lastName,
+          organisationName: values.organisationName,
+          street: values.street,
+          premise: values.premise,
+          city: values.city,
+          postalCode: values.postalCode,
+          country: values.country,
+        },
+        email: values.email,
+        password: values.password,
+        accessCode: values.accessCode,
+      }
+
+      User.register(payload, () => {
         navigate('/login')
-        // navigate(from, { replace: true })
       })
     },
   })
@@ -53,17 +97,81 @@ export default function Login() {
   return (
     <Main center>
       <Pagetitle title={t('common.auth.register')} />
-      <Form onSubmit={formik.handleSubmit} width="xs">
+      <Form onSubmit={formik.handleSubmit} width="two-thirds" twoColumns>
         <TextField
-          label={t('common.auth.userName')}
+          label={t('common.profile.firstName')}
           error={
-            formik.touched.userName && formik.errors.userName
-              ? formik.errors.userName
+            formik.touched.firstName && formik.errors.firstName
+              ? formik.errors.firstName
               : null
           }
-          {...formik.getFieldProps('userName')}
+          {...formik.getFieldProps('firstName')}
         />
-        <Spacer />
+        <TextField
+          label={t('common.profile.lastName')}
+          error={
+            formik.touched.lastName && formik.errors.lastName
+              ? formik.errors.lastName
+              : null
+          }
+          {...formik.getFieldProps('lastName')}
+        />
+        <TextField
+          label={t('common.profile.organisationName')}
+          error={
+            formik.touched.organisationName && formik.errors.organisationName
+              ? formik.errors.organisationName
+              : null
+          }
+          {...formik.getFieldProps('organisationName')}
+        />
+        <div></div>
+        <TextField
+          label={t('common.profile.street')}
+          error={
+            formik.touched.street && formik.errors.street
+              ? formik.errors.street
+              : null
+          }
+          {...formik.getFieldProps('street')}
+        />
+        <TextField
+          label={t('common.profile.premise')}
+          error={
+            formik.touched.premise && formik.errors.premise
+              ? formik.errors.premise
+              : null
+          }
+          {...formik.getFieldProps('premise')}
+        />
+        <TextField
+          label={t('common.profile.city')}
+          error={
+            formik.touched.city && formik.errors.city
+              ? formik.errors.city
+              : null
+          }
+          {...formik.getFieldProps('city')}
+        />
+        <TextField
+          label={t('common.profile.postalCode')}
+          error={
+            formik.touched.postalCode && formik.errors.postalCode
+              ? formik.errors.postalCode
+              : null
+          }
+          {...formik.getFieldProps('postalCode')}
+        />
+        <TextField
+          label={t('common.profile.country')}
+          error={
+            formik.touched.country && formik.errors.country
+              ? formik.errors.country
+              : null
+          }
+          {...formik.getFieldProps('country')}
+        />
+        <div></div>
         <TextField
           label={t('common.auth.email')}
           error={
@@ -73,7 +181,6 @@ export default function Login() {
           }
           {...formik.getFieldProps('email')}
         />
-        <Spacer />
         <TextField
           type="password"
           label={t('common.auth.password')}
@@ -84,8 +191,16 @@ export default function Login() {
           }
           {...formik.getFieldProps('password')}
         />
-        <Spacer />
-
+        <TextField
+          label={t('common.auth.accessCode')}
+          error={
+            formik.touched.accessCode && formik.errors.accessCode
+              ? formik.errors.accessCode
+              : null
+          }
+          {...formik.getFieldProps('accessCode')}
+        />
+        <div></div>
         <div className="flex space-x-2">
           <Button type="submit">{t('common.auth.register')}</Button>
           <LinkButton to="/login" color="secondary">
