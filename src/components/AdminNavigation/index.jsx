@@ -41,7 +41,7 @@ export default function AdminNavigation() {
   }
 
   return (
-    <div className="border-b border-gray-200 p-4 dark:border-gray-700">
+    <div className="border-b border-gray-200 py-4 dark:border-gray-700">
       <div className="mx-auto flex flex-col items-center px-4 sm:flex-row lg:max-w-6xl lg:px-10">
         {renderNavLinks()}
       </div>
