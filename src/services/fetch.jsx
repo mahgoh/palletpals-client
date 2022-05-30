@@ -8,6 +8,10 @@ export function useFetch(path, options) {
   let [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    load()
+  }, [path, options])
+
+  function load() {
     setLoading(true)
 
     Fetch(path, options)
@@ -27,13 +31,14 @@ export function useFetch(path, options) {
           setLoading(false)
         }
       )
-  }, [path, options])
+  }
 
   return {
     data,
     status,
     error,
     loading,
+    load,
   }
 }
 
