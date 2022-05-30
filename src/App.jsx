@@ -11,10 +11,11 @@ import {
 import Header from '@/components/Header'
 
 function App() {
-  const { validate } = useAuth()
+  const { validate, validateAdmin } = useAuth()
 
   useEffect(() => {
     validate()
+    validateAdmin()
   }, [])
 
   return (
