@@ -9,5 +9,6 @@
   "cart-item-not-removed": "Produkt konnte nicht aus dem Warenkorb entfernt werden",
   "cart-item-updated": "Produkt im Warenkorb aktualisiert",
   "cart-item-not-updated": "Produkt im Warenkorb konnte nicht aktualisiert werden",
-  "login-failed": "Email und/oder Passwort nicht korrekt"
+  "login-failed": "Email und/oder Passwort nicht korrekt",
+  "login-with-new-email": "Bitte melden Sie sich mit Ihrer neuen Email-Adresse an"
 }

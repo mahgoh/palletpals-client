@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useFormik } from 'formik'
 import API from '@/services/api'
+import { useAuth } from '@/services/auth'
 import { useNotification } from '@/services/notification'
 import Button from '@/components/Button'
 import Form from '@/components/Form'
@@ -12,6 +13,7 @@ import TextField from '@/components/TextField'
 export default function ProfileEdit() {
   const { t } = useTranslation()
   const navigate = useNavigate()
+  const auth = useAuth()
   const { showNotification } = useNotification()
 
   const { loading, error, data = {} } = API.User.profile()
@@ -50,10 +52,6 @@ export default function ProfileEdit() {
       errors.email = t('validation.invalid.email')
     }
 
-    if (!values.password) {
-      errors.password = t('validation.required')
-    }
-
     return errors
   }
 
@@ -74,7 +72,7 @@ export default function ProfileEdit() {
     validate,
     onSubmit: async (values) => {
       try {
-        await API.User.patch({
+        let payload = {
           address: {
             firstName: values.firstName,
             lastName: values.lastName,
@@ -86,11 +84,21 @@ export default function ProfileEdit() {
             country: values.country,
           },
           email: values.email,
-          ...(values.password &&
-            values.password !== '' && { password: values.password }),
-        })
+        }
+
+        if (values.password !== '')
+          payload = { ...payload, password: values.password }
+
+        await API.User.patch(payload)
         showNotification(t('message.profile-updated'))
-        navigate('/profile')
+
+        // email change requires to re-login
+        if (values.email !== data?.email) {
+          showNotification(t('message.login-with-new-email'))
+          auth.logout(() => navigate('/login'))
+        } else {
+          navigate('/profile')
+        }
       } catch (e) {
         showNotification(t('message.profile-not-updated'))
         console.error(e)
