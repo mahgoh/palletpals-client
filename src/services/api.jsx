@@ -188,6 +188,14 @@ export const ServiceProvider = {
   byId(id) {
     return useFetch(`/serviceproviders/${id}`)
   },
+  async remove(serviceProviderId) {
+    await Fetch(`/serviceproviders/${serviceProviderId}`, {
+      method: 'DELETE',
+    }).then((res) => {
+      if (res.status !== 202)
+        throw new Error('Could not delete service provider')
+    })
+  },
 }
 
 export const Warehouse = {

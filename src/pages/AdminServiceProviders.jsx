@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import API from '@/services/api'
+import { useNotification } from '@/services/notification'
 import { PencilIcon, TrashIcon } from '@heroicons/react/outline'
 import Button, { LinkButton } from '@/components/Button'
 import Debug from '@/components/Debug'
@@ -18,8 +19,29 @@ import {
 
 export default function AdminServiceProviders() {
   const { t } = useTranslation()
+  const { showNotification } = useNotification()
 
-  const { data, loading, error } = API.ServiceProvider.all()
+  const { data, loading, error, load } = API.ServiceProvider.all()
+
+  async function removeServiceProvider(e) {
+    e.preventDefault()
+
+    // currentTarget inseat of target to get button and not svg
+    const id = e.currentTarget.dataset.id
+
+    try {
+      // Remove service provider
+      await API.ServiceProvider.remove(id)
+
+      // Show notification
+      showNotification(t('message.service-provider-removed'))
+    } catch (e) {
+      showNotification(t('message.service-provider-not-removed'))
+    }
+
+    // Reload service providers
+    load()
+  }
 
   function renderServiceProviders() {
     if (!data) return null
@@ -59,6 +81,8 @@ export default function AdminServiceProviders() {
               color="redOutline"
               className="inline-flex justify-center"
               title={t('common.remove')}
+              data-id={id}
+              onClick={removeServiceProvider}
             >
               <TrashIcon className="h-4 w-4 sm:h-5 sm:w-5" />
             </Button>
