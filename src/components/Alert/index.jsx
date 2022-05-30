@@ -6,7 +6,7 @@ export function AlertGreen({ message, className }) {
   if (!message) return null
 
   return (
-    <div className={classNames('rounded-md bg-green-50 p-4', className)}>
+    <div className={classNames('rounded-md bg-green-500/10 p-4', className)}>
       <div className="flex items-center">
         <div className="flex-shrink-0">
           <CheckCircleIcon
@@ -15,7 +15,9 @@ export function AlertGreen({ message, className }) {
           />
         </div>
         <div className="ml-3">
-          <p className="font-medium text-green-800">{message}</p>
+          <p className="font-medium text-green-800 dark:text-green-400">
+            {message}
+          </p>
         </div>
       </div>
     </div>
