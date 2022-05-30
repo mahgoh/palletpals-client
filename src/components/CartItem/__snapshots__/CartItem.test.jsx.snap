@@ -1,0 +1,107 @@
+// Vitest Snapshot v1
+
+exports[`cart item > should render 1`] = `
+<div>
+  <div
+    class="mb-4 flex flex-col last:mb-0 sm:flex-row"
+  >
+    <div
+      class="flex grow"
+    >
+      <div
+        class="h-32 w-32 overflow-hidden bg-gray-100 dark:bg-gray-800"
+      >
+        <a
+          class=""
+          href="/product/4"
+        >
+          <img
+            alt="Product A"
+            class="h-32 w-32 object-cover"
+            src="/api/product-images/2"
+          />
+        </a>
+      </div>
+      <div
+        class="flex flex-col py-2 px-6"
+      >
+        <a
+          class=""
+          href="/product/4"
+        >
+          <h3
+            class="mb-2 text-lg font-bold hover:underline focus:underline"
+          >
+            Product A
+          </h3>
+        </a>
+        <div>
+          Price per unit
+          : 
+          CHF 16.70
+        </div>
+        <div>
+          Amount
+          : 
+          2
+        </div>
+        <div
+          class="sm:mt-2"
+        >
+          Total
+          :
+           
+          <strong>
+            CHF 33.40
+          </strong>
+        </div>
+      </div>
+    </div>
+    <form
+      class="mt-4 flex space-x-2 sm:mt-0 sm:flex-col sm:justify-end sm:space-x-0 sm:space-y-2"
+    >
+      <div>
+        <input
+          class="w-auto grow text-center sm:grow-0 block w-full rounded-md border-gray-300 py-3 shadow-sm focus:border-orange-500 focus:ring-orange-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-orange-500"
+          id="amount"
+          min="1"
+          name="amount"
+          placeholder="Amount"
+          type="number"
+          value="2"
+        />
+      </div>
+      <button
+        class="bg-orange-500 focus:bg-orange-700 hover:bg-orange-700 focus:ring-orange-500 text-white px-6 py-2 sm:py-3 sm:px-8 rounded-md border border-transparent  text-base font-medium ring-offset-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 "
+        type="submit"
+      >
+        Update
+      </button>
+    </form>
+    <div
+      class="flex flex-col justify-end pt-2 sm:pt-0 sm:pl-4"
+    >
+      <button
+        class="inline-flex justify-center bg-rose-500/20 focus:bg-rose-500 hover:bg-rose-500 focus:ring-rose-500 text-rose-500 hover:text-white focus:text-white px-6 py-2 sm:py-3 sm:px-8 rounded-md border border-transparent  text-base font-medium ring-offset-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 "
+        title="Remove"
+      >
+        <svg
+          aria-hidden="true"
+          class="h-6 w-6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
