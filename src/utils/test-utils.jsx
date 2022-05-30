@@ -6,8 +6,9 @@ import i18n from '../i18n'
 
 import { AuthProvider } from '@/services/auth'
 import { AppearanceProvider } from '@/services/appearance'
-import { LanguageProvider } from '@/services/language'
 import { CartProvider } from '@/services/cart'
+import { LanguageProvider } from '@/services/language'
+import { NotificationProvider } from '@/services/notification'
 
 /**
  * Render component with router wrapper and option for specifying the current route.
@@ -51,7 +52,9 @@ const renderComplete = (component, options) => {
       <AuthProvider>
         <AppearanceProvider>
           <LanguageProvider>
-            <CartProvider>{component}</CartProvider>
+            <CartProvider>
+              <NotificationProvider>{component}</NotificationProvider>
+            </CartProvider>
           </LanguageProvider>
         </AppearanceProvider>
       </AuthProvider>,

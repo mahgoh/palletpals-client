@@ -55,25 +55,26 @@ export function NotificationProvider({ children }) {
     }, 4000)
   }
 
-  let value = { showNotification }
-
-  function renderNotification() {
-    return (
-      <div
-        className={classNames(
-          'fixed top-20 left-0 right-9 z-10 inline-flex h-10 w-full items-center justify-center bg-orange-500/10 font-semibold text-orange-600 transition-all ease-in-out',
-          visible ? 'h-12' : 'h-0 opacity-0'
-        )}
-      >
-        {text}
-      </div>
-    )
-  }
+  let value = { showNotification, text, visible }
 
   return (
     <NotificationContext.Provider value={value}>
-      {renderNotification()}
       {children}
     </NotificationContext.Provider>
+  )
+}
+
+export function NotificationOutlet() {
+  const { text, visible } = useNotification()
+
+  return (
+    <div
+      className={classNames(
+        'fixed top-20 left-0 right-9 z-10 inline-flex h-10 w-full items-center justify-center bg-orange-500/10 font-semibold text-orange-600 transition-all ease-in-out',
+        visible ? 'h-12' : 'h-0 opacity-0'
+      )}
+    >
+      {text}
+    </div>
   )
 }
