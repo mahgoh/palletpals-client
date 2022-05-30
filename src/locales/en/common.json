@@ -39,7 +39,9 @@
     "none": "No orders yet."
   },
   "product": {
-    "title": "{numProducts, plural, =0 {Products} =1 {Product} other {Products}}"
+    "title": "{numProducts, plural, =0 {Products} =1 {Product} other {Products}}",
+    "create": "Create product",
+    "edit": "Edit product"
   },
   "profile": {
     "title": "Profile",
@@ -57,6 +59,7 @@
   "service-provider": {
     "title": "{numServiceProviders, plural, =0 {Service Providers} =1 {Service Provider} other {Service Providers}}",
     "create": "Create service provider",
+    "edit": "Edit service provider",
     "price-plan": "Price plan",
     "price-plan-valid": "Price plan processed and valid.",
     "upload-file": "Choose a file",
@@ -64,7 +67,8 @@
   },
   "warehouse": {
     "title": "{numWarehouses, plural, =0 {Warehouses} =1 {Warehouse} other {Warehouses}}",
-    "create": "Create warehouse"
+    "create": "Create warehouse",
+    "edit": "Edit warehouse"
   },
   "admin": "Admin",
   "name": "Name",

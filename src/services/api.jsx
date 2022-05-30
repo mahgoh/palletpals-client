@@ -58,6 +58,14 @@ export const Product = {
       loading,
     }
   },
+  patch(productId, payload) {
+    return Fetch(`/products/${productId}`, {
+      method: 'PATCH',
+      body: JSON.stringify(payload),
+    }).then((res) => {
+      if (res.status !== 202) throw new Error('Could not patch product')
+    })
+  },
   async remove(productId) {
     await Fetch(`/products/${productId}`, {
       method: 'DELETE',
@@ -201,6 +209,15 @@ export const ServiceProvider = {
   byId(id) {
     return useFetch(`/serviceproviders/${id}`)
   },
+  patch(serviceProviderId, payload) {
+    return Fetch(`/serviceproviders/${serviceProviderId}`, {
+      method: 'PATCH',
+      body: JSON.stringify(payload),
+    }).then((res) => {
+      if (res.status !== 202)
+        throw new Error('Could not patch service provider')
+    })
+  },
   async remove(serviceProviderId) {
     await Fetch(`/serviceproviders/${serviceProviderId}`, {
       method: 'DELETE',
@@ -225,6 +242,14 @@ export const Warehouse = {
   },
   byId(id) {
     return useFetch(`/warehouses/${id}`)
+  },
+  patch(warehouseId, payload) {
+    return Fetch(`/warehouses/${warehouseId}`, {
+      method: 'PATCH',
+      body: JSON.stringify(payload),
+    }).then((res) => {
+      if (res.status !== 202) throw new Error('Could not patch warehouse')
+    })
   },
   async remove(warehouseId) {
     await Fetch(`/warehouses/${warehouseId}`, {

@@ -39,7 +39,9 @@
     "none": "Keine Bestellungen vorhanden."
   },
   "product": {
-    "title": "{numProducts, plural, =0 {Produkte} =1 {Produkt} other {Produkte}}"
+    "title": "{numProducts, plural, =0 {Produkte} =1 {Produkt} other {Produkte}}",
+    "create": "Produkt erstellen",
+    "edit": "Produkt bearbeiten"
   },
   "profile": {
     "title": "Profil",
@@ -57,6 +59,7 @@
   "service-provider": {
     "title": "{numServiceProviders, plural, =0 {Dienstleister} =1 {Dienstleister} other {Dienstleister}}",
     "create": "Dienstleister erstellen",
+    "edit": "Dienstleister bearbeiten",
     "price-plan": "Preisplan",
     "price-plan-valid": "Preisplan verarbeitet und gültig",
     "upload-file": "Datei auswählen",
@@ -64,7 +67,8 @@
   },
   "warehouse": {
     "title": "{numWarehouses, plural, =0 {Lagerhäuser} =1 {Lagerhaus} other {Lagerhäuser  }}",
-    "create": "Lagerhaus erstellen"
+    "create": "Lagerhaus erstellen",
+    "edit": "Lagerhaus bearbeiten"
   },
   "admin": "Admin",
   "name": "Name",
