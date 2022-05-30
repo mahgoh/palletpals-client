@@ -27,6 +27,7 @@ export default function Button({
   className,
   color = 'primary',
   size = 'md',
+  disabled,
   ...props
 }) {
   const colorClasses = {
@@ -48,11 +49,14 @@ export default function Button({
     <button
       className={classNames(
         className,
-        colorClasses[color],
+        !disabled && colorClasses[color],
         sizeClasses[size],
+        disabled &&
+          'cursor-not-allowed bg-gray-200 text-gray-500 dark:bg-gray-700 dark:text-gray-400',
         'items-center rounded-md border border-transparent text-base font-medium ring-offset-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 '
       )}
       onClick={onClick}
+      disabled={disabled}
       {...props}
     >
       {children}
@@ -65,4 +69,5 @@ Button.propTypes = {
   className: PropTypes.string,
   color: PropTypes.oneOf(['primary', 'secondary', 'red', 'redOutline']),
   size: PropTypes.oneOf(['md', 'sm']),
+  disabled: PropTypes.bool,
 }
