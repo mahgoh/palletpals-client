@@ -1,5 +1,4 @@
 import { createContext, useContext, useEffect, useRef, useState } from 'react'
-import { useQueueState } from 'rooks'
 import { classNames } from '@/utils/common'
 
 const NotificationContext = createContext()
