@@ -58,9 +58,11 @@
     "title": "{numServiceProviders, plural, =0 {Dienstleister} =1 {Dienstleister} other {Dienstleister}}"
   },
   "warehouse": {
-    "title": "{numWarehouses, plural, =0 {Lagerhäuser} =1 {Lagerhaus} other {Lagerhäuser  }}"
+    "title": "{numWarehouses, plural, =0 {Lagerhäuser} =1 {Lagerhaus} other {Lagerhäuser  }}",
+    "create": "Lagerhaus erstellen"
   },
   "admin": "Admin",
+  "name": "Name",
   "create": "Erstellen",
   "edit": "Bearbeiten",
   "actions": "Aktionen",

@@ -10,5 +10,7 @@
   "cart-item-updated": "Cart item updated successfully",
   "cart-item-not-updated": "Could not update cart item",
   "login-failed": "Email and/or password is incorrect",
-  "login-with-new-email": "Please login with your new email"
+  "login-with-new-email": "Please login with your new email",
+  "warehouse-created": "Warehouse created successfully",
+  "warehouse-not-created": "Could not create warehouse"
 }

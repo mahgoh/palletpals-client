@@ -186,6 +186,14 @@ export const Warehouse = {
   all() {
     return useFetch('/warehouses')
   },
+  async create(payload) {
+    await Fetch('/warehouses', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    }).then((res) => {
+      if (res.status !== 201) throw new Error('Could not create warehouse')
+    })
+  },
   byId(id) {
     return useFetch(`/warehouses/${id}`)
   },

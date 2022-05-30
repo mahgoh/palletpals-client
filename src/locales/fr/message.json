@@ -10,5 +10,7 @@
   "cart-item-updated": "Produit mis à jour dans le panier",
   "cart-item-not-updated": "Impossible de mettre à jour le produit dans le panier",
   "login-failed": "Identifiant et/ou mot de passe incorrect",
-  "login-with-new-email": "Veuillez vous connecter avec votre nouvelle adresse email."
+  "login-with-new-email": "Veuillez vous connecter avec votre nouvelle adresse email.",
+  "warehouse-created": "Entrepôt créé avec succès",
+  "warehouse-not-created": "Impossible de créer l'entrepôt"
 }

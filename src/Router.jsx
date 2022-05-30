@@ -24,6 +24,7 @@ import Admin from '@/pages/Admin'
 import AdminProducts from '@/pages/AdminProducts'
 import AdminServiceProviders from '@/pages/AdminServiceProviders'
 import AdminWarehouses from '@/pages/AdminWarehouses'
+import AdminWarehouseCreate from '@/pages/AdminWarehouseCreate'
 
 export default function Router() {
   return (
@@ -48,6 +49,10 @@ export default function Router() {
               element={<AdminServiceProviders />}
             />
             <Route path="warehouses" element={<AdminWarehouses />} />
+            <Route
+              path="warehouses/create"
+              element={<AdminWarehouseCreate />}
+            />
           </Route>
           <Route path="" element={<Home />} />
           <Route path="products" element={<Products />} />
