@@ -4,7 +4,6 @@ import { useFormik } from 'formik'
 import API from '@/services/api'
 import { useNotification } from '@/services/notification'
 import Button from '@/components/Button'
-import Debug from '@/components/Debug'
 import Form from '@/components/Form'
 import Main from '@/components/Main'
 import Pagetitle from '@/components/Pagetitle'
@@ -154,7 +153,6 @@ export default function AdminWarehouseCreate() {
 
   return (
     <>
-      <Debug data={{}} />
       <Main>
         <Pagetitle title={t('common.warehouse.create')} />
         <Spacer size="lg" />
