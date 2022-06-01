@@ -152,11 +152,15 @@ export const User = {
     })
   },
   async settings() {
-    const data = await Fetch('/user/profile').then((res) => res.json())
+    try {
+      const data = await Fetch('/user/profile').then((res) => res.json())
 
-    return {
-      appearance: data.appearance,
-      language: data.language,
+      return {
+        appearance: data.appearance,
+        language: data.language,
+      }
+    } catch (e) {
+      throw e
     }
   },
   profile() {

@@ -15,18 +15,30 @@ export function AuthProvider({ children }) {
   let login = (newUser, callback) => {
     return User.login(newUser, async (_authenticated) => {
       if (_authenticated) {
-        try {
-          setAuthenticated(_authenticated)
+        // try until JWT is valid
+        const MAX_ROUNDS = 10
+        let round = 0
+        let success = false
 
-          const userSettings = await User.settings()
-          const isAdmin = await User.validateAdmin()
-          setIsAdmin(isAdmin)
+        while (!success && round < MAX_ROUNDS) {
+          await new Promise((resolve) =>
+            setTimeout(async () => {
+              try {
+                // set/override appearance and language if authenticated
+                const userSettings = await User.settings()
 
-          callback(_authenticated, userSettings)
-        } catch (e) {
-          // Should never occur
-          console.error(e)
+                setAuthenticated(_authenticated)
+                callback(_authenticated, userSettings)
+                success = true
+              } catch (e) {
+                round++
+              }
+              resolve()
+            }, 500)
+          )
         }
+
+        callback(_authenticated, { appearande: null, language: null })
       } else {
         callback(_authenticated, null)
       }
