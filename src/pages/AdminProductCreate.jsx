@@ -128,14 +128,16 @@ export default function AdminProductCreate() {
     onSubmit: async (values) => {
       try {
         let productImages = []
-        for (let i = 0; i < images.length; i++) {
-          const file = images[i]
+        if (images !== null && images.length > 0) {
+          for (let i = 0; i < images.length; i++) {
+            const file = images[i]
 
-          try {
-            let productImage = await API.ProductImage.create(file)
-            productImages.push(productImage)
-          } catch (e) {
-            throw new Error(e)
+            try {
+              let productImage = await API.ProductImage.create(file)
+              productImages.push(productImage)
+            } catch (e) {
+              throw new Error(e)
+            }
           }
         }
 
