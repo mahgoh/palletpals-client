@@ -7,7 +7,7 @@ exports[`loader > should render 1`] = `
   >
     <img
       class="h-16 w-16"
-      src="/loader.svg"
+      src="/src/assets/loader.svg"
     />
   </div>
 </div>
