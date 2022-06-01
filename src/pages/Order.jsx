@@ -118,7 +118,9 @@ export default function Order() {
             <TableCell className="hidden sm:block">
               {t('common.product.price-per-unit')}
             </TableCell>
-            <TableCell className="text-right">{t('common.price')}</TableCell>
+            <TableCell className="text-right">
+              {t('common.product.price')}
+            </TableCell>
           </TableHeadRow>
         </TableHead>
 
