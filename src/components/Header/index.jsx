@@ -10,59 +10,56 @@ export default function Header() {
   const { authenticated, isAdmin } = useAuth()
   const { cart } = useCart()
 
-  let routes = [
-    {
-      to: '/products',
-      label: t('common.product.title', { numProducts: 2 }),
-    },
-  ]
-
-  if (authenticated && isAdmin) {
-    routes.unshift({
-      to: '/admin',
-      label: t('common.admin'),
-    })
-  }
-
-  const routesMobile = [
-    {
+  const routes = {
+    home: {
       to: '/',
       label: t('common.home'),
     },
-    ...routes,
-  ]
-
-  if (authenticated) {
-    routes.push({
+    admin: {
+      to: '/admin',
+      label: t('common.admin'),
+    },
+    products: {
+      to: '/products',
+      label: t('common.product.title', { numProducts: 2 }),
+    },
+    profile: {
       to: '/profile',
       label: t('common.profile.title'),
-    })
-    routes.push({
-      to: '/logout',
-      label: t('common.auth.logout'),
-    })
-    routesMobile.push({
+    },
+    cart: {
       to: '/cart',
       label: t('common.cart.title'),
       count: cart.shoppingCart.length,
-    })
-    routesMobile.push({
-      to: '/profile',
-      label: t('common.profile.title'),
-    })
-    routesMobile.push({
+    },
+    login: {
+      to: '/login',
+      label: t('common.auth.login'),
+    },
+    logout: {
       to: '/logout',
       label: t('common.auth.logout'),
-    })
-  } else {
-    routes.push({
-      to: '/login',
-      label: t('common.auth.login'),
-    })
-    routesMobile.push({
-      to: '/login',
-      label: t('common.auth.login'),
-    })
+    },
+  }
+
+  let routesMain = [routes.products, routes.login]
+  let routesMobile = [routes.home, routes.products, routes.login]
+
+  if (authenticated) {
+    routesMain = [routes.products, routes.profile, routes.logout]
+
+    routesMobile = [
+      routes.home,
+      routes.products,
+      routes.profile,
+      routes.cart,
+      routes.logout,
+    ]
+
+    if (isAdmin) {
+      routesMain.unshift(routes.admin)
+      routesMobile.splice(1, 0, routes.admin)
+    }
   }
 
   return (
@@ -76,7 +73,7 @@ export default function Header() {
             PalletPals
           </span>
         </Link>
-        <MenuBar routes={routes} />
+        <MenuBar routes={routesMain} />
         <MenuBarMobile routes={routesMobile} />
       </div>
     </header>
