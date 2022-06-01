@@ -11,10 +11,7 @@ describe('navigation link', () => {
 
   it('should have active styling', () => {
     render(<NavigationLink to="/" label="Home" />, { renderer: 'router' })
-    expect(screen.getByRole('link')).toHaveClass(
-      'font-semibold',
-      'text-orange-500'
-    )
+    expect(screen.getByRole('link')).toHaveClass('font-bold', 'text-orange-500')
   })
 
   it('should have active styling on profile page', () => {
@@ -22,10 +19,7 @@ describe('navigation link', () => {
       route: 'profile',
       renderer: 'router',
     })
-    expect(screen.getByRole('link')).toHaveClass(
-      'font-semibold',
-      'text-orange-500'
-    )
+    expect(screen.getByRole('link')).toHaveClass('font-bold', 'text-orange-500')
   })
 
   it('should not have active styling', () => {
@@ -33,7 +27,7 @@ describe('navigation link', () => {
       renderer: 'router',
     })
     expect(screen.getByRole('link')).not.toHaveClass(
-      'font-semibold',
+      'font-bold',
       'text-orange-500'
     )
   })

@@ -3,7 +3,6 @@ import Navigation from '@/components/Navigation'
 import AppearanceSelect from './AppearanceSelect'
 import LanguageSelect from './LanguageSelect'
 import Cart from './Cart'
-import Logout from './Logout'
 
 export default function MenuBar({ routes }) {
   return (

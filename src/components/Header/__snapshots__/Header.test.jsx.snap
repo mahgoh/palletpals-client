@@ -18,7 +18,7 @@ exports[`header > should render 1`] = `
       </span>
     </a>
     <div
-      class="flex justify-end"
+      class="hidden justify-end sm:flex"
     >
       <nav
         class="flex h-full items-center justify-end"
@@ -31,83 +31,11 @@ exports[`header > should render 1`] = `
         </a>
         <a
           class="inline-flex items-center pr-6 last:pr-0"
-          href="/profile"
+          href="/login"
         >
-          Profile
+          Login
         </a>
       </nav>
-      <div
-        class="ml-4 flex items-center space-x-2"
-      >
-        <div
-          class="relative w-28"
-        >
-          <button
-            aria-expanded="false"
-            aria-haspopup="true"
-            class="relative w-full cursor-default rounded-md border border-transparent bg-white py-2 pl-3 pr-10 text-left hover:border-gray-300 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 dark:bg-gray-900 dark:hover:border-gray-700 dark:focus:border-orange-500 sm:text-sm"
-            id="headlessui-listbox-button-:r0:"
-            type="button"
-          >
-            <span
-              class="block truncate uppercase"
-            >
-              System
-            </span>
-            <span
-              class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
-            >
-              <svg
-                aria-hidden="true"
-                class="h-5 w-5 text-gray-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  clip-rule="evenodd"
-                  d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                  fill-rule="evenodd"
-                />
-              </svg>
-            </span>
-          </button>
-        </div>
-        <div
-          class="relative"
-        >
-          <button
-            aria-expanded="false"
-            aria-haspopup="true"
-            class="relative w-full cursor-default rounded-md border border-transparent bg-white py-2 pl-3 pr-10 text-left hover:border-gray-300 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 dark:bg-gray-900 dark:hover:border-gray-700 dark:focus:border-orange-500 sm:text-sm"
-            id="headlessui-listbox-button-:r1:"
-            type="button"
-          >
-            <span
-              class="block truncate uppercase"
-            >
-              en
-            </span>
-            <span
-              class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
-            >
-              <svg
-                aria-hidden="true"
-                class="h-5 w-5 text-gray-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  clip-rule="evenodd"
-                  d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                  fill-rule="evenodd"
-                />
-              </svg>
-            </span>
-          </button>
-        </div>
-      </div>
       <div
         class="group ml-4 flex items-center"
       >
@@ -144,6 +72,230 @@ exports[`header > should render 1`] = `
               class="mt-4 w-full bg-orange-500 focus:bg-orange-700 hover:bg-orange-700 focus:ring-orange-500 text-white px-6 py-2 sm:py-3 sm:px-8 items-center rounded-md border border-transparent text-base font-medium ring-offset-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 "
             >
               Login
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ml-4 flex items-center space-x-2"
+      >
+        <div
+          class="relative w-28"
+        >
+          <button
+            aria-expanded="false"
+            aria-haspopup="true"
+            class="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-orange-500 sm:text-sm"
+            id="headlessui-listbox-button-:r0:"
+            type="button"
+          >
+            <span
+              class="block truncate uppercase"
+            >
+              System
+            </span>
+            <span
+              class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
+            >
+              <svg
+                aria-hidden="true"
+                class="h-5 w-5 text-gray-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+        <div
+          class="relative"
+        >
+          <button
+            aria-expanded="false"
+            aria-haspopup="true"
+            class="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-orange-500 sm:text-sm"
+            id="headlessui-listbox-button-:r1:"
+            type="button"
+          >
+            <span
+              class="block truncate uppercase"
+            >
+              en
+            </span>
+            <span
+              class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
+            >
+              <svg
+                aria-hidden="true"
+                class="h-5 w-5 text-gray-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex justify-end sm:hidden"
+    >
+      <button
+        class="px-4"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="h-8 w-8"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4 6h16M4 12h16M4 18h16"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+      <div
+        class="fixed bottom-0 right-0 z-20 h-screen w-full bg-transparent bg-white transition-all duration-300 ease-menu group-hover:block dark:bg-gray-900 -bottom-full scale-150 opacity-0"
+      >
+        <div
+          class="mx-auto flex h-20 justify-end px-4"
+        >
+          <button
+            class="px-4"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="h-8 w-8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6 18L18 6M6 6l12 12"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="flex flex-col items-start space-y-2 p-8 text-lg"
+        >
+          <a
+            aria-current="page"
+            class="flex w-full items-center justify-between py-2 font-bold text-orange-500"
+            href="/"
+          >
+            <span>
+              Home
+            </span>
+          </a>
+          <a
+            class="flex w-full items-center justify-between py-2"
+            href="/products"
+          >
+            <span>
+              Products
+            </span>
+          </a>
+          <a
+            class="flex w-full items-center justify-between py-2"
+            href="/login"
+          >
+            <span>
+              Login
+            </span>
+          </a>
+          <div
+            class="h-4 w-full"
+          />
+          <div
+            class="relative w-full"
+          >
+            <button
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-orange-500 sm:text-sm"
+              id="headlessui-listbox-button-:r2:"
+              type="button"
+            >
+              <span
+                class="block truncate uppercase"
+              >
+                System
+              </span>
+              <span
+                class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="h-5 w-5 text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div
+            class="relative w-full"
+          >
+            <button
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-orange-500 sm:text-sm"
+              id="headlessui-listbox-button-:r3:"
+              type="button"
+            >
+              <span
+                class="block truncate uppercase"
+              >
+                en
+              </span>
+              <span
+                class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="h-5 w-5 text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
             </button>
           </div>
         </div>
