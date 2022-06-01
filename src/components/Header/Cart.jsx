@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { ShoppingCartIcon } from '@heroicons/react/outline'
+import { ShoppingCartIcon, XIcon } from '@heroicons/react/outline'
 import { useAuth } from '@/services/auth'
 import { useCart } from '@/services/cart'
+import { classNames } from '@/utils/common'
 import { LinkButton } from '@/components/Button'
 import CartItem from './CartItem'
 
@@ -51,17 +53,34 @@ export default function Cart() {
       </>
     )
   }
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <div className="group ml-4 flex items-center">
-      <ShoppingCartIcon
-        className="h-5 w-5 cursor-pointer text-gray-600 transition-colors hover:text-orange-500 focus:text-orange-500 dark:text-gray-100 dark:hover:text-orange-500"
-        aria-hidden="true"
-      />
-      <div className="absolute top-0 right-0 z-20 hidden h-screen w-screen transition-all group-hover:block md:w-1/3">
+      <button type="button" onClick={() => setIsOpen(true)}>
+        <ShoppingCartIcon
+          className="h-5 w-5 cursor-pointer text-gray-600 transition-colors hover:text-orange-500 focus:text-orange-500 dark:text-gray-100 dark:hover:text-orange-500"
+          aria-hidden="true"
+        />
+      </button>
+      <div
+        className={classNames(
+          'fixed top-0 z-20 h-screen max-h-screen w-96 transition-all duration-300 ease-menu',
+          isOpen ? 'right-0 opacity-100' : '-right-full opacity-0'
+        )}
+      >
         <div className="flex h-full w-full flex-col border-l border-gray-200 bg-white p-8 text-left dark:border-gray-700 dark:bg-gray-900">
-          <h2 className="pb-10 pt-4 text-2xl font-extrabold leading-10 tracking-tight sm:text-3xl sm:leading-none">
-            {t('common.cart.title')}
+          <h2 className="flex items-center justify-between pb-10 pt-4 text-2xl font-extrabold leading-10 tracking-tight sm:text-3xl sm:leading-none">
+            <span>{t('common.cart.title')}</span>
+            <span>
+              <button
+                type="button"
+                className="text-gray-600 hover:text-orange-500 focus:text-orange-500 dark:text-gray-400 dark:hover:text-orange-500 dark:focus:text-orange-500"
+                onClick={() => setIsOpen(false)}
+              >
+                <XIcon className="h-6 w-6" />
+              </button>
+            </span>
           </h2>
           {renderCart()}
         </div>

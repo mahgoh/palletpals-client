@@ -14,7 +14,7 @@ export default function MenuBarMobile({ routes }) {
     if (!count || count === 0) return null
 
     return (
-      <span className="inline-flex h-7 w-7 items-center  justify-center rounded-full bg-orange-500/10 text-sm  font-semibold text-orange-500">
+      <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-orange-500/10 text-sm font-semibold text-orange-500">
         {count}
       </span>
     )
@@ -24,7 +24,7 @@ export default function MenuBarMobile({ routes }) {
     return (
       <div
         className={classNames(
-          'fixed bottom-0 right-0 z-20 h-screen w-full bg-transparent bg-white transition-all duration-300 ease-menu group-hover:block dark:bg-gray-900',
+          'fixed bottom-0 right-0 z-20 h-screen w-full bg-transparent bg-white transition-all duration-300 ease-menu dark:bg-gray-900',
           isOpen
             ? 'bottom-0 scale-100 opacity-100'
             : '-bottom-full scale-150 opacity-0'
@@ -50,7 +50,7 @@ export default function MenuBarMobile({ routes }) {
                   isActive && 'font-bold text-orange-500'
                 )
               }}
-              onClick={(e) => {
+              onClick={() => {
                 setIsOpen(false)
               }}
             >
