@@ -134,7 +134,7 @@ export default function AdminServiceProviderCreate() {
               htmlFor="file"
               className="relative cursor-pointer rounded-sm bg-transparent font-medium text-orange-600 ring-offset-white focus-within:outline-none focus-within:ring-2 focus-within:ring-orange-500 focus-within:ring-offset-2 hover:text-orange-500 dark:ring-offset-gray-900"
             >
-              <span>{t('common.service-provider.upload-file')}</span>
+              <span>{t('common.upload-file')}</span>
               <input
                 id="file"
                 name="file"
@@ -147,7 +147,7 @@ export default function AdminServiceProviderCreate() {
               />
             </label>
             <p className="hidden pl-1 sm:block">
-              {t('common.service-provider.or-drag-and-drop')}
+              {t('common.or-drag-and-drop')}
             </p>
           </div>
           <DocumentTextIcon className="h-10 w-10 text-gray-400 dark:text-gray-600" />
@@ -169,6 +169,7 @@ export default function AdminServiceProviderCreate() {
           color="redOutline"
           className="inline-flex justify-center"
           title={t('common.remove')}
+          type="button"
           onClick={() => {
             setFile(null)
           }}

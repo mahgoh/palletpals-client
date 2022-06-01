@@ -61,15 +61,15 @@
     "create": "Dienstleister erstellen",
     "edit": "Dienstleister bearbeiten",
     "price-plan": "Preisplan",
-    "price-plan-valid": "Preisplan verarbeitet und gültig",
-    "upload-file": "Datei auswählen",
-    "or-drag-and-drop": "oder hierhin ziehen"
+    "price-plan-valid": "Preisplan verarbeitet und gültig"
   },
   "warehouse": {
     "title": "{numWarehouses, plural, =0 {Lagerhäuser} =1 {Lagerhaus} other {Lagerhäuser  }}",
     "create": "Lagerhaus erstellen",
     "edit": "Lagerhaus bearbeiten"
   },
+  "upload-file": "Datei auswählen",
+  "or-drag-and-drop": "oder hierhin ziehen",
   "admin": "Admin",
   "name": "Name",
   "create": "Erstellen",

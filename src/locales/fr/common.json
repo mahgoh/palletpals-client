@@ -61,15 +61,15 @@
     "create": "Créer fournisseur de services",
     "edit": "Modifier fournisseur de services",
     "price-plan": "Plan tarifaire",
-    "price-plan-valid": "Plan tarifaire traité et valide.",
-    "upload-file": "Choisissez un fichier",
-    "or-drag-and-drop": "ou glisser-déposer"
+    "price-plan-valid": "Plan tarifaire traité et valide."
   },
   "warehouse": {
     "title": "{numWarehouses, plural, =0 {Entrepôts} =1 {Entrepôt} other {Entrepôts}}",
     "create": "Créer entrepôt",
     "edit": "Modifier entrepôt"
   },
+  "upload-file": "Choisissez un fichier",
+  "or-drag-and-drop": "ou glisser-déposer",
   "admin": "Admin",
   "name": "Nom",
   "create": "Créer",

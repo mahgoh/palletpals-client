@@ -61,15 +61,15 @@
     "create": "Create service provider",
     "edit": "Edit service provider",
     "price-plan": "Price plan",
-    "price-plan-valid": "Price plan processed and valid.",
-    "upload-file": "Choose a file",
-    "or-drag-and-drop": "or drag and drop"
+    "price-plan-valid": "Price plan processed and valid."
   },
   "warehouse": {
     "title": "{numWarehouses, plural, =0 {Warehouses} =1 {Warehouse} other {Warehouses}}",
     "create": "Create warehouse",
     "edit": "Edit warehouse"
   },
+  "upload-file": "Choose a file",
+  "or-drag-and-drop": "or drag and drop",
   "admin": "Admin",
   "name": "Name",
   "create": "Create",
