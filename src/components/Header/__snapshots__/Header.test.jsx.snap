@@ -201,7 +201,7 @@ exports[`header > should render 1`] = `
         </svg>
       </button>
       <div
-        class="fixed bottom-0 right-0 z-20 h-screen w-full bg-transparent bg-white transition-all duration-300 ease-menu dark:bg-gray-900 -bottom-full scale-150 opacity-0"
+        class="fixed bottom-0 right-0 z-20 h-screen w-full bg-transparent bg-white transition-all duration-300 ease-menu dark:bg-gray-900 -bottom-full opacity-0"
       >
         <div
           class="mx-auto flex h-20 justify-end px-4"
