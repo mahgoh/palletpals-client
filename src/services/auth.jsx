@@ -38,9 +38,9 @@ export function AuthProvider({ children }) {
           )
         }
         await validateAdmin()
-        callback(_authenticated, { appearande: null, language: null })
+        callback(_authenticated, { appearance: null, language: null })
       } else {
-        callback(_authenticated, null)
+        callback(_authenticated, { appearance: null, language: null })
       }
     })
   }
