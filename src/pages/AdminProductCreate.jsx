@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useFormik } from 'formik'
-import { DocumentTextIcon, TrashIcon } from '@heroicons/react/outline'
+import { PhotographIcon, TrashIcon } from '@heroicons/react/outline'
 import API from '@/services/api'
 import { useNotification } from '@/services/notification'
 import { classNames } from '@/utils/common'
@@ -225,7 +225,7 @@ export default function AdminProductCreate() {
               {t('common.or-drag-and-drop')}
             </p>
           </div>
-          <DocumentTextIcon className="h-10 w-10 text-gray-400 dark:text-gray-600" />
+          <PhotographIcon className="h-10 w-10 text-gray-400 dark:text-gray-600" />
         </div>
       </div>
     )
