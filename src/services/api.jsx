@@ -166,13 +166,10 @@ export const User = {
   profile() {
     return useFetch('/user/profile')
   },
-  register(credentials, callback) {
+  register(payload, callback) {
     Fetch('/user/register', {
       method: 'POST',
-      body: JSON.stringify({
-        ...credentials,
-        role: 'USER',
-      }),
+      body: JSON.stringify(payload),
     })
       .then((res) => {
         callback(res.status === 200)
