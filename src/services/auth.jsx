@@ -27,9 +27,9 @@ export function AuthProvider({ children }) {
                 // set/override appearance and language if authenticated
                 const userSettings = await User.settings()
 
+                success = true
                 setAuthenticated(_authenticated)
                 callback(_authenticated, userSettings)
-                success = true
               } catch (e) {
                 round++
               }
@@ -37,7 +37,7 @@ export function AuthProvider({ children }) {
             }, 500)
           )
         }
-
+        await validateAdmin()
         callback(_authenticated, { appearande: null, language: null })
       } else {
         callback(_authenticated, null)
