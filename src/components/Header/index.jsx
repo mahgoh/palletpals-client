@@ -1,24 +1,19 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useAuth } from '@/services/auth'
-import Navigation from '@/components/Navigation'
-import AppearanceSelect from './AppearanceSelect'
-import LanguageSelect from './LanguageSelect'
-import Cart from './Cart'
-import Logout from './Logout'
+import { useCart } from '@/services/cart'
+import MenuBar from './MenuBar'
+import MenuBarMobile from './MenuBarMobile'
 
 export default function Header() {
   const { t } = useTranslation()
   const { authenticated, isAdmin } = useAuth()
+  const { cart } = useCart()
 
   let routes = [
     {
       to: '/products',
       label: t('common.product.title', { numProducts: 2 }),
-    },
-    {
-      to: '/profile',
-      label: t('common.profile.title'),
     },
   ]
 
@@ -26,6 +21,47 @@ export default function Header() {
     routes.unshift({
       to: '/admin',
       label: t('common.admin'),
+    })
+  }
+
+  const routesMobile = [
+    {
+      to: '/',
+      label: t('common.home'),
+    },
+    ...routes,
+  ]
+
+  if (authenticated) {
+    routes.push({
+      to: '/profile',
+      label: t('common.profile.title'),
+    })
+    routes.push({
+      to: '/logout',
+      label: t('common.auth.logout'),
+    })
+    routesMobile.push({
+      to: '/cart',
+      label: t('common.cart.title'),
+      count: cart.shoppingCart.length,
+    })
+    routesMobile.push({
+      to: '/profile',
+      label: t('common.profile.title'),
+    })
+    routesMobile.push({
+      to: '/logout',
+      label: t('common.auth.logout'),
+    })
+  } else {
+    routes.push({
+      to: '/login',
+      label: t('common.auth.login'),
+    })
+    routesMobile.push({
+      to: '/login',
+      label: t('common.auth.login'),
     })
   }
 
@@ -40,15 +76,8 @@ export default function Header() {
             PalletPals
           </span>
         </Link>
-        <div className="flex justify-end">
-          <Navigation routes={routes} />
-          <div className="ml-4 flex items-center space-x-2">
-            <AppearanceSelect />
-            <LanguageSelect />
-          </div>
-          <Cart />
-          <Logout />
-        </div>
+        <MenuBar routes={routes} />
+        <MenuBarMobile routes={routesMobile} />
       </div>
     </header>
   )

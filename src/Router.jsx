@@ -9,6 +9,7 @@ import Home from '@/pages/Home'
 import Products from '@/pages/Products'
 import Product from '@/pages/Product'
 import Login from '@/pages/Login'
+import Logout from '@/pages/Logout'
 import Register from '@/pages/Register'
 import NotFound from '@/pages/NotFound'
 
@@ -120,6 +121,7 @@ export default function Router() {
             }
           />
           <Route path="login" element={<Login />} />
+          <Route path="logout" element={<Logout />} />
           <Route path="register" element={<Register />} />
           <Route path="*" element={<NotFound />} />
         </Route>

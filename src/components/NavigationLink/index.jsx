@@ -8,7 +8,7 @@ export default function NavigationLink({ to, label }) {
       className={({ isActive }) => {
         return classNames(
           'inline-flex items-center pr-6 last:pr-0',
-          isActive ? 'font-semibold text-orange-500' : ''
+          isActive && 'font-bold text-orange-500'
         )
       }}
       to={to}

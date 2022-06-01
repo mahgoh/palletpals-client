@@ -1,7 +1,7 @@
 import Select from '@/components/Select'
 import { useLanguage } from '@/services/language'
 
-export default function LanguageSelect() {
+export default function LanguageSelect({ ...props }) {
   const { language, setLanguage, languages } = useLanguage()
 
   const options = languages.map((language) => {
@@ -14,5 +14,12 @@ export default function LanguageSelect() {
     setLanguage(option.value)
   }
 
-  return <Select options={options} set={set} selectedIndex={selectedIndex} />
+  return (
+    <Select
+      options={options}
+      set={set}
+      selectedIndex={selectedIndex}
+      {...props}
+    />
+  )
 }

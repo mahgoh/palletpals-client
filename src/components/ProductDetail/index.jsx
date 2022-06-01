@@ -167,7 +167,7 @@ export default function ProductDetail({ product }) {
             <TextField
               type="number"
               placeholder={t('common.amount')}
-              className="w-auto text-center"
+              className="text-center"
               showError={false}
               min={1}
               error={

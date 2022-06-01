@@ -8,7 +8,7 @@ export default function Select({
   options,
   selectedIndex,
   set,
-  classes = [],
+  className,
 } = {}) {
   const [selectedOption, setSelectedOption] = useState(options[selectedIndex])
 
@@ -24,8 +24,8 @@ export default function Select({
     <Listbox value={selectedOption} onChange={setSelectedOption}>
       {({ open }) => (
         <>
-          <div className={classNames('relative', ...classes)}>
-            <Listbox.Button className="relative w-full cursor-default rounded-md border border-transparent bg-white py-2 pl-3 pr-10 text-left hover:border-gray-300 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 dark:bg-gray-900 dark:hover:border-gray-700 dark:focus:border-orange-500 sm:text-sm">
+          <div className={classNames('relative', className)}>
+            <Listbox.Button className="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-orange-500 sm:text-sm">
               <span className="block truncate uppercase">
                 {selectedOption.label}
               </span>
@@ -95,5 +95,4 @@ Select.propTypes = {
   ).isRequired,
   selectedIndex: PropTypes.number.isRequired,
   set: PropTypes.func.isRequired,
-  classes: PropTypes.arrayOf(PropTypes.string),
 }

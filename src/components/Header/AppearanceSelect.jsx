@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next'
 import Select from '@/components/Select'
 import { useAppearance } from '@/services/appearance'
 
-export default function AppearanceSelect() {
+export default function AppearanceSelect({ className }) {
   const { t } = useTranslation()
   const { appearance, setAppearance, appearances } = useAppearance()
 
@@ -23,7 +23,7 @@ export default function AppearanceSelect() {
       options={options}
       set={set}
       selectedIndex={selectedIndex}
-      classes={['w-28']}
+      className={className}
     />
   )
 }

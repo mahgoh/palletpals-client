@@ -8,6 +8,9 @@ module.exports = {
       colors: {
         gray: colors.zinc,
       },
+      transitionTimingFunction: {
+        menu: 'cubic-bezier(.61,.11,.32,.96)',
+      },
     },
   },
   plugins: [
