@@ -41,7 +41,15 @@
   "product": {
     "title": "{numProducts, plural, =0 {Products} =1 {Product} other {Products}}",
     "create": "Create product",
-    "edit": "Edit product"
+    "edit": "Edit product",
+    "image": "{numImages, plural, =0 {Images} =1 {Image} other {Images}}",
+    "price": "Price",
+    "price-per-unit": "Price per unit",
+    "description": "Description",
+    "details": "Details",
+    "max-products": "Max. products per pallet space",
+    "min-pallet-space": "Min. pallet space",
+    "pallet-space": "Pallet space"
   },
   "profile": {
     "title": "Profile",
@@ -79,12 +87,5 @@
   "amount": "Amount",
   "update": "Update",
   "remove": "Remove",
-  "price": "Price",
-  "price-per-unit": "Price per unit",
-  "description": "Description",
-  "details": "Details",
-  "max-products": "Max. products per pallet space",
-  "min-pallet-space": "Min. pallet space",
-  "pallet-space": "Pallet space",
   "save": "Save"
 }

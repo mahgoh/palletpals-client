@@ -88,16 +88,16 @@ export default function Order() {
               {t('common.product.title', { numProducts: 1 })}
             </TableCell>
             <TableCell className="text-right sm:hidden">
-              {t('common.price-per-unit')}
+              {t('common.product.price-per-unit')}
             </TableCell>
             <TableCell className="hidden sm:block">
-              {t('common.pallet-space')}
+              {t('common.product.pallet-space')}
             </TableCell>
             <TableCell className="hidden sm:block">
               {t('common.amount')}
             </TableCell>
             <TableCell className="hidden sm:block">
-              {t('common.price-per-unit')}
+              {t('common.product.price-per-unit')}
             </TableCell>
             <TableCell className="text-right">{t('common.price')}</TableCell>
           </TableHeadRow>

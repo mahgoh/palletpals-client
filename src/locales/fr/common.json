@@ -41,7 +41,15 @@
   "product": {
     "title": "{numProducts, plural, =0 {Produits} =1 {Produit} other {Produits}}",
     "create": "Créer un produit",
-    "edit": "Modifier le produit"
+    "edit": "Modifier le produit",
+    "image": "{numImages, plural, =0 {Image} =1 {Image} other {Images}}",
+    "price": "Prix",
+    "price-per-unit": "Prix par unité",
+    "description": "Description",
+    "details": "Détails",
+    "max-products": "Produits max. par espace de palette",
+    "min-pallet-space": "Espace min. des palettes",
+    "pallet-space": "Espace des palettes"
   },
   "profile": {
     "title": "Profil",
@@ -79,12 +87,5 @@
   "amount": "Quantité",
   "update": "Actualiser",
   "remove": "Supprimer",
-  "price": "Prix",
-  "price-per-unit": "Prix par unité",
-  "description": "Description",
-  "details": "Détails",
-  "max-products": "Produits max. par espace de palette",
-  "min-pallet-space": "Espace min. des palettes",
-  "pallet-space": "Espace des palettes",
   "save": "Sauver"
 }

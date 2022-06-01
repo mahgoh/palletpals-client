@@ -69,11 +69,11 @@ export default function ProductDetail({ product }) {
 
   const detailRows = [
     {
-      key: t('common.max-products'),
+      key: t('common.product.max-products'),
       value: maxProducts,
     },
     {
-      key: t('common.min-pallet-space'),
+      key: t('common.product.min-pallet-space'),
       value: minPalletSpace,
     },
   ]
@@ -155,7 +155,7 @@ export default function ProductDetail({ product }) {
         </div>
 
         <div className="mt-6">
-          <h3 className="sr-only">{t('common.description')}</h3>
+          <h3 className="sr-only">{t('common.product.description')}</h3>
 
           <div className="space-y-6 text-base text-gray-700 dark:text-gray-300">
             {i18nDescription()}
@@ -185,7 +185,7 @@ export default function ProductDetail({ product }) {
 
         <section aria-labelledby="details-heading" className="mt-8">
           <h2 id="details-heading" className="sr-only">
-            {t('common.details')}
+            {t('common.product.details')}
           </h2>
 
           <div className="divide-y divide-gray-200 border-t border-gray-200 dark:divide-gray-700 dark:border-gray-700">
@@ -202,7 +202,7 @@ export default function ProductDetail({ product }) {
                           'text-sm font-medium'
                         )}
                       >
-                        {t('common.details')}
+                        {t('common.product.details')}
                       </span>
                       <span className="ml-6 flex items-center">
                         {open ? (

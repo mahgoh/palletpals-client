@@ -80,7 +80,7 @@ export default function CartItem({ item }) {
             </h3>
           </NavLink>
           <div>
-            {t('common.price-per-unit')}: {formatPrice(pricePerUnit)}
+            {t('common.product.price-per-unit')}: {formatPrice(pricePerUnit)}
           </div>
           <div>
             {t('common.amount')}: {quantity}

@@ -41,7 +41,15 @@
   "product": {
     "title": "{numProducts, plural, =0 {Produkte} =1 {Produkt} other {Produkte}}",
     "create": "Produkt erstellen",
-    "edit": "Produkt bearbeiten"
+    "edit": "Produkt bearbeiten",
+    "image": "{numImages, plural, =0 {Bilder} =1 {Bild} other {Bilder}}",
+    "price": "Preis",
+    "price-per-unit": "Preis pro Stück",
+    "description": "Beschreibung",
+    "details": "Details",
+    "max-products": "Max. Produkte pro Palettenplatz",
+    "min-pallet-space": "Min. Palettenfläche",
+    "pallet-space": "Palettenfläche"
   },
   "profile": {
     "title": "Profil",
@@ -79,12 +87,5 @@
   "amount": "Anzahl",
   "update": "Aktualisieren",
   "remove": "Entfernen",
-  "price": "Preis",
-  "price-per-unit": "Preis pro Stück",
-  "description": "Beschreibung",
-  "details": "Details",
-  "max-products": "Max. Produkte pro Palettenplatz",
-  "min-pallet-space": "Min. Palettenfläche",
-  "pallet-space": "Palettenfläche",
   "save": "Speichern"
 }
