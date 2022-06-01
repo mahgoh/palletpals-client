@@ -63,7 +63,7 @@ export default function AdminWarehouses() {
       return (
         <TableRow className="grid-cols-2" key={id}>
           <TableCell key={id}>
-            <NavLink to={`/admin/warehouses/${id}`}>
+            <NavLink to={`/admin/warehouses/edit/${id}`}>
               <h4 className="mb-1 text-lg font-medium ">{name}</h4>
             </NavLink>
           </TableCell>

@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useFormik } from 'formik'
 import { PhotographIcon, TrashIcon } from '@heroicons/react/outline'
 import API from '@/services/api'
 import { useNotification } from '@/services/notification'
-import { classNames } from '@/utils/common'
+import { classNames, productImageURL } from '@/utils/common'
 import Button from '@/components/Button'
 import Form from '@/components/Form'
 import Main from '@/components/Main'
@@ -14,15 +14,32 @@ import Spacer from '@/components/Spacer'
 import TextArea from '@/components/TextArea'
 import TextField from '@/components/TextField'
 
-export default function AdminProductCreate() {
+export default function AdminProductEdit() {
   const { t } = useTranslation()
+  const { productId } = useParams()
   const navigate = useNavigate()
   const { showNotification } = useNotification()
 
+  const { data = {}, error, loading } = API.Product.byId(productId)
+
+  if (error !== null) {
+    navigate('/admin/products')
+  }
+
   // State of images
-  const [files, setFiles] = useState(null)
-  const [filesAreValid, setFilesAreValid] = useState(false)
+  const [oldImages, setOldImages] = useState(null)
+  const [newImages, setNewImages] = useState(null)
   const [previews, setPreviews] = useState(null)
+
+  useEffect(() => {
+    if (data?.productImages) {
+      setOldImages(data.productImages)
+    }
+  }, [data])
+
+  // useEffect(() => {
+  //   getPreviewImages()
+  // }, [newImages])
 
   const ALLOWED_IMAGE_TYPES = [
     'image/png',
@@ -33,45 +50,49 @@ export default function AdminProductCreate() {
     'image/avif',
   ]
 
-  function validateFiles() {
-    if (files === null) return setFilesAreValid(false)
+  function addNewImages(files) {
+    console.log(files)
+    if (files === null) return
 
-    if (files.length === 0) return setFilesAreValid(false)
+    if (files.length === 0) return
+
+    let newFiles = []
 
     for (let i = 0; i < files.length; i++) {
-      const file = files.item(i)
-      if (!ALLOWED_IMAGE_TYPES.includes(file.type)) {
-        setFiles(null)
-        setFilesAreValid(false)
+      const file = files[i]
+
+      if (ALLOWED_IMAGE_TYPES.includes(file.type)) {
+        newFiles.push(file)
+      } else {
         showNotification(t('message.file-type-not-allowed'))
-        return
       }
     }
 
-    setFilesAreValid(true)
+    addPreviewImages(newFiles)
+
+    if (newImages === null) return setNewImages(newFiles)
+
+    setNewImages([...newImages, newFiles])
   }
 
-  function getPreviewImages() {
-    if (files === null) return
-
+  function addPreviewImages(newFiles) {
     const previewImages = []
-    for (let i = 0; i < files.length; i++) {
-      const file = files.item(i)
+    for (let i = 0; i < newFiles.length; i++) {
+      const file = newFiles[i]
       const reader = new FileReader()
       reader.onload = () => {
-        previewImages.push(reader.result)
-        if (previewImages.length === files.length) {
-          setPreviews(previewImages)
+        previewImages.push({
+          id: file.name + Date.now(),
+          src: reader.result,
+        })
+        if (previewImages.length === newFiles.length) {
+          if (previews === null) return setPreviews(previewImages)
+          setPreviews([...previews, ...previewImages])
         }
       }
       reader.readAsDataURL(file)
     }
   }
-
-  useEffect(() => {
-    validateFiles()
-    getPreviewImages()
-  }, [files])
 
   const validate = (values) => {
     const errors = {}
@@ -111,37 +132,36 @@ export default function AdminProductCreate() {
 
   const formik = useFormik({
     initialValues: {
-      name: '',
-      description: '',
-      description_de: '',
-      description_fr: '',
-      details: '',
-      details_de: '',
-      details_fr: '',
-      price: 0.01,
-      maxProducts: 1,
-      minPalletSpace: 0.01,
+      name: data?.name,
+      description: data?.description,
+      description_de: data?.description_de,
+      description_fr: data?.description_fr,
+      details: data?.details,
+      details_de: data?.details_de,
+      details_fr: data?.details_fr,
+      price: data?.price,
+      maxProducts: data?.maxProducts,
+      minPalletSpace: data?.minPalletSpace,
     },
+    enableReinitialize: true,
     validate,
     onSubmit: async (values) => {
       try {
-        if (files !== null && !filesAreValid) {
-          throw new Error('Invalid files')
-        }
+        let productImages = [...oldImages]
+        if (newImages !== null && newImages.length > 0) {
+          for (let i = 0; i < newImages.length; i++) {
+            const file = newImages[i]
 
-        let productImages = []
-        for (let i = 0; i < files.length; i++) {
-          const file = files.item(i)
-
-          try {
-            let productImage = await API.ProductImage.create(file)
-            productImages.push(productImage)
-          } catch (e) {
-            throw new Error(e)
+            try {
+              let productImage = await API.ProductImage.create(file)
+              productImages.push(productImage)
+            } catch (e) {
+              throw new Error(e)
+            }
           }
         }
 
-        const payload = {
+        let payload = {
           name: values.name,
           description: values.description,
           description_de: values.description_de,
@@ -155,11 +175,11 @@ export default function AdminProductCreate() {
           productImages: productImages,
         }
 
-        await API.Product.create(payload)
-        showNotification(t('message.product-created'))
+        await API.Product.patch(productId, payload)
+        showNotification(t('message.product-updated'))
         navigate('/admin/products')
       } catch (e) {
-        showNotification(t('message.product-not-created'))
+        showNotification(t('message.product-not-updated'))
         console.error(e)
       }
     },
@@ -185,12 +205,10 @@ export default function AdminProductCreate() {
     e.preventDefault()
 
     setIsDragOver(false)
-    setFiles(e.dataTransfer.files)
+    addNewImages(e.dataTransfer.files)
   }
 
   function renderFileInput() {
-    if (filesAreValid) return null
-
     return (
       <div
         className={classNames(
@@ -217,7 +235,7 @@ export default function AdminProductCreate() {
                 className="sr-only"
                 multiple
                 onChange={(e) => {
-                  setFiles(e.target.files)
+                  addNewImages(e.target.files)
                 }}
               />
             </label>
@@ -231,47 +249,73 @@ export default function AdminProductCreate() {
     )
   }
 
-  function renderPreviews() {
-    if (previews === null) return null
+  function renderOldPreviews() {
+    if (oldImages === null || !Array.isArray(oldImages)) return null
 
-    return (
-      <div className="-mx-2 flex grow flex-wrap">
-        {previews.map((preview, index) => (
-          <div key={index} className="h-14 w-14 px-2">
-            <img
-              src={preview}
-              alt="preview"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        ))}
-      </div>
-    )
-  }
+    console.log(oldImages)
 
-  function renderFileStatus() {
-    if (!filesAreValid) return null
-
-    return (
-      <div className="flex space-x-2">
-        {renderPreviews()}
-        <Button
-          color="redOutline"
-          className="inline-flex justify-center"
-          title={t('common.remove')}
+    return oldImages.map((image, index) => (
+      <div key={image.id} className="h-14 w-14 px-2">
+        <button
           type="button"
+          className="group relative"
           onClick={() => {
-            setFiles(null)
-            setPreviews(null)
+            setOldImages(oldImages.filter((_, i) => i !== index))
           }}
         >
-          <TrashIcon className="h-4 w-4 sm:h-5 sm:w-5" />
-        </Button>
+          <div className="absolute top-0 left-0 z-10 flex h-14 w-14 items-center justify-center opacity-0 group-hover:opacity-100">
+            <TrashIcon className="h-6 w-6" />
+          </div>
+          <img
+            src={productImageURL(image.id)}
+            alt="preview"
+            className="h-14 w-14 object-cover group-hover:opacity-50"
+          />
+        </button>
+      </div>
+    ))
+  }
+
+  function renderNewPreviews() {
+    if (previews === null) return null
+
+    return previews.map((preview, index) => (
+      <div key={preview.id} className="h-14 w-14 px-2">
+        <button
+          type="button"
+          className="group relative"
+          onClick={() => {
+            setPreviews(previews.filter((_, i) => i !== index))
+            setNewImages(newImages.filter((_, i) => i !== index))
+          }}
+        >
+          <div className="absolute top-0 left-0 z-10 flex h-14 w-14 items-center justify-center opacity-0 group-hover:opacity-100">
+            <TrashIcon className="h-6 w-6" />
+          </div>
+          <img
+            src={preview.src}
+            alt="preview"
+            className="h-14 w-14 object-cover group-hover:opacity-50"
+          />
+        </button>
+      </div>
+    ))
+  }
+
+  function renderPreviews() {
+    if (previews === null && oldImages === null) return null
+
+    return (
+      <div className="-mx-2 mb-4 flex grow flex-wrap">
+        {renderOldPreviews()}
+        {renderNewPreviews()}
       </div>
     )
   }
 
   function renderForm() {
+    if (loading || error !== null) return null
+
     return (
       <Form onSubmit={formik.handleSubmit} twoColumns width="full">
         <div className="sm:col-span-2">
@@ -383,18 +427,11 @@ export default function AdminProductCreate() {
           >
             {t('common.product.image', { numImages: 2 })}
           </label>
-          {renderFileStatus()}
+          {renderPreviews()}
           {renderFileInput()}
         </div>
-        <Button
-          type="submit"
-          disabled={
-            !formik.isValid ||
-            formik.isDirty ||
-            (files !== null && !filesAreValid)
-          }
-        >
-          {t('common.create')}
+        <Button type="submit" disabled={!formik.isValid}>
+          {t('common.save')}
         </Button>
       </Form>
     )
@@ -403,7 +440,7 @@ export default function AdminProductCreate() {
   return (
     <>
       <Main>
-        <Pagetitle title={t('common.product.create')} />
+        <Pagetitle title={t('common.product.edit')} />
         <Spacer size="lg" />
         {renderForm()}
       </Main>

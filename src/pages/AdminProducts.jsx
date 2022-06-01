@@ -61,7 +61,7 @@ export default function AdminProducts() {
       return (
         <TableRow className="grid-cols-2" key={id}>
           <TableCell key={id}>
-            <NavLink to={`/admin/products/${id}`}>
+            <NavLink to={`/admin/products/edit/${id}`}>
               <h4 className="mb-1 text-lg font-medium ">{name}</h4>
             </NavLink>
           </TableCell>

@@ -23,6 +23,7 @@ import ProfileEdit from '@/pages/ProfileEdit'
 import Admin from '@/pages/Admin'
 import AdminProducts from '@/pages/AdminProducts'
 import AdminProductCreate from '@/pages/AdminProductCreate'
+import AdminProductEdit from '@/pages/AdminProductEdit'
 import AdminServiceProviders from '@/pages/AdminServiceProviders'
 import AdminServiceProviderCreate from '@/pages/AdminServiceProviderCreate'
 import AdminServiceProviderEdit from '@/pages/AdminServiceProviderEdit'
@@ -49,6 +50,10 @@ export default function Router() {
             />
             <Route path="products" element={<AdminProducts />} />
             <Route path="products/create" element={<AdminProductCreate />} />
+            <Route
+              path="products/edit/:productId"
+              element={<AdminProductEdit />}
+            />
             <Route
               path="service-providers"
               element={<AdminServiceProviders />}

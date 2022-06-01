@@ -27,6 +27,7 @@ export const Product = {
     }, [data])
 
     return {
+      data,
       products,
       error,
       loading,
@@ -61,6 +62,7 @@ export const Product = {
     }, [data])
 
     return {
+      data,
       product,
       error,
       loading,
