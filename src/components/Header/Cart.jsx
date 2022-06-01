@@ -11,6 +11,7 @@ export default function Cart() {
   const { t } = useTranslation()
   const auth = useAuth()
   const { cart } = useCart()
+  const [isOpen, setIsOpen] = useState(false)
 
   function renderCartItems() {
     if (!cart || cart.length === 0) {
@@ -27,7 +28,11 @@ export default function Cart() {
       return (
         <>
           <div>{t('common.cart.not-authenticated')}</div>
-          <LinkButton to="/login" className="mt-4 w-full">
+          <LinkButton
+            to="/login"
+            className="mt-4 w-full"
+            onClick={() => setIsOpen(false)}
+          >
             {t('common.auth.login')}
           </LinkButton>
         </>
@@ -47,13 +52,16 @@ export default function Cart() {
         <div className="w-full grow justify-start divide-y divide-gray-200 overflow-y-auto dark:divide-gray-700">
           {renderCartItems()}
         </div>
-        <LinkButton to="/cart" className="mt-4 w-full">
+        <LinkButton
+          to="/cart"
+          className="mt-4 w-full"
+          onClick={() => setIsOpen(false)}
+        >
           {t('common.cart.go')}
         </LinkButton>
       </>
     )
   }
-  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <div className="group ml-4 flex items-center">
