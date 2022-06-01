@@ -25,9 +25,7 @@ export default function MenuBarMobile({ routes }) {
       <div
         className={classNames(
           'fixed bottom-0 right-0 z-20 h-screen w-full bg-transparent bg-white transition-all duration-300 ease-menu dark:bg-gray-900',
-          isOpen
-            ? 'bottom-0 scale-100 opacity-100'
-            : '-bottom-full scale-150 opacity-0'
+          isOpen ? 'bottom-0 opacity-100' : '-bottom-full opacity-0'
         )}
       >
         <div className="mx-auto flex h-20 justify-end px-4">
