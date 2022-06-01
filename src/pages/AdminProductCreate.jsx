@@ -20,8 +20,7 @@ export default function AdminProductCreate() {
   const { showNotification } = useNotification()
 
   // State of images
-  const [files, setFiles] = useState(null)
-  const [filesAreValid, setFilesAreValid] = useState(false)
+  const [images, setImages] = useState(null)
   const [previews, setPreviews] = useState(null)
 
   const ALLOWED_IMAGE_TYPES = [
@@ -33,45 +32,48 @@ export default function AdminProductCreate() {
     'image/avif',
   ]
 
-  function validateFiles() {
-    if (files === null) return setFilesAreValid(false)
+  function addNewImages(files) {
+    if (files === null) return
 
-    if (files.length === 0) return setFilesAreValid(false)
+    if (files.length === 0) return
+
+    let newFiles = []
 
     for (let i = 0; i < files.length; i++) {
-      const file = files.item(i)
-      if (!ALLOWED_IMAGE_TYPES.includes(file.type)) {
-        setFiles(null)
-        setFilesAreValid(false)
+      const file = files[i]
+
+      if (ALLOWED_IMAGE_TYPES.includes(file.type)) {
+        newFiles.push(file)
+      } else {
         showNotification(t('message.file-type-not-allowed'))
-        return
       }
     }
 
-    setFilesAreValid(true)
+    addPreviewImages(newFiles)
+
+    if (images === null) return setImages(newFiles)
+
+    setImages([...images, newFiles])
   }
 
-  function getPreviewImages() {
-    if (files === null) return
-
+  function addPreviewImages(newFiles) {
     const previewImages = []
-    for (let i = 0; i < files.length; i++) {
-      const file = files.item(i)
+    for (let i = 0; i < newFiles.length; i++) {
+      const file = newFiles[i]
       const reader = new FileReader()
       reader.onload = () => {
-        previewImages.push(reader.result)
-        if (previewImages.length === files.length) {
-          setPreviews(previewImages)
+        previewImages.push({
+          id: file.name + Date.now(),
+          src: reader.result,
+        })
+        if (previewImages.length === newFiles.length) {
+          if (previews === null) return setPreviews(previewImages)
+          setPreviews([...previews, ...previewImages])
         }
       }
       reader.readAsDataURL(file)
     }
   }
-
-  useEffect(() => {
-    validateFiles()
-    getPreviewImages()
-  }, [files])
 
   const validate = (values) => {
     const errors = {}
@@ -125,13 +127,9 @@ export default function AdminProductCreate() {
     validate,
     onSubmit: async (values) => {
       try {
-        if (files !== null && !filesAreValid) {
-          throw new Error('Invalid files')
-        }
-
         let productImages = []
-        for (let i = 0; i < files.length; i++) {
-          const file = files.item(i)
+        for (let i = 0; i < images.length; i++) {
+          const file = images[i]
 
           try {
             let productImage = await API.ProductImage.create(file)
@@ -185,12 +183,10 @@ export default function AdminProductCreate() {
     e.preventDefault()
 
     setIsDragOver(false)
-    setFiles(e.dataTransfer.files)
+    addNewImages(e.dataTransfer.files)
   }
 
   function renderFileInput() {
-    if (filesAreValid) return null
-
     return (
       <div
         className={classNames(
@@ -217,7 +213,7 @@ export default function AdminProductCreate() {
                 className="sr-only"
                 multiple
                 onChange={(e) => {
-                  setFiles(e.target.files)
+                  addNewImages(e.target.files)
                 }}
               />
             </label>
@@ -235,38 +231,28 @@ export default function AdminProductCreate() {
     if (previews === null) return null
 
     return (
-      <div className="-mx-2 flex grow flex-wrap">
+      <div className="-mx-1 mb-4 flex grow flex-wrap">
         {previews.map((preview, index) => (
-          <div key={index} className="h-14 w-14 px-2">
-            <img
-              src={preview}
-              alt="preview"
-              className="h-full w-full object-cover"
-            />
+          <div key={preview.id} className="px-1">
+            <button
+              type="button"
+              className="group relative h-14 w-14"
+              onClick={() => {
+                setPreviews(previews.filter((_, i) => i !== index))
+                setImages(images.filter((_, i) => i !== index))
+              }}
+            >
+              <div className="absolute top-0 left-0 z-10 flex h-14 w-14 items-center justify-center opacity-0 group-hover:opacity-100">
+                <TrashIcon className="h-6 w-6" />
+              </div>
+              <img
+                src={preview.src}
+                alt="preview"
+                className="h-14 w-14 object-cover group-hover:opacity-50"
+              />
+            </button>
           </div>
         ))}
-      </div>
-    )
-  }
-
-  function renderFileStatus() {
-    if (!filesAreValid) return null
-
-    return (
-      <div className="flex space-x-2">
-        {renderPreviews()}
-        <Button
-          color="redOutline"
-          className="inline-flex justify-center"
-          title={t('common.remove')}
-          type="button"
-          onClick={() => {
-            setFiles(null)
-            setPreviews(null)
-          }}
-        >
-          <TrashIcon className="h-4 w-4 sm:h-5 sm:w-5" />
-        </Button>
       </div>
     )
   }
@@ -383,17 +369,10 @@ export default function AdminProductCreate() {
           >
             {t('common.product.image', { numImages: 2 })}
           </label>
-          {renderFileStatus()}
+          {renderPreviews()}
           {renderFileInput()}
         </div>
-        <Button
-          type="submit"
-          disabled={
-            !formik.isValid ||
-            formik.isDirty ||
-            (files !== null && !filesAreValid)
-          }
-        >
+        <Button type="submit" disabled={!formik.isValid || formik.isDirty}>
           {t('common.create')}
         </Button>
       </Form>

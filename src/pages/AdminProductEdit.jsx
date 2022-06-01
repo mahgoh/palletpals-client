@@ -37,10 +37,6 @@ export default function AdminProductEdit() {
     }
   }, [data])
 
-  // useEffect(() => {
-  //   getPreviewImages()
-  // }, [newImages])
-
   const ALLOWED_IMAGE_TYPES = [
     'image/png',
     'image/jpeg',
@@ -51,7 +47,6 @@ export default function AdminProductEdit() {
   ]
 
   function addNewImages(files) {
-    console.log(files)
     if (files === null) return
 
     if (files.length === 0) return
@@ -255,10 +250,10 @@ export default function AdminProductEdit() {
     console.log(oldImages)
 
     return oldImages.map((image, index) => (
-      <div key={image.id} className="h-14 w-14 px-2">
+      <div key={image.id} className="px-1">
         <button
           type="button"
-          className="group relative"
+          className="group relative h-14 w-14"
           onClick={() => {
             setOldImages(oldImages.filter((_, i) => i !== index))
           }}
@@ -280,10 +275,10 @@ export default function AdminProductEdit() {
     if (previews === null) return null
 
     return previews.map((preview, index) => (
-      <div key={preview.id} className="h-14 w-14 px-2">
+      <div key={preview.id} className="px-1">
         <button
           type="button"
-          className="group relative"
+          className="group relative h-14 w-14"
           onClick={() => {
             setPreviews(previews.filter((_, i) => i !== index))
             setNewImages(newImages.filter((_, i) => i !== index))
@@ -306,7 +301,7 @@ export default function AdminProductEdit() {
     if (previews === null && oldImages === null) return null
 
     return (
-      <div className="-mx-2 mb-4 flex grow flex-wrap">
+      <div className="-mx-1 mb-4 flex grow flex-wrap">
         {renderOldPreviews()}
         {renderNewPreviews()}
       </div>
