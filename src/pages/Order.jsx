@@ -54,7 +54,7 @@ export default function Order() {
             id
           )}`}
         >
-          <Button onClick={reOrder}>{t('common.order.re-order')}</Button>
+          <Button onClick={reOrder}>{t('common.cart.add')}</Button>
         </Pagetitle>
         <Spacer size="lg" />
         <div className="grid grid-cols-1 gap-y-4 gap-x-6 rounded-md bg-gray-100 p-6 dark:bg-gray-800 sm:grid-cols-4">
