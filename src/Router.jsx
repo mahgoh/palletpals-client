@@ -22,6 +22,7 @@ import ProfileEdit from '@/pages/ProfileEdit'
 // Admin routes
 import Admin from '@/pages/Admin'
 import AdminProducts from '@/pages/AdminProducts'
+import AdminProductCreate from '@/pages/AdminProductCreate'
 import AdminServiceProviders from '@/pages/AdminServiceProviders'
 import AdminServiceProviderCreate from '@/pages/AdminServiceProviderCreate'
 import AdminServiceProviderEdit from '@/pages/AdminServiceProviderEdit'
@@ -47,6 +48,7 @@ export default function Router() {
               element={<Navigate to="products" replace={true} />}
             />
             <Route path="products" element={<AdminProducts />} />
+            <Route path="products/create" element={<AdminProductCreate />} />
             <Route
               path="service-providers"
               element={<AdminServiceProviders />}

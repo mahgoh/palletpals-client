@@ -33,6 +33,14 @@ export const Product = {
       load,
     }
   },
+  async create(payload) {
+    await Fetch('/products', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    }).then((res) => {
+      if (res.status !== 201) throw new Error('Could not create product')
+    })
+  },
   byId(id) {
     let [product, setProduct] = useState({})
 
@@ -72,6 +80,29 @@ export const Product = {
     }).then((res) => {
       if (res.status !== 202) throw new Error('Could not delete product')
     })
+  },
+}
+
+export const ProductImage = {
+  async create(file) {
+    const formData = new FormData()
+    formData.append('image', file)
+
+    return await Fetch('/product-images', {
+      method: 'POST',
+      headers: {},
+      body: formData,
+    })
+      .then((res) => {
+        if (res.status !== 202)
+          throw new Error('Could not create product image')
+        return res.json()
+      })
+      .then((data) => {
+        return {
+          id: data.id,
+        }
+      })
   },
 }
 
@@ -265,6 +296,7 @@ export default {
   Cart,
   Order,
   Product,
+  ProductImage,
   User,
   ServiceProvider,
   Warehouse,

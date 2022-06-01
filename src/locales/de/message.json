@@ -30,5 +30,6 @@
   "product-updated": "Produkt erfolgreich aktualisiert",
   "product-not-updated": "Produkt konnte nicht aktualisiert werden",
   "product-removed": "Produkt erfolgreich entfernt",
-  "product-not-removed": "Produkt konnte nicht entfernt werden"
+  "product-not-removed": "Produkt konnte nicht entfernt werden",
+  "file-type-not-allowed": "Dateityp nicht erlaubt"
 }

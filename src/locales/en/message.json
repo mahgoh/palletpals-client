@@ -30,5 +30,6 @@
   "product-updated": "Product updated successfully",
   "product-not-updated": "Could not update product",
   "product-removed": "Product removed successfully",
-  "product-not-removed": "Could not remove product"
+  "product-not-removed": "Could not remove product",
+  "file-type-not-allowed": "File type not allowed"
 }
