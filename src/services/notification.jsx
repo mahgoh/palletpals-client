@@ -54,7 +54,7 @@ export function NotificationProvider({ children }) {
     }, 4000)
   }
 
-  let value = { showNotification, text, visible }
+  let value = { showNotification, text, visible, setVisible }
 
   return (
     <NotificationContext.Provider value={value}>
@@ -64,7 +64,7 @@ export function NotificationProvider({ children }) {
 }
 
 export function NotificationOutlet() {
-  const { text, visible } = useNotification()
+  const { text, visible, setVisible } = useNotification()
 
   return (
     <div
@@ -72,6 +72,9 @@ export function NotificationOutlet() {
         'fixed top-20 left-0 right-9 z-10 inline-flex h-10 w-full items-center justify-center bg-orange-500/10 font-semibold text-orange-600 transition-all ease-in-out',
         visible ? 'h-12' : 'h-0 opacity-0'
       )}
+      onClick={() => {
+        setVisible(false)
+      }}
     >
       {text}
     </div>
