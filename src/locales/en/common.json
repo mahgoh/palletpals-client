@@ -36,7 +36,8 @@
     "ordered": "Ordered",
     "delivered": "Delivered",
     "pending": "Pending",
-    "none": "No orders yet."
+    "none": "No orders yet.",
+    "re-order": "Re-order"
   },
   "product": {
     "title": "{numProducts, plural, =0 {Products} =1 {Product} other {Products}}",

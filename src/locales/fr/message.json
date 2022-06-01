@@ -1,6 +1,6 @@
 {
-  "added-to-cart": "Produit ajouté au panier",
-  "not-added-to-cart": "Impossible d'ajouter le produit au panier",
+  "added-to-cart": "{numProducts, plural, =0 {Produits} =1 {Produit} other {Produits}} ajouté au panier",
+  "not-added-to-cart": "Impossible d'ajouter {numProducts, plural, =0 {les produits} =1 {le produit} other {les produits}} au panier",
   "profile-updated": "Profil mis à jour avec succès",
   "profile-not-updated": "Impossible de mettre à jour le profil",
   "registered": "Vous êtes inscrit avec succès",

@@ -44,9 +44,9 @@ export default function ProductDetail({ product }) {
         try {
           await API.Cart.add(product.id, values.amount)
           await refreshCart()
-          showNotification(t('message.added-to-cart'))
+          showNotification(t('message.added-to-cart', { numProducts: 1 }))
         } catch (e) {
-          showNotification(t('message.not-added-to-cart'))
+          showNotification(t('message.not-added-to-cart', { numProducts: 1 }))
           console.error(e)
         }
       }

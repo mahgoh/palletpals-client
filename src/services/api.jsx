@@ -164,6 +164,13 @@ export const Order = {
   byId(id) {
     return useFetch(`/orders/${id}`)
   },
+  async reOrder(orderId) {
+    await Fetch(`/shopping/${orderId}`, {
+      method: 'POST',
+    }).then((res) => {
+      if (res.status !== 200) throw new Error('Could not reorder order')
+    })
+  },
 }
 
 export const User = {

@@ -1,6 +1,6 @@
 {
-  "added-to-cart": "Produkt zum Warenkorb hinzugefügt",
-  "not-added-to-cart": "Produkt konnte nicht zum Warenkorb hinzugefügt werden.",
+  "added-to-cart": "{numProducts, plural, =0 {Produkte} =1 {Produkt} other {Produkte}} zum Warenkorb hinzugefügt",
+  "not-added-to-cart": "{numProducts, plural, =0 {Produkte} =1 {Produkt} other {Produkte}} {numProducts, plural, =0 {konnten} =1 {konnte} other {konnten}} nicht zum Warenkorb hinzugefügt werden.",
   "profile-updated": "Profil erfolgreich aktualisiert",
   "profile-not-updated": "Profil konnte nicht aktualisiert werden",
   "registered": "Registrierung erfolgreich",

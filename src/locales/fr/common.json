@@ -36,7 +36,8 @@
     "ordered": "Commandé",
     "delivered": "Livraison",
     "pending": "En attente",
-    "none": "Aucune commande disponible."
+    "none": "Aucune commande disponible.",
+    "re-order": "Re-commander"
   },
   "product": {
     "title": "{numProducts, plural, =0 {Produits} =1 {Produit} other {Produits}}",

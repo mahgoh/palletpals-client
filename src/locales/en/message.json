@@ -1,6 +1,6 @@
 {
-  "added-to-cart": "Product added to cart",
-  "not-added-to-cart": "Could not add Product to cart",
+  "added-to-cart": "{numProducts, plural, =0 {Products} =1 {Product} other {Products}} added to cart",
+  "not-added-to-cart": "Could not add {numProducts, plural, =0 {Products} =1 {Product} other {Products}} to cart",
   "profile-updated": "Profile updated successfully",
   "profile-not-updated": "Could not update profile",
   "registered": "Registered successfully",
