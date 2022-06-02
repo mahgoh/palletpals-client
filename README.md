@@ -1,6 +1,6 @@
 # PalletPals Client
 
-The **PalletPals** client is written in [React](https://reactjs.org) and [Tailwind](https://tailwindcss.com) using the frontend tooling of [Vite](https://vitejs.dev).
+The **PalletPals** client is written in [React](https://reactjs.org) and [Tailwind CSS](https://tailwindcss.com), uses the frontend tooling of [Vite](https://vitejs.dev) and [Vitest](https://vitest.dev/) as test framework.
 
 ## Getting Started
 
