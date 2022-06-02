@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { useFormik } from 'formik'
 import { useAuth } from '@/services/auth'
 import { useAppearance } from '@/services/appearance'
+import { useCart } from '@/services/cart'
 import { useLanguage } from '@/services/language'
 import { useNotification } from '@/services/notification'
 import Button, { LinkButton } from '@/components/Button'
@@ -20,6 +21,7 @@ export default function Login() {
   let location = useLocation()
   let auth = useAuth()
   let { setAppearance } = useAppearance()
+  let { refreshCart } = useCart()
   let { setLanguage } = useLanguage()
   let { showNotification } = useNotification()
   let [validating, setValidating] = useState(false)
@@ -56,6 +58,9 @@ export default function Login() {
           const { appearance, language } = userPreferences
           if (appearance !== null) setAppearance(appearance.toLowerCase())
           if (language !== null) setLanguage(language)
+
+          // refresh cart
+          await refreshCart()
 
           // Disable loader
           setValidating(false)
