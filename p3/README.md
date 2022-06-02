@@ -29,7 +29,7 @@ In any case, depending on the operating system, a prompt can appear that asks fo
 
 ### Prerequisites
 
-- Docker (_tested with Docker Engine v20.10.12_)
+- Docker (_tested with Docker Engine v20.10.12 and v20.10.14_)
 
 The Dockerfile provided builds and runs **p3**. Additionally, `run.sh` already includes the commands to build the Docker image and run a Docker container and can simply be executed.
 
