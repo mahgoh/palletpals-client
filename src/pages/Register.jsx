@@ -204,12 +204,12 @@ export default function Login() {
           {...formik.getFieldProps('accessCode')}
         />
         <div></div>
-        <div className="flex space-x-2">
+        <div className="flex space-x-2 sm:col-span-2">
           <Button type="submit" disabled={!formik.isValid || !formik.dirty}>
             {t('common.auth.register')}
           </Button>
           <LinkButton to="/login" color="secondary">
-            {t('common.auth.login')}
+            {t('common.auth.back-to-login')}
           </LinkButton>
         </div>
       </Form>

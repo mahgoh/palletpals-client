@@ -12,7 +12,8 @@
     "password": "Password",
     "email": "Email",
     "remember": "Remember me",
-    "accessCode": "Access Code"
+    "accessCode": "Access Code",
+    "back-to-login": "Back to login"
   },
   "cart": {
     "title": "Cart",

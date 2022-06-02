@@ -12,7 +12,8 @@
     "password": "Mot de passe",
     "email": "Email",
     "remember": "Rappelle-toi de moi",
-    "accessCode": "Code d'accès"
+    "accessCode": "Code d'accès",
+    "back-to-login": "Retour à Login"
   },
   "cart": {
     "title": "Panier",

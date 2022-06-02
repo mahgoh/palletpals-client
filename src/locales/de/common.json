@@ -12,7 +12,8 @@
     "password": "Passwort",
     "email": "Email",
     "remember": "Angemeldet bleiben",
-    "accessCode": "Zugangscode"
+    "accessCode": "Zugangscode",
+    "back-to-login": "Zurück zur Anmeldung"
   },
   "cart": {
     "title": "Warenkorb",
