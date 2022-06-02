@@ -58,6 +58,10 @@ D-- No -->F[Proceed]
 
 Unit tests are written using [Vitest](https://vitest.dev) and [Testing Library](https://testing-library.com). Tests for a component are written in a `ComponentName.test.jsx` file inside the components directory to keep the source code and tests close to each other.
 
+### Automated Testing
+
+Tests can be run locally with the `npm test` command. Additionally, Github Actions are used to automatically run all test suites. On every push on the main branch and on each pull request, this test workflow is run automatically. In the case of a failure, merging is blocked and the commit is marked as failing. This solves the issue of "forgetting" to run tests and sends a notification / email to the contributors in case of a failure.
+
 ## Docker Environment
 
 The client can be run inside a [Docker](https://www.docker.com) container. This requires Docker to be installed on the host system. [Docker Compose](https://docs.docker.com/compose) is used to start and stop the container.
