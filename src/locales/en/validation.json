@@ -3,5 +3,6 @@
   "invalid": {
     "email": "Invalid email address"
   },
-  "min": "At least {min}"
+  "min": "At least {min}",
+  "passwords-not-different": "Passwords must be different"
 }

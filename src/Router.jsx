@@ -19,6 +19,7 @@ import Orders from '@/pages/Orders'
 import Order from '@/pages/Order'
 import Profile from '@/pages/Profile'
 import ProfileEdit from '@/pages/ProfileEdit'
+import ChangePassword from '@/pages/ChangePassword'
 
 // Admin routes
 import Admin from '@/pages/Admin'
@@ -117,6 +118,14 @@ export default function Router() {
             element={
               <RequireAuth>
                 <ProfileEdit />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="profile/change-password"
+            element={
+              <RequireAuth>
+                <ChangePassword />
               </RequireAuth>
             }
           />

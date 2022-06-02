@@ -93,9 +93,7 @@ export default function Profile() {
         <Debug data={{ auth, profile, orders }} />
       )}
       <Main>
-        <Pagetitle title={t('common.profile.title')}>
-          <LinkButton to="/profile/edit">{t('common.profile.edit')}</LinkButton>
-        </Pagetitle>
+        <Pagetitle title={t('common.profile.title')}></Pagetitle>
         <Spacer size="lg" />
         {profile.loading && <Loader />}
         {!profile.loading && (
@@ -104,6 +102,14 @@ export default function Profile() {
             {renderEmail()}
           </div>
         )}
+        <Spacer size="md" />
+        <div className="flex space-x-2">
+          <LinkButton to="/profile/edit">{t('common.profile.edit')}</LinkButton>
+
+          <LinkButton to="/profile/change-password">
+            {t('common.profile.change-password')}
+          </LinkButton>
+        </div>
         <Spacer size="lg" />
         {orders.loading && <Loader />}
         {!orders.loading && renderOrders()}

@@ -63,7 +63,10 @@
     "city": "City",
     "postalCode": "Postal code",
     "country": "Country",
-    "edit": "Edit profile"
+    "edit": "Edit profile",
+    "change-password": "Change password",
+    "current-password": "Current password",
+    "new-password": "New password"
   },
   "service-provider": {
     "title": "{numServiceProviders, plural, =0 {Service Providers} =1 {Service Provider} other {Service Providers}}",

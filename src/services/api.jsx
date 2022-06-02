@@ -224,6 +224,16 @@ export const User = {
       body: JSON.stringify(payload),
     })
   },
+  patchPassword(currentPassword, newPassword) {
+    return Fetch('/user/newPassword', {
+      method: 'POST',
+      body: JSON.stringify({
+        passwords: [currentPassword, newPassword],
+      }),
+    }).then((res) => {
+      if (res.status !== 200) throw new Error('Could not change password')
+    })
+  },
   async validate() {
     const res = await Fetch('/user/validate')
     return res.status === 200
