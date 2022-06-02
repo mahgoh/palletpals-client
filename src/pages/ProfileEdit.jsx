@@ -67,7 +67,6 @@ export default function ProfileEdit() {
       postalCode: data?.address?.postalCode,
       country: data?.address?.country,
       email: data?.email,
-      password: '',
     },
     enableReinitialize: true,
     validate,
@@ -86,9 +85,6 @@ export default function ProfileEdit() {
           },
           email: values.email,
         }
-
-        if (values.password !== '')
-          payload = { ...payload, password: values.password }
 
         await API.User.patch(payload)
         showNotification(t('message.profile-updated'))
@@ -139,16 +135,7 @@ export default function ProfileEdit() {
           }
           {...formik.getFieldProps('email')}
         />
-        <TextField
-          type="password"
-          label={t('common.auth.password')}
-          error={
-            formik.touched.password && formik.errors.password
-              ? formik.errors.password
-              : null
-          }
-          {...formik.getFieldProps('password')}
-        />
+        <div className="hidden sm:block"></div>
         <div className="sm:col-span-2">
           <Spacer size="sm" />
           <Subheading title={t('common.profile.address')} />

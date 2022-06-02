@@ -374,7 +374,7 @@ export default function AdminProductCreate() {
           {renderPreviews()}
           {renderFileInput()}
         </div>
-        <Button type="submit" disabled={!formik.isValid || formik.isDirty}>
+        <Button type="submit" disabled={!formik.isValid || !formik.dirty}>
           {t('common.create')}
         </Button>
       </Form>

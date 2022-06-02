@@ -206,7 +206,7 @@ export default function AdminServiceProviderCreate() {
           {renderFileStatus()}
           {renderFileInput()}
         </div>
-        <Button type="submit" disabled={!formik.isValid || formik.isDirty}>
+        <Button type="submit" disabled={!formik.isValid || !formik.dirty}>
           {t('common.save')}
         </Button>
       </Form>
